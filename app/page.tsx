@@ -42,6 +42,8 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { claims, people, type Claim } from '@/lib/claims';
+import { verdicts, evaluateTiming, AS_OF, RUBRIC_VERSION } from '@/lib/rubric';
+import { GradingRubric } from '@/components/grading-rubric';
 
 type View =
   | 'all'
@@ -58,7 +60,7 @@ const titles: Record<View, string> = {
   products: 'Product releases',
   capabilities: 'Capabilities & adoption',
   people: 'People',
-  method: 'How we evaluate',
+  method: 'Grading rubric',
   'andrew-curran': 'Andrew Curran',
   'mark-gurman': 'Mark Gurman',
 };
@@ -80,7 +82,7 @@ const descriptions: Record<View, string> = {
 function Status({ value }: { value: Claim['status'] }) {
   return (
     <span
-      className={`status status-${value === 'Supported' ? 'supported' : 'review'}`}
+      className={`status status-${verdicts.find((grade) => grade.label === value)?.tone ?? 'neutral'}`}
     >
       <span aria-hidden="true" />
       {value}
@@ -158,7 +160,28 @@ function Navigation({
     </Sidebar>
   );
 }
-function ClaimDetail({ claim }: { claim: Claim }) {
+function SourceRefs({ claim, ids }: { claim: Claim; ids: string[] }) {
+  return (
+    <span className="source-refs">
+      {ids.map((id) => (
+        <a
+          key={id}
+          href={`#${claim.id}-${id}`}
+          aria-label={`${id}: ${claim.sources.find((source) => source.id === id)?.label ?? 'Source'}`}
+        >
+          [{id}]
+        </a>
+      ))}
+    </span>
+  );
+}
+function ClaimDetail({
+  claim,
+  openRubric,
+}: {
+  claim: Claim;
+  openRubric: () => void;
+}) {
   return (
     <>
       <SheetHeader>
@@ -170,12 +193,21 @@ function ClaimDetail({ claim }: { claim: Claim }) {
         <SheetDescription>{claim.person} · Retrospective case</SheetDescription>
       </SheetHeader>
       <div className="detail-body">
-        <Status value={claim.status} />
+        <div className="grade-line">
+          <Status value={claim.status} />
+          <span>{claim.reviewState}</span>
+          <button className="text-link" onClick={openRubric}>
+            Rubric {claim.rubricVersion}
+          </button>
+        </div>
         <p>{claim.summary}</p>
         <dl className="claim-facts">
           <div>
             <dt>Published</dt>
-            <dd>{claim.published}</dd>
+            <dd>
+              {claim.published}
+              <span className="cell-note">{claim.dateNote}</span>
+            </dd>
           </div>
           <div>
             <dt>Forecast window</dt>
@@ -186,97 +218,122 @@ function ClaimDetail({ claim }: { claim: Claim }) {
             <dd>{claim.milestone}</dd>
           </div>
           <div>
+            <dt>Timing</dt>
+            <dd>{claim.timing.label}</dd>
+          </div>
+          <div>
+            <dt>Resolution</dt>
+            <dd>{claim.clarity}</dd>
+          </div>
+          <div>
+            <dt>Evidence</dt>
+            <dd>{claim.evidence}</dd>
+          </div>
+          <div>
             <dt>Probability</dt>
             <dd>Not recorded · no probability score</dd>
           </div>
           <div>
-            <dt>Original source</dt>
-            <dd>{claim.sourceState}</dd>
+            <dt>Forecast family</dt>
+            <dd>{claim.familyId}</dd>
           </div>
         </dl>
         <h3>Claim & context</h3>
         <p>{claim.context}</p>
-        {claim.quote && <blockquote>{claim.quote}</blockquote>}
-        <h3>Evidence & assessment</h3>
+        {claim.quote && (
+          <>
+            <blockquote>{claim.quote}</blockquote>
+            <p className="fine-print">
+              Short excerpt reproduced by the cited source.{' '}
+              <SourceRefs
+                claim={claim}
+                ids={claim.quoteSourceId ? [claim.quoteSourceId] : []}
+              />
+            </p>
+          </>
+        )}
+        <h3>Resolution rule · retrospective</h3>
+        <p>{claim.criteria}</p>
+        <p className="clarity-note">
+          <strong>{claim.clarity}.</strong> {claim.clarityNote}
+        </p>
+        <h3>Timing assessment</h3>
+        <p>{claim.timing.note}</p>
+        {claim.timing.observations.length > 0 && (
+          <ul className="observations">
+            {claim.timing.observations.map((observation) => {
+              const timing = claim.timing.rule
+                ? evaluateTiming(claim.timing.rule, observation.date, AS_OF)
+                : null;
+              return (
+                <li key={observation.label}>
+                  <span>{observation.label}</span>
+                  <strong>{observation.date}</strong>
+                  {timing && (
+                    <span className="timing-result">
+                      {timing.label}
+                      {timing.days !== null
+                        ? ` · ${timing.days > 0 ? '+' : ''}${timing.days} days`
+                        : ''}
+                    </span>
+                  )}
+                  <SourceRefs claim={claim} ids={[observation.sourceId]} />
+                </li>
+              );
+            })}
+          </ul>
+        )}
+        <h3>Checks & evidence</h3>
+        {claim.checks.map((check) => (
+          <div className="evidence-check" key={check.condition}>
+            <h4>{check.condition}</h4>
+            <p>
+              {check.finding} <SourceRefs claim={claim} ids={check.sourceIds} />
+            </p>
+          </div>
+        ))}
+        <h3>Assessment</h3>
         <p>{claim.assessment}</p>
         <h3>Sources</h3>
+        <p className="fine-print">
+          Forecast evidence: {claim.evidence}. {claim.sourceState}. No pre-event
+          archived snapshot is recorded for this pilot case.
+        </p>
         <ol className="sources">
           {claim.sources.map((source) => (
-            <li key={source.url}>
+            <li id={`${claim.id}-${source.id}`} key={source.id}>
+              <div className="source-meta">
+                {source.id} · {source.role} · {source.access}
+              </div>
               <a href={source.url} target="_blank" rel="noreferrer">
                 {source.label}
                 <ArrowUpRight size={14} aria-hidden="true" />
               </a>
               <p>{source.note}</p>
+              <div className="source-date">
+                Published: {source.published} · Access checked:{' '}
+                {source.accessed}
+              </div>
             </li>
           ))}
         </ol>
         <h3>Review record</h3>
         <p>{claim.review}</p>
+        <ol className="review-history">
+          {claim.history.map((entry, i) => (
+            <li key={`${entry.date}-${i}`}>
+              <time>{entry.date}</time>
+              <p>{entry.change}</p>
+            </li>
+          ))}
+        </ol>
         <p className="fine-print">
-          Added 4 September 2026. Inclusion is for method development, not a
-          representative sample of this person’s predictions.
+          Related revisions share a forecast family and are not independent
+          evidence of skill. This selective pilot does not support a
+          person-level ranking.
         </p>
       </div>
     </>
-  );
-}
-function Method() {
-  return (
-    <div className="prose-content">
-      <h2>Different claims need different tests</h2>
-      <p>
-        <strong>Product releases</strong> concern a device, feature,
-        specification, or launch window. <strong>Model releases</strong> concern
-        a model’s identity, announcement, access stage, or availability.{' '}
-        <strong>Capabilities and adoption</strong> need a measurable threshold,
-        a date, and a defined evaluation.
-      </p>
-      <h2>Two records, kept separate</h2>
-      <p>
-        Historical public statements receive an evidence-backed assessment. A
-        probabilistic forecast receives a proper score only when its
-        probability, deadline, and resolution criteria were recorded before the
-        outcome. We never invent a probability from confident wording.
-      </p>
-      <h2>What counts as a release?</h2>
-      <p>
-        An announcement, private preview, limited rollout, public API, and
-        general availability are distinct milestones. A prediction about one
-        does not automatically succeed when another happens. Preserve the
-        original meaning; record ambiguous wording as ambiguous.
-      </p>
-      <h2>What makes a useful call?</h2>
-      <p>
-        Record how far ahead the call was made, how narrow its time window was,
-        and what was already public. Distinguish original reporting, independent
-        forecasting, inference from public clues, and repetition of someone
-        else’s report. Track all revisions and link claims derived from the same
-        report.
-      </p>
-      <h2>Evidence before a verdict</h2>
-      <p>
-        Keep the original post URL, timestamp, wording, surrounding thread, and
-        an archived snapshot when obtainable. Search results, mirrors, and Grok
-        can help find a claim; an incomplete source remains visibly incomplete.
-        Check the outcome against the company’s dated announcement or release
-        notes.
-      </p>
-      <h2>What these labels mean</h2>
-      <p>
-        <strong>Supported</strong> means the available evidence supports this
-        historical interpretation. <strong>Needs source</strong> means the
-        original dated claim still needs to be recovered. Neither label is a
-        probability score or a person-level accuracy estimate.
-      </p>
-      <h2>Before comparing people</h2>
-      <p>
-        Declare a source list and publication window before collection. Include
-        misses and unresolvable claims, use independent review, account for
-        related claims, and compare matching milestones and lead times. The
-        present pilot is too small and selectively collected to rank people.
-      </p>
-    </div>
   );
 }
 export default function Home() {
@@ -309,7 +366,7 @@ export default function Home() {
             <p className="intro">{descriptions[view]}</p>
           </div>
           {view === 'method' ? (
-            <Method />
+            <GradingRubric />
           ) : view === 'people' ? (
             <div className="people-list">
               {people.map((p) => (
@@ -356,7 +413,13 @@ export default function Home() {
                   {filtered.length} {filtered.length === 1 ? 'case' : 'cases'}
                 </span>
                 <span>Retrospective pilot</span>
-                <span>No forecaster rankings</span>
+                <button
+                  className="text-link rubric-jump"
+                  onClick={() => setView('method')}
+                >
+                  Rubric {RUBRIC_VERSION}
+                  <BookOpen size={13} />
+                </button>
               </div>
               {filtered.length ? (
                 <Table className="forecast-table">
@@ -364,8 +427,10 @@ export default function Home() {
                     <TableRow>
                       <TableHead>Forecast</TableHead>
                       <TableHead>Published</TableHead>
-                      <TableHead>Target</TableHead>
-                      <TableHead>Assessment</TableHead>
+                      <TableHead>Target & timing</TableHead>
+                      <TableHead>Grade</TableHead>
+                      <TableHead>Resolution</TableHead>
+                      <TableHead>Sources</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -399,10 +464,51 @@ export default function Home() {
                         <TableCell>
                           {c.target}
                           <span className="cell-note">{c.milestone}</span>
+                          <span
+                            className={`timing-label ${c.timing.label === 'Late' ? 'timing-late' : ''}`}
+                          >
+                            {c.timing.label}
+                          </span>
                         </TableCell>
                         <TableCell>
                           <Status value={c.status} />
                           <span className="cell-note">{c.statusNote}</span>
+                        </TableCell>
+                        <TableCell>
+                          <span className="clarity-label">{c.clarity}</span>
+                          <span className="cell-note">
+                            {c.evidence} evidence
+                          </span>
+                        </TableCell>
+                        <TableCell>
+                          <div className="row-sources">
+                            {(['Forecast', 'Outcome'] as const).map((role) => {
+                              const source = c.sources.find(
+                                (item) =>
+                                  item.role === role && item.access === 'Read',
+                              );
+                              return source ? (
+                                <a
+                                  key={role}
+                                  href={source.url}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  aria-label={`${role} source for ${c.title}`}
+                                >
+                                  {role}
+                                  <ArrowUpRight size={12} />
+                                </a>
+                              ) : (
+                                <span key={role}>{role}: missing</span>
+                              );
+                            })}
+                            <button
+                              className="all-sources"
+                              onClick={() => setSelected(c)}
+                            >
+                              All {c.sources.length} sources
+                            </button>
+                          </div>
                         </TableCell>
                       </TableRow>
                     ))}
@@ -432,7 +538,7 @@ export default function Home() {
                     className="text-link"
                     onClick={() => setView('method')}
                   >
-                    How we evaluate
+                    View the full rubric
                     <ChevronRight size={14} />
                   </button>
                 </div>
@@ -452,7 +558,15 @@ export default function Home() {
         }}
       >
         <SheetContent className="claim-sheet" side="right">
-          {selected && <ClaimDetail claim={selected} />}
+          {selected && (
+            <ClaimDetail
+              claim={selected}
+              openRubric={() => {
+                setSelected(null);
+                setView('method');
+              }}
+            />
+          )}
         </SheetContent>
       </Sheet>
     </SidebarProvider>

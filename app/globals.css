@@ -694,3 +694,244 @@ h1 {
     animation: none !important;
   }
 }
+
+/* Rubric and evidence extend the original restrained research layout. */
+.status-contradicted {
+  color: #a43f39;
+  background: #fbeeee;
+}
+.status-mixed {
+  color: #855c1b;
+  background: #faf3e6;
+}
+.status-pending {
+  color: #3569a4;
+  background: #edf3fb;
+}
+.status-neutral {
+  color: #636e7b;
+  background: #f0f2f5;
+}
+.forecast-table {
+  min-width: 910px;
+}
+.forecast-table th:first-child,
+.forecast-table td:first-child {
+  width: 29%;
+}
+.forecast-table th,
+.forecast-table td {
+  white-space: normal;
+}
+.clarity-label {
+  display: block;
+  font-size: 14px;
+  max-width: 125px;
+}
+.timing-label {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 550;
+  color: #657891;
+}
+.timing-late {
+  color: #a43f39;
+}
+.row-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+  min-width: 100px;
+}
+.row-sources a {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: #3e6597;
+}
+.row-sources a:hover {
+  text-decoration: underline;
+}
+.row-sources > span {
+  color: #828996;
+  font-size: 12px;
+}
+.all-sources {
+  font-size: 12px;
+  color: #748094;
+  text-align: left;
+  margin-top: 2px;
+}
+.all-sources:hover {
+  color: #2859ad;
+  text-decoration: underline;
+}
+.collection-meta .rubric-jump {
+  font-size: 12px;
+  gap: 6px;
+}
+.grade-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+  color: #758397;
+}
+.grade-line .text-link {
+  margin-left: auto;
+  font-size: 13px;
+}
+.clarity-note {
+  border-left: 2px solid #d6e1ef;
+  padding-left: 14px;
+  font-size: 14px;
+}
+.evidence-check {
+  padding: 12px 0;
+  border-bottom: 1px solid #eef0f4;
+}
+.evidence-check h4 {
+  color: #3e4c60;
+  font-size: 14px;
+  font-weight: 600;
+}
+.evidence-check p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+.source-refs {
+  display: inline-flex;
+  gap: 5px;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+.source-refs a {
+  color: #376aab;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.sources li {
+  scroll-margin-top: 20px;
+  padding: 13px 0;
+}
+.source-meta {
+  font-size: 12px;
+  color: #526782;
+  margin-bottom: 5px;
+  font-weight: 550;
+}
+.source-date {
+  font-size: 12px;
+  color: #7e8896;
+}
+.observations {
+  padding: 0;
+  margin: 18px 0;
+  list-style: none;
+}
+.observations li {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  flex-wrap: wrap;
+  padding: 8px 0;
+  border-bottom: 1px solid #eef0f4;
+  font-size: 13px;
+}
+.observations li > span:first-child {
+  flex: 1;
+  min-width: 140px;
+  color: #6c788a;
+}
+.observations strong {
+  font-weight: 500;
+  color: #3e4e64;
+}
+.timing-result {
+  color: #a43f39;
+}
+.review-history {
+  list-style: none;
+  padding: 0 0 0 15px;
+  border-left: 1px solid #dfe5ee;
+}
+.review-history li {
+  padding: 10px 0;
+}
+.review-history time {
+  font-size: 12px;
+  color: #8591a1;
+}
+.review-history p {
+  font-size: 14px;
+  margin: 4px 0;
+}
+.rubric-content {
+  max-width: 860px;
+}
+.rubric-version {
+  margin: 24px 0 18px;
+  font-size: 13px;
+  color: #536d91;
+}
+.rubric-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 25px 0 12px;
+}
+.rubric-content p + p {
+  margin-top: 15px;
+}
+.rubric-table {
+  margin: 18px 0;
+  border-top: 1px solid var(--border);
+}
+.rubric-table th {
+  background: #f8fafc;
+  color: #607084;
+  font-size: 14px;
+  padding: 10px 14px;
+}
+.rubric-table td {
+  white-space: normal;
+  vertical-align: top;
+  padding: 13px 14px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #5b6b80;
+}
+.rubric-table td:first-child {
+  width: 165px;
+}
+.rubric-table td strong {
+  font-weight: 550;
+  color: #30465f;
+}
+.rubric-table tr:last-child {
+  border-bottom: 1px solid var(--border);
+}
+.rubric-content .rubric-note {
+  font-size: 14px;
+  color: #778294;
+  margin: 18px 0;
+}
+.rubric-note a {
+  color: #3868a1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.examples-table {
+  min-width: 520px;
+}
+@media (max-width: 767px) {
+  .rubric-table td:first-child {
+    width: 125px;
+  }
+  .rubric-table td {
+    padding: 11px 9px;
+  }
+}
