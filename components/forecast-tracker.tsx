@@ -49,6 +49,8 @@ import {
   EssayCollection,
 } from '@/components/essay-evaluation';
 import { essays, type EssaySlug } from '@/lib/essays';
+import { AppleLaunchTable } from '@/components/apple-launch-table';
+import { GurmanOverview } from '@/components/gurman-overview';
 import { GradingRubric } from '@/components/grading-rubric';
 
 type View =
@@ -60,7 +62,8 @@ type View =
   | 'people'
   | 'method'
   | 'andrew-curran'
-  | 'mark-gurman';
+  | 'mark-gurman'
+  | 'apple-launches';
 const titles: Record<View, string> = {
   'ai-2027': 'AI 2027',
   'ai-2040-plan-a': 'AI 2040: Plan A',
@@ -73,6 +76,7 @@ const titles: Record<View, string> = {
   method: 'Grading rubric',
   'andrew-curran': 'Andrew Curran',
   'mark-gurman': 'Mark Gurman',
+  'apple-launches': 'Apple launch dates',
 };
 const descriptions: Record<View, string> = {
   'ai-2027': 'A scenario of AI research automation and two possible endings.',
@@ -92,7 +96,9 @@ const descriptions: Record<View, string> = {
   method:
     'Make each claim inspectable. Preserve uncertainty in the evidence and in the interpretation.',
   'andrew-curran': 'AI reporting and commentary · @AndrewCurran_',
-  'mark-gurman': 'Technology reporting · Bloomberg / Power On',
+  'mark-gurman': 'Technology reporting · 2015–2026 historical dossier',
+  'apple-launches':
+    'A reusable reference for announcement dates, orders, and availability—linked to forecast evaluations.',
 };
 function Status({ value }: { value: Claim['status'] }) {
   return (
@@ -179,7 +185,7 @@ function Navigation({
           </SidebarMenu>
         </SidebarGroup>
         <SidebarGroup>
-          <SidebarGroupLabel>PEOPLE IN THE PILOT</SidebarGroupLabel>
+          <SidebarGroupLabel>PEOPLE</SidebarGroupLabel>
           <SidebarMenu>
             {nav('andrew-curran', FileText)}
             {nav('mark-gurman', FileText)}
@@ -187,13 +193,16 @@ function Navigation({
         </SidebarGroup>
         <SidebarGroup>
           <SidebarGroupLabel>THE PROJECT</SidebarGroupLabel>
-          <SidebarMenu>{nav('method', BookOpen)}</SidebarMenu>
+          <SidebarMenu>
+            {nav('apple-launches', Smartphone)}
+            {nav('method', BookOpen)}
+          </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter className="sidebar-note">
         <span className="pilot-label">Pilot research</span>
         <p>
-          A small corpus.
+          A growing corpus.
           <br />
           An auditable record.
         </p>
@@ -220,9 +229,11 @@ function SourceRefs({ claim, ids }: { claim: Claim; ids: string[] }) {
 function ClaimDetail({
   claim,
   openRubric,
+  select,
 }: {
   claim: Claim;
   openRubric: () => void;
+  select: (claim: Claim) => void;
 }) {
   return (
     <>
@@ -336,6 +347,30 @@ function ClaimDetail({
         ))}
         <h3>Assessment</h3>
         <p>{claim.assessment}</p>
+        {claims.some(
+          (other) => other.id !== claim.id && other.familyId === claim.familyId,
+        ) && (
+          <>
+            <h3>Related claims & revisions</h3>
+            <ul className="related-claims">
+              {claims
+                .filter(
+                  (other) =>
+                    other.id !== claim.id && other.familyId === claim.familyId,
+                )
+                .map((other) => (
+                  <li key={other.id}>
+                    <button className="text-link" onClick={() => select(other)}>
+                      {other.published} · {other.title}
+                    </button>
+                    <span className="cell-note">
+                      {other.id} · {other.status}
+                    </span>
+                  </li>
+                ))}
+            </ul>
+          </>
+        )}
         <h3>Sources</h3>
         <p className="fine-print">
           Forecast evidence: {claim.evidence}. {claim.sourceState}. No pre-event
@@ -383,12 +418,47 @@ export default function ForecastTracker({
 }: {
   initialView?: View;
 }) {
-  const [view, setView] = useState<View>(initialView);
+  const [view, updateView] = useState<View>(initialView);
+  const [query, setQuery] = useState('');
+  const [category, setCategory] = useState('');
+  const [year, setYear] = useState('');
+  const [grade, setGrade] = useState('');
+  const [kind, setKind] = useState('');
+  const [page, setPage] = useState(0);
+  const [sort, setSort] = useState('newest');
+  const setView = (next: View) => {
+    updateView(next);
+    setQuery('');
+    setCategory('');
+    setYear('');
+    setGrade('');
+    setKind('');
+    setPage(0);
+    window.history.replaceState(null, '', `/?view=${next}`);
+  };
   const essay = essays.find((item) => item.slug === view);
   const [selected, setSelected] = useState<Claim | null>(null);
-  const filtered = claims.filter(
+  const collection = claims.filter(
     (c) => view === 'all' || c.type === view || c.personId === view,
   );
+  const filtered = collection
+    .filter(
+      (claim) =>
+        (!category || claim.category === category) &&
+        (!year || claim.published.startsWith(year)) &&
+        (!grade || claim.status === grade) &&
+        (!kind || (claim.kind || 'expectation') === kind) &&
+        `${claim.title} ${claim.id} ${claim.summary} ${claim.familyId}`
+          .toLowerCase()
+          .includes(query.toLowerCase()),
+    )
+    .sort((a, b) =>
+      sort === 'newest'
+        ? b.published.localeCompare(a.published)
+        : a.published.localeCompare(b.published),
+    );
+  const pageCount = Math.max(1, Math.ceil(filtered.length / 25));
+  const currentPage = Math.min(page, pageCount - 1);
   const person = people.find((p) => p.id === view);
   return (
     <SidebarProvider style={{ '--sidebar-width': '15rem' } as CSSProperties}>
@@ -414,6 +484,8 @@ export default function ForecastTracker({
           </div>
           {essay ? (
             <EssayEvaluation essay={essay} />
+          ) : view === 'apple-launches' ? (
+            <AppleLaunchTable claims={claims} select={setSelected} />
           ) : view === 'method' ? (
             <GradingRubric />
           ) : view === 'people' ? (
@@ -460,11 +532,124 @@ export default function ForecastTracker({
                   </a>
                 </div>
               )}
+              {view === 'mark-gurman' && (
+                <GurmanOverview
+                  claims={claims}
+                  select={setSelected}
+                  openLaunches={() => setView('apple-launches')}
+                />
+              )}
+              {collection.length > 10 && (
+                <div className="research-filters">
+                  <label>
+                    Search claims
+                    <input
+                      type="search"
+                      value={query}
+                      onChange={(e) => {
+                        setQuery(e.target.value);
+                        setPage(0);
+                      }}
+                      placeholder="AirTags, M4, forecast family…"
+                    />
+                  </label>
+                  <label>
+                    Product
+                    <select
+                      value={category}
+                      onChange={(e) => {
+                        setCategory(e.target.value);
+                        setPage(0);
+                      }}
+                    >
+                      <option value="">All products</option>
+                      {[
+                        ...new Set(
+                          collection
+                            .map((claim) => claim.category)
+                            .filter((item): item is string => !!item),
+                        ),
+                      ]
+                        .sort()
+                        .map((item) => (
+                          <option key={item}>{item}</option>
+                        ))}
+                    </select>
+                  </label>
+                  <label>
+                    Report year
+                    <select
+                      value={year}
+                      onChange={(e) => {
+                        setYear(e.target.value);
+                        setPage(0);
+                      }}
+                    >
+                      <option value="">All years</option>
+                      {[
+                        ...new Set(
+                          collection
+                            .map((claim) => claim.published.slice(0, 4))
+                            .filter((item) => /^\d{4}$/.test(item)),
+                        ),
+                      ]
+                        .sort()
+                        .reverse()
+                        .map((item) => (
+                          <option key={item}>{item}</option>
+                        ))}
+                    </select>
+                  </label>
+                  <label>
+                    Verdict
+                    <select
+                      value={grade}
+                      onChange={(e) => {
+                        setGrade(e.target.value);
+                        setPage(0);
+                      }}
+                    >
+                      <option value="">All verdicts</option>
+                      {verdicts.map((item) => (
+                        <option key={item.label}>{item.label}</option>
+                      ))}
+                    </select>
+                  </label>
+                  <label>
+                    Statement type
+                    <select
+                      value={kind}
+                      onChange={(e) => {
+                        setKind(e.target.value);
+                        setPage(0);
+                      }}
+                    >
+                      <option value="">All statements</option>
+                      <option value="expectation">Expectations</option>
+                      <option value="possibility">Possibilities</option>
+                      <option value="development">Internal development</option>
+                    </select>
+                  </label>
+                  <label>
+                    Sort
+                    <select
+                      value={sort}
+                      onChange={(e) => {
+                        setSort(e.target.value);
+                        setPage(0);
+                      }}
+                    >
+                      <option value="newest">Newest report</option>
+                      <option value="oldest">Oldest report</option>
+                    </select>
+                  </label>
+                </div>
+              )}
               <div className="collection-meta">
                 <span>
                   {view === 'capabilities'
                     ? `${essays.length} essay evaluations`
-                    : `${filtered.length} release cases`}
+                    : `${filtered.length} of ${collection.length} claims`}
                 </span>
                 <span>Retrospective pilot</span>
                 <button
@@ -488,84 +673,89 @@ export default function ForecastTracker({
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {filtered.map((c) => (
-                      <TableRow key={c.id}>
-                        <TableCell>
-                          <div className="row-type">
-                            {c.type === 'models'
-                              ? 'Model release'
-                              : 'Product release'}{' '}
-                            <span>· {c.id}</span>
-                          </div>
-                          <button
-                            className="claim-link"
-                            onClick={() => setSelected(c)}
-                          >
-                            {c.title}
-                            <ChevronRight size={15} aria-hidden="true" />
-                          </button>
-                          <button
-                            className="author-link"
-                            onClick={() => setView(c.personId as View)}
-                          >
-                            {c.person}
-                          </button>
-                        </TableCell>
-                        <TableCell>
-                          {c.published}
-                          <span className="cell-note">{c.dateNote}</span>
-                        </TableCell>
-                        <TableCell>
-                          {c.target}
-                          <span className="cell-note">{c.milestone}</span>
-                          <span
-                            className={`timing-label ${c.timing.label === 'Late' ? 'timing-late' : ''}`}
-                          >
-                            {c.timing.label}
-                          </span>
-                        </TableCell>
-                        <TableCell>
-                          <Status value={c.status} />
-                          <span className="cell-note">{c.statusNote}</span>
-                        </TableCell>
-                        <TableCell>
-                          <span className="clarity-label">{c.clarity}</span>
-                          <span className="cell-note">
-                            {c.evidence} evidence
-                          </span>
-                        </TableCell>
-                        <TableCell>
-                          <div className="row-sources">
-                            {(['Forecast', 'Outcome'] as const).map((role) => {
-                              const source = c.sources.find(
-                                (item) =>
-                                  item.role === role && item.access === 'Read',
-                              );
-                              return source ? (
-                                <a
-                                  key={role}
-                                  href={source.url}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  aria-label={`${role} source for ${c.title}`}
-                                >
-                                  {role}
-                                  <ArrowUpRight size={12} />
-                                </a>
-                              ) : (
-                                <span key={role}>{role}: missing</span>
-                              );
-                            })}
+                    {filtered
+                      .slice(currentPage * 25, (currentPage + 1) * 25)
+                      .map((c) => (
+                        <TableRow key={c.id}>
+                          <TableCell>
+                            <div className="row-type">
+                              {c.type === 'models'
+                                ? 'Model release'
+                                : c.category || 'Product release'}{' '}
+                              <span>· {c.id}</span>
+                            </div>
                             <button
-                              className="all-sources"
+                              className="claim-link"
                               onClick={() => setSelected(c)}
                             >
-                              All {c.sources.length} sources
+                              {c.title}
+                              <ChevronRight size={15} aria-hidden="true" />
                             </button>
-                          </div>
-                        </TableCell>
-                      </TableRow>
-                    ))}
+                            <button
+                              className="author-link"
+                              onClick={() => setView(c.personId as View)}
+                            >
+                              {c.person}
+                            </button>
+                          </TableCell>
+                          <TableCell>
+                            {c.published}
+                            <span className="cell-note">{c.dateNote}</span>
+                          </TableCell>
+                          <TableCell>
+                            {c.target}
+                            <span className="cell-note">{c.milestone}</span>
+                            <span
+                              className={`timing-label ${c.timing.label === 'Late' ? 'timing-late' : ''}`}
+                            >
+                              {c.timing.label}
+                            </span>
+                          </TableCell>
+                          <TableCell>
+                            <Status value={c.status} />
+                            <span className="cell-note">{c.statusNote}</span>
+                          </TableCell>
+                          <TableCell>
+                            <span className="clarity-label">{c.clarity}</span>
+                            <span className="cell-note">
+                              {c.evidence} evidence
+                            </span>
+                          </TableCell>
+                          <TableCell>
+                            <div className="row-sources">
+                              {(['Forecast', 'Outcome'] as const).map(
+                                (role) => {
+                                  const source = c.sources.find(
+                                    (item) =>
+                                      item.role === role &&
+                                      item.access === 'Read',
+                                  );
+                                  return source ? (
+                                    <a
+                                      key={role}
+                                      href={source.url}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      aria-label={`${role} source for ${c.title}`}
+                                    >
+                                      {role}
+                                      <ArrowUpRight size={12} />
+                                    </a>
+                                  ) : (
+                                    <span key={role}>{role}: missing</span>
+                                  );
+                                },
+                              )}
+                              <button
+                                className="all-sources"
+                                onClick={() => setSelected(c)}
+                              >
+                                All {c.sources.length} sources
+                              </button>
+                            </div>
+                          </TableCell>
+                        </TableRow>
+                      ))}
                   </TableBody>
                 </Table>
               ) : view === 'capabilities' ? (
@@ -577,12 +767,35 @@ export default function ForecastTracker({
               ) : (
                 <div className="empty-state">
                   <BookOpen size={25} strokeWidth={1.4} />
-                  <h2>No cases collected yet</h2>
+                  <h2>
+                    {collection.length
+                      ? 'No claims match these filters'
+                      : 'No cases collected yet'}
+                  </h2>
                   <p>
                     This category will cover measurable capability and adoption
                     forecasts. The first collection focuses on product and model
                     releases.
                   </p>
+                </div>
+              )}
+              {filtered.length > 25 && (
+                <div className="research-pagination">
+                  <button
+                    disabled={currentPage === 0}
+                    onClick={() => setPage(currentPage - 1)}
+                  >
+                    Previous
+                  </button>
+                  <span aria-live="polite">
+                    Page {currentPage + 1} of {pageCount}
+                  </span>
+                  <button
+                    disabled={currentPage + 1 === pageCount}
+                    onClick={() => setPage(currentPage + 1)}
+                  >
+                    Next
+                  </button>
                 </div>
               )}
               <div className="reading-note">
@@ -621,6 +834,7 @@ export default function ForecastTracker({
           {selected && (
             <ClaimDetail
               claim={selected}
+              select={setSelected}
               openRubric={() => {
                 setSelected(null);
                 setView('method');

@@ -1,4 +1,5 @@
 import { productClaims } from './product-claims';
+import { gurmanClaims } from './gurman-claims';
 import type { Claim } from './claim-types';
 export type { Claim } from './claim-types';
 
@@ -17,12 +18,25 @@ export const people = [
     initials: 'MG',
     description: 'Apple and consumer technology · Bloomberg',
     url: 'https://www.macrumors.com/2024/04/11/m4-ai-chips-late-2024/',
-    note: 'A pilot for evaluating specific product reporting. Source access, original wording, and the difference between reporting and prediction are recorded for each case.',
+    note: 'A historical dossier of Apple reporting. Inspect product details, timing, revisions, and source quality separately.',
   },
 ];
 
 export const claims: Claim[] = [
-  ...productClaims,
+  ...productClaims.map(
+    (claim): Claim => ({
+      ...claim,
+      category: claim.id === 'F-004' ? 'Mac' : 'iPad',
+      kind: 'expectation',
+      launchIds:
+        claim.id === 'F-004'
+          ? ['imac-m4', 'macbook-pro-m4']
+          : claim.id === 'F-003'
+            ? ['ipad-pro-m4']
+            : ['ipad-pro-m4', 'ipad-air-m2'],
+    }),
+  ),
+  ...gurmanClaims,
   {
     id: 'F-001',
     title: 'GPT-6 release timing',

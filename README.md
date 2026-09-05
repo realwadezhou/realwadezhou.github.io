@@ -6,12 +6,23 @@ A small research website for inspectable technology forecasts. Built with React,
 
 Run `npm install`, then `npm run dev`. Validate the application with `npx oxlint app lib components/grading-rubric.tsx`, `npx tsc --noEmit`, `node --experimental-strip-types --test tests/rubric.test.mjs`, and `npm run build`.
 
-The data in `lib/claims.ts` and `lib/product-claims.ts` is manually curated. It is a selective retrospective pilot, not a complete corpus or a ranking. Sources, missing evidence, and provisional assessments are displayed in each case panel. There is no automatic X or Grok connection.
+The claim data is manually curated. `lib/claims.ts` combines the original cases in `lib/product-claims.ts` with the historical Gurman corpus through `lib/gurman-claims.ts`. It is a selective retrospective collection, not a complete corpus or a ranking. Sources, missing evidence, and provisional assessments are displayed in each case panel. There is no automatic X or Grok connection.
 
-Views cover product releases, model releases, people, and the complete grading rubric. The capabilities/adoption category has an explicit empty state for future work. The site is owner-private by default.
+Views cover product releases, model releases, people, essay evaluations, the grading rubric, and reusable Apple launch dates. The Gurman dossier and forecast index support product, year, verdict, statement-type, and text filters. The site is owner-private by default.
 
 `lib/rubric.ts` defines every allowed grade, timing label, resolution clarity, evidence level, and review state. The UI renders the same definitions used by the data types. Date rules distinguish deadlines from bounded windows and use calendar-day arithmetic. Tests cover boundary dates, early/late/overdue outcomes, invalid input, source references, and the distinction between a specification forecast and a timing forecast.
 
-Each checked claim records its retrospective resolution rule, source-linked findings, actual milestone dates, rubric version, and review history. The four Gurman cases use public attributed reports and authoritative Apple outcomes. They are provisional; no independent second human review or pre-event archived snapshot has been recorded. The Curran case remains an unassessed lead, with X collection deferred.
+Each checked claim records its retrospective resolution rule, source-linked findings, actual milestone dates, rubric version, and review history. The Gurman dossier now has 205 claims across 80 forecast families, including the original four cases with their histories preserved. Assessments remain provisional; no independent second human review or pre-event archived snapshot is recorded. The Curran case remains an unassessed lead, with X collection deferred.
+
+## Historical research and reusable launch catalog
+
+- `public/data/apple-launches.json`: the reusable Apple product table, with stable IDs, separate announcement/order/customer-availability dates, market, precision, source binding for each milestone, and verification date. Read this before fetching Apple dates again. Future dates are scheduled, and null dates remain unknown.
+- `scripts/build-apple-launches.py`: curated launch ledger and reproducible catalog builder. Requires Python and `beautifulsoup4`. It uses a local `/tmp/gurman-apple-evidence` cache; delete the relevant cached entry when deliberately rechecking a source. The pinned review date must be updated deliberately during a new research pass.
+- `scripts/collect-apple-newsroom.py`: optional discovery pass over Apple's yearly archives; not a grading engine. `docs/apple-newsroom-index.json` and `docs/apple-launch-candidates.json` retain article metadata only. Discovery candidates are not automatically launch records.
+- `scripts/build-gurman-corpus.py`: 201-claim expansion ledger, with concise paraphrases, qualifiers, source dates, outcomes, families, and launch IDs. Run it after editing to regenerate `public/data/gurman-forecasts.json`. Preserve existing IDs: append new rows, retain revisions, and record changes to already-published assessments.
+- `public/data/gurman-outcome-sources.json`: supplementary evidence for cancellations and specifications. These references supplement the shared launch catalog.
+- `GET /api/gurman`: complete 205-claim dossier, including original cases, all evidence, assessments, and review histories, generated from the same canonical data used by the UI.
+
+See `docs/gurman-research.md` for collection boundaries and the evaluation method. Reuse a launch ID across reporters and revisions; a shipped product can resolve several claims without duplicating its dates. A source-response hash identifies the retrieved response, not a pre-event archive. The source corpus is not a complete inventory of Gurman's reporting, and claim counts must not be presented as career accuracy.
 
 Validation note: `npm run lint` includes the generated component catalog, which has 19 known lint errors in unmodified starter components/hooks. The scoped application lint, TypeScript check, timing/evidence tests, and production build are the validation checks for this update. Browser interaction testing has not been performed.

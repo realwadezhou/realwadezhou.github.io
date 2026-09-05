@@ -43,6 +43,9 @@ export type Claim = {
   reviewState: ReviewState;
   criteria: string;
   familyId: string;
+  category?: string;
+  kind?: 'expectation' | 'possibility' | 'development';
+  launchIds?: string[];
   timing: {
     label: TimingLabel;
     note: string;

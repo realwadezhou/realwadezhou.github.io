@@ -1,6 +1,6 @@
 /** The single source of truth for the published rubric and allowed labels. */
 export const RUBRIC_VERSION = '0.1';
-export const AS_OF = '2026-09-04';
+export const AS_OF = '2026-09-05';
 export const verdicts = [
   {
     label: 'Supported',

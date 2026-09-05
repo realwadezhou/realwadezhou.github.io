@@ -2,6 +2,228 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
+.research-summary {
+  padding: 20px 24px;
+  margin: 24px 0;
+  background: #f6f8fb;
+  border-left: 3px solid #7897c7;
+}
+.research-summary p {
+  max-width: 90ch;
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #48525f;
+}
+.research-summary p:last-child {
+  margin-bottom: 0;
+}
+.research-summary strong {
+  color: #273951;
+}
+.research-actions {
+  display: flex;
+  gap: 12px 24px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+.research-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px;
+  margin: 28px 0 18px;
+}
+.research-filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #5b6572;
+  font-size: 11px;
+  font-weight: 600;
+}
+.research-filters label:first-child {
+  flex: 1 1 220px;
+}
+.research-filters input,
+.research-filters select {
+  border: 1px solid #d5dce6;
+  background: white;
+  border-radius: 4px;
+  padding: 9px 11px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #303b4c;
+  min-height: 38px;
+  max-width: 100%;
+}
+.research-pagination {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 0;
+  font-size: 12px;
+  color: #67717e;
+}
+.research-pagination button {
+  border: 1px solid #d5dce6;
+  border-radius: 4px;
+  padding: 7px 13px;
+  background: #fff;
+  color: #2859ad;
+}
+.research-pagination button:disabled {
+  color: #929aa5;
+  cursor: default;
+  background: #f8f9fb;
+}
+.verdict-counts {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border-block: 1px solid #e6e9ee;
+  padding: 18px 0;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.verdict-counts div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.verdict-counts strong {
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  color: #273951;
+}
+.verdict-counts span {
+  font-size: 11px;
+  color: #67717e;
+}
+.research-findings {
+  max-width: 90ch;
+  margin-top: 28px;
+}
+.research-findings h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.research-findings p {
+  font-size: 14px;
+  line-height: 1.85;
+  margin-bottom: 14px;
+  color: #48525f;
+}
+.research-findings .text-link {
+  display: inline;
+  text-align: left;
+  line-height: inherit;
+  font-size: inherit;
+}
+.coverage-details {
+  margin: 22px 0 32px;
+  border-block: 1px solid #e6e9ee;
+  padding: 16px 0;
+}
+.coverage-details summary {
+  cursor: pointer;
+  color: #2859ad;
+  font-size: 13px;
+}
+.coverage-scroll {
+  overflow-x: auto;
+}
+.coverage-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin: 16px 0;
+  text-align: right;
+}
+.coverage-table th,
+.coverage-table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid #e6e9ee;
+  font-weight: 400;
+}
+.coverage-table th:first-child {
+  text-align: left;
+}
+.coverage-table thead th {
+  color: #67717e;
+  font-size: 11px;
+}
+.launch-table {
+  margin-top: 20px;
+  min-width: 720px;
+}
+.launch-table td {
+  vertical-align: top;
+  padding-block: 17px;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.launch-table td:first-child {
+  width: 47%;
+  white-space: normal;
+}
+.launch-details summary {
+  cursor: pointer;
+  list-style: none;
+}
+.launch-details summary strong {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2859ad;
+}
+.launch-details summary strong::after {
+  content: ' ＋';
+  font-weight: 400;
+  color: #67717e;
+}
+.launch-details[open] summary strong::after {
+  content: ' −';
+}
+.launch-evidence {
+  padding: 14px 0 0;
+  color: #5b6572;
+  max-width: 60ch;
+  line-height: 1.65;
+}
+.launch-evidence p {
+  margin-bottom: 10px;
+}
+.launch-evidence li,
+.related-claims li {
+  margin-bottom: 12px;
+}
+.launch-evidence a {
+  color: #2859ad;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.launch-evidence h3 {
+  margin: 16px 0 10px;
+  font-weight: 600;
+}
+.related-claims .text-link {
+  text-align: left;
+}
+@media (max-width: 700px) {
+  .verdict-counts {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 18px;
+  }
+  .research-summary {
+    padding: 16px;
+  }
+  .research-filters label {
+    flex: 1 1 130px;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
