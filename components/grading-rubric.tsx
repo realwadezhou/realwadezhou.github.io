@@ -14,6 +14,7 @@ import {
   verdicts,
   RUBRIC_VERSION,
 } from '@/lib/rubric';
+import { EpochPolicy } from '@/components/epoch-policy';
 function Vocabulary({
   rows,
   title,
@@ -150,6 +151,7 @@ export function GradingRubric() {
         domain, horizon, and specificity groups.
       </p>
       <h2>What sources support the assessment?</h2>
+      <EpochPolicy />
       <Vocabulary rows={evidenceLevels} title="Evidence level" />
       <p>
         Each checked case lists its forecast and outcome sources. Each factual

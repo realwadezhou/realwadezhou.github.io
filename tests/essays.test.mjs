@@ -147,3 +147,67 @@ test('aggregate counts exclude proposals even if a later editor gives one a fact
   assert.equal(counts.proposals, 1);
   assert.equal(counts.context, 1);
 });
+
+test('revised claims retain their prior decision and attributable evidence additions', () => {
+  const claims = essays.flatMap((essay) => essay.claims);
+  for (const essay of essays)
+    for (const claim of essay.claims)
+      for (const review of claim.reviewHistory ?? []) {
+        assert.equal(review.previous.id, claim.id);
+        assert.ok(review.date <= ESSAY_AS_OF);
+        assert.ok(review.reason && review.reviewer && review.rubricVersion);
+        assert.ok(
+          !review.previous.reviewHistory,
+          'history cannot recursively nest',
+        );
+        for (const id of review.addedEvidenceIds)
+          assert.ok(
+            essay.sources.some((source) => source.id === id),
+            id,
+          );
+      }
+  const capacity = claims.find((claim) => claim.id === 'A27-008');
+  assert.equal(capacity.deadline, undefined);
+  assert.equal(capacity.kind, 'Conditional forecast');
+  assert.equal(capacity.reviewHistory[0].previous.deadline, '2025-12-31');
+  assert.equal(capacity.reviewHistory[0].previous.grade, 'Not assessed');
+});
+
+test('canonical hardware resolutions use dated estimates and disclose proxy scope', () => {
+  const snapshot = JSON.parse(
+    fs.readFileSync(
+      new URL('../public/evidence/epoch-2026-09-05.json', import.meta.url),
+      'utf8',
+    ),
+  );
+  assert.ok(
+    snapshot.colossus2.Date <= ESSAY_AS_OF,
+    'future expansion cannot resolve a claim',
+  );
+  for (const chip of snapshot.colossus2Chips)
+    assert.ok(chip.Date <= ESSAY_AS_OF);
+  const physicalChips = snapshot.colossus2Chips.reduce(
+    (sum, chip) => sum + Number(chip['Number of Units']),
+    0,
+  );
+  assert.ok(physicalChips < 1_000_000);
+  assert.ok(Number(snapshot.colossus2['H100 equivalents']) > 1_000_000);
+  assert.ok(
+    Number(snapshot.colossus2['Power (MW)']) >
+      Number(snapshot.colossus2['IT power (MW)']),
+  );
+  for (const id of ['SA-028', 'SA-029', 'SA-030']) {
+    const claim = data.situational.claims.find((c) => c.id === id);
+    assert.equal(claim.grade, 'Supported');
+    assert.equal(claim.canonicalSource, 'Epoch AI');
+    assert.ok(claim.evidenceIds.includes('epoch-snapshot'));
+    assert.match(claim.criteria, /stricter.*Not assessed/);
+    assert.equal(claim.reviewHistory[0].previous.grade, 'Pending');
+  }
+  assert.equal(
+    data.ai2027.claims.find((c) => c.id === 'A27-007').grade,
+    'Not assessed',
+    'missing frontier-model compute cannot be silently treated as a measured failure',
+  );
+  assert.ok(snapshot.modelsReleasedThrough2025.missingCompute > 0);
+});

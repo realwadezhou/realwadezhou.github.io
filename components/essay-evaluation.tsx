@@ -25,6 +25,7 @@ import {
   type EssayClaim,
 } from '@/lib/essays';
 import { verdicts, RUBRIC_VERSION } from '@/lib/rubric';
+import { EpochPolicy } from '@/components/epoch-policy';
 
 function Grade({ claim }: { claim: EssayClaim }) {
   if (claim.kind === 'Policy proposal' || claim.kind === 'Already observable')
@@ -143,6 +144,7 @@ export function EssayEvaluation({ essay }: { essay: Essay }) {
           </div>
         ))}
       </div>
+      <EpochPolicy />
       <p className="fine-print essay-score-note">
         As of {ESSAY_AS_OF} · Provisional assessment by Codex · Rubric{' '}
         {RUBRIC_VERSION}. Counts describe claims, not independent bets or
@@ -238,6 +240,11 @@ export function EssayEvaluation({ essay }: { essay: Essay }) {
                           ? 'Outside accuracy counts'
                           : claim.clarity}
                       </span>
+                      {claim.observation && (
+                        <span className="cell-note essay-observation">
+                          {claim.observation}
+                        </span>
+                      )}
                     </TableCell>
                   </TableRow>
                 ))}
@@ -311,6 +318,12 @@ export function EssayEvaluation({ essay }: { essay: Essay }) {
                         : 'Original source read; outcome evidence incomplete'}
                     </dd>
                   </div>
+                  {selected.canonicalSource && (
+                    <div>
+                      <dt>Hardware authority</dt>
+                      <dd>{selected.canonicalSource} · estimates accepted</dd>
+                    </div>
+                  )}
                   <div>
                     <dt>Family</dt>
                     <dd>{selected.family}</dd>
@@ -358,6 +371,39 @@ export function EssayEvaluation({ essay }: { essay: Essay }) {
                   by Codex. No independent human review. This row is not an
                   independent trial of the essay’s overall thesis.
                 </p>
+                {selected.reviewHistory?.map((review, i) => (
+                  <div className="essay-review" key={`${review.date}-${i}`}>
+                    <p>
+                      <strong>{review.date} · Follow-up review</strong>
+                      <br />
+                      {review.reviewer} · Rubric {review.rubricVersion}
+                      <br />
+                      Previously {review.previous.grade}. {review.reason}
+                    </p>
+                    {review.addedEvidenceIds.length > 0 && (
+                      <p className="fine-print">
+                        Sources added:{' '}
+                        {review.addedEvidenceIds
+                          .map(
+                            (id) =>
+                              essay.sources.find((s) => s.id === id)?.title ??
+                              id,
+                          )
+                          .join('; ')}
+                        .
+                      </p>
+                    )}
+                    <details>
+                      <summary>Previous assessment and resolution test</summary>
+                      <p>{review.previous.assessment}</p>
+                      <p>
+                        Target: {review.previous.target} · Timing:{' '}
+                        {review.previous.timing}
+                      </p>
+                      <p>{review.previous.criteria}</p>
+                    </details>
+                  </div>
+                ))}
               </div>
             </>
           )}

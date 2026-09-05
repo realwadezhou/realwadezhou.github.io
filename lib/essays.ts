@@ -31,6 +31,16 @@ export type EssayClaim = {
   sourceId: string;
   section: string;
   evidenceIds: string[];
+  canonicalSource?: 'Epoch AI';
+  observation?: string;
+  reviewHistory?: {
+    date: string;
+    reviewer: string;
+    rubricVersion: string;
+    reason: string;
+    previous: Omit<EssayClaim, 'reviewHistory'>;
+    addedEvidenceIds: string[];
+  }[];
 };
 export type Essay = {
   slug: EssaySlug;

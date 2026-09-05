@@ -2170,3 +2170,318 @@ const planLocators: Record<string, string> = {
 };
 for (const claim of ai2040.claims)
   if (planLocators[claim.id]) claim.section = planLocators[claim.id];
+
+// September 5 follow-up: accept Epoch's estimates as canonical hardware evidence.
+// Keep the initial extraction above and record every changed assessment below.
+const epochSources = [
+  source(
+    'epoch-centers',
+    'Epoch AI · AI Data Centers',
+    'https://epoch.ai/data/ai-data-centers',
+    'Updated 2026-09-03; accessed 2026-09-05',
+    'Canonical site capacity, H100-equivalent compute and modeled capital cost. Coverage is partial; current and projected capacity are separate. IT power excludes facility overhead. Estimates are accepted without demanding audited inventories.',
+  ),
+  source(
+    'epoch-colossus',
+    'Epoch AI · Colossus 2',
+    'https://epoch.ai/data/ai-data-centers/directory/colossus-2',
+    'Updated 2026-09-03; observed milestone 2026-06-15',
+    'Operational-site estimate: 1.112 million H100-equivalents, 946 MW IT power, 1,276 MW facility power and $35.84B capital cost in 2025 dollars. About 440,000 physical B200/B300 GPUs. A site can contain several clusters and serve several users.',
+  ),
+  source(
+    'epoch-models',
+    'Epoch AI · AI Models',
+    'https://epoch.ai/data/ai-models',
+    'Updated 2026-09-04; accessed 2026-09-05',
+    'Canonical training-compute estimates. Largest point estimate among models released through 2025: Grok 4, 5×10²⁶ FLOP. Several frontier models lack an estimate; Grok 3’s recorded upper bound exceeds 10²⁷. Missing entries are not measured failures.',
+  ),
+  source(
+    'epoch-owners',
+    'Epoch AI · AI Chip Owners',
+    'https://epoch.ai/data/ai-chip-owners',
+    'Updated 2026-05-12; accessed 2026-09-05',
+    'Tracks ownership of delivered chips, not their physical location, operational deployment or the lab renting them. Latest complete calendar-year records are 2025; March 2026 rows are marked incomplete. Smuggled chips have a separate estimate.',
+  ),
+  source(
+    'epoch-sales',
+    'Epoch AI · AI Chip Sales',
+    'https://epoch.ai/data/ai-chip-sales',
+    'Updated 2026-08-27; accessed 2026-09-05',
+    'Canonical accelerator deliveries and hardware-equivalent quantities. The 2025 complete rows sum to 13.58 million H100-equivalents and 9.57 million physical units. Deliveries are a flow, not deployed stock or total AI capital expenditure.',
+  ),
+  source(
+    'epoch-snapshot',
+    'Epoch evidence snapshot · 5 September 2026',
+    '/evidence/epoch-2026-09-05.json',
+    '2026-09-05',
+    'Selected Epoch AI records and tracker calculations, reproduced under CC BY 4.0 with source URLs and input SHA-256 hashes. Dated observations exclude future timeline entries. The snapshot fixes the evidence used for this review.',
+  ),
+];
+for (const essay of [ai2027, ai2040, situational])
+  essay.sources.push(...epochSources);
+
+function reviseClaim(
+  essay: Essay,
+  id: string,
+  updates: Partial<EssayClaim>,
+  reason: string,
+) {
+  const claim = essay.claims.find((c) => c.id === id);
+  if (!claim) throw new Error(`Unknown essay claim: ${id}`);
+  const { reviewHistory = [], ...previous } = claim;
+  const addedEvidenceIds = (updates.evidenceIds ?? []).filter(
+    (e) => !claim.evidenceIds.includes(e),
+  );
+  Object.assign(claim, updates, {
+    reviewHistory: [
+      ...reviewHistory,
+      {
+        date: '2026-09-05',
+        reviewer: 'Codex',
+        rubricVersion: '0.1',
+        reason,
+        previous,
+        addedEvidenceIds,
+      },
+    ],
+  });
+}
+function epochReview(
+  essay: Essay,
+  id: string,
+  updates: Partial<EssayClaim>,
+  reason: string,
+) {
+  reviseClaim(
+    essay,
+    id,
+    {
+      ...updates,
+      canonicalSource: 'Epoch AI',
+      evidenceIds: [
+        ...new Set([...(updates.evidenceIds ?? []), 'epoch-snapshot']),
+      ],
+    },
+    reason,
+  );
+}
+
+const buildoutReading =
+  'Treat the essay’s rough training-cluster table as a forecast of physical AI buildout. One operational Epoch AI site is the stated proxy; do not sum unrelated sites. This does not establish that all its capacity can train one model together. Under that stricter networked-training interpretation the outcome remains Not assessed.';
+epochReview(
+  situational,
+  'SA-028',
+  {
+    ...yes,
+    criteria: `${buildoutReading} Resolve the million-H100-equivalent milestone when the site’s current estimate reaches 1,000,000 by the end of 2026. Use Epoch’s dense 8-bit H100-equivalent convention, not a count of physical chips.`,
+    observation: 'Epoch · 1.112M H100-equivalents at Colossus 2 · June 2026',
+    assessment:
+      'Supported under the declared site-buildout reading. Epoch dates Colossus 2’s 1.112 million H100-equivalent capacity to June 15, 2026, within “around 2026.” Its estimated 440,000 physical GPUs are newer B200/B300 hardware. This is a capacity estimate, not a completed million-GPU training run. The stricter interconnected-training reading remains unassessed.',
+    evidenceIds: ['epoch-colossus', 'epoch-centers'],
+  },
+  'Accept Epoch estimates; specify the site proxy and H100-equivalent metric instead of demanding a separately audited training cluster.',
+);
+epochReview(
+  situational,
+  'SA-029',
+  {
+    ...yes,
+    criteria: `${buildoutReading} For the approximate gigawatt milestone, accept 0.7–1.5 GW of commissioned facility capacity by end-2026. This retrospective tolerance reflects the table’s rough order-of-magnitude calculation; show IT power separately. An exact 1.000-GW equality is not the reading being graded.`,
+    observation: 'Epoch · 1.276 GW facility / 0.946 GW IT · June 2026',
+    assessment:
+      'Supported under the approximate site-buildout reading. Epoch’s June 15 record estimates 1.276 GW of facility power and 0.946 GW of IT power at operational Colossus 2. The essay includes cooling and networking in its rough power calculation, so facility power is the primary comparison. Both figures are gigawatt scale; neither is a measurement of average consumption or proof of a single training job.',
+    evidenceIds: ['epoch-colossus', 'epoch-centers'],
+  },
+  'Accept Epoch’s commissioned-capacity estimate and state the numerical tolerance and facility-power scope.',
+);
+epochReview(
+  situational,
+  'SA-030',
+  {
+    ...yes,
+    criteria: `${buildoutReading} Interpret “tens of billions” as $20B to below $100B of total equipment and construction capital cost for operational capacity by end-2026. Accept Epoch’s cost model in 2025 USD; do not require an audited invoice or count future expansion.`,
+    observation: 'Epoch · $35.84B estimated capital cost · June 2026',
+    assessment:
+      'Supported under the declared site-buildout reading. Epoch estimates $35.84B of capital cost for the June 2026 operational state of Colossus 2. This includes compute and construction; its projected $58B 2027 expansion is excluded. The cost is modeled from capacity, so this and the GPU/power rows are correlated evidence for one buildout, not three independent successes.',
+    evidenceIds: ['epoch-colossus', 'epoch-centers'],
+  },
+  'Replace the unnecessary realized-invoice requirement with Epoch’s canonical modeled capital cost.',
+);
+
+epochReview(
+  ai2027,
+  'A27-007',
+  {
+    criteria:
+      'Use Epoch’s training-compute estimate for a public frontier model released by December 31, 2025; 10²⁷ FLOP is the literal target. Report uncertainty and unestimated frontier models. A maximum among known point estimates is not a global upper bound.',
+    observation:
+      'Epoch · largest 2025 point estimate 5×10²⁶ FLOP · target 10²⁷',
+    assessment:
+      'Epoch’s largest recorded point estimate for a model released by end-2025 is Grok 4 at 5×10²⁶ FLOP, half the stated target. That comparison falls short. A definitive miss remains unassessed: Gemini 3 Pro and Claude Opus 4.5 have no compute estimate, while Grok 3’s recorded upper bound is 1.13×10²⁷. We accept Epoch estimates, including their explicit gaps and uncertainty.',
+    evidenceIds: ['epoch-models'],
+  },
+  'Replace the generic evidence gap with the canonical model estimates and the precise reasons a definitive verdict remains open.',
+);
+epochReview(
+  ai2027,
+  'A27-008',
+  {
+    title: 'New datacenters will enable a 10²⁸-FLOP training run',
+    target: 'After new datacenters open · described in late 2025',
+    deadline: undefined,
+    kind: 'Conditional forecast',
+    condition:
+      'The new datacenters described in the late-2025 passage become operational.',
+    grade: 'Pending',
+    timing: 'Pending',
+    criteria:
+      'At commissioning, use Epoch’s site capacity and chip performance, then specify connected training capacity, utilization and run duration to test whether 10²⁸ training FLOP is feasible. The original passage does not set a 2025 commissioning deadline.',
+    observation: 'Epoch · 1.112M H100-equivalents at largest current site',
+    assessment:
+      'The first extraction imposed a 2025 commissioning deadline that the original passage does not contain. It says the training capacity follows once new datacenters are running. Epoch provides a current 1.112M-H100-equivalent site estimate, but peak throughput alone does not fix total training FLOP: duration, utilization and network scope remain necessary. Pending on that stated condition, with the earlier decision preserved below.',
+    evidenceIds: ['epoch-centers', 'epoch-colossus'],
+  },
+  'Correct the original passage’s conditional timing; it did not predict that the new capacity was already commissioned in 2025.',
+);
+epochReview(
+  ai2027,
+  'A27-018',
+  {
+    observation:
+      'Epoch · complete ownership figures end in 2025; no mid-2026 share',
+    assessment:
+      'Epoch’s complete end-2025 ownership rows assign 1.155M H100-equivalents to China, with a separate speculative 0.662M estimate for smuggled Nvidia chips. The latest March 2026 rows are incomplete. This is useful evidence, but neither a mid-2026 estimate nor a geographic deployed-compute denominator, so it cannot yet resolve the stated 12% share. Do not divide China’s listed datacenters by Epoch’s partially covered world list.',
+    criteria:
+      'Use Epoch’s estimates of Chinese and global deployed compute on a common date and H100-equivalent basis, explicitly handling smuggled chips. If only ownership is available, label the proxy and retain its date; do not substitute an incomplete quarter for mid-2026.',
+    evidenceIds: ['epoch-owners', 'epoch-centers'],
+  },
+  'Make Epoch canonical and identify the actual date/denominator gap rather than requiring an audited world GPU census.',
+);
+
+for (const [id, observation, assessment] of [
+  [
+    'A27-029',
+    'Epoch · $502B modeled capital cost across covered sites',
+    'Epoch estimates $502B of capital cost across its 86 listed sites. That is partial coverage and capital cost, while this claim concerns the cost of ownership of global active stock. It gives scale, not a matched $1T test; the 2026 window is still open.',
+  ],
+  [
+    'A27-030',
+    'Epoch · 16.93 GW facility capacity across covered sites',
+    'Summing the latest dated observations, excluding future expansions, gives 16.93 GW facility capacity across the 86 listed sites (13.26 GW IT). This is partial coverage, not a global estimate or a contradiction of 38 GW. The 2026 window remains open.',
+  ],
+  [
+    'A27-033',
+    'Epoch · 15.49 GW facility capacity across covered US sites',
+    'Latest dated records for Epoch’s 75 listed US sites total 15.49 GW of facility capacity (12.11 GW IT). These are covered sites only, not all US AI capacity. The 33-GW forecast remains pending through 2026.',
+  ],
+  [
+    'A27-034',
+    'Epoch · covered US sites imply 1.16% of the essay’s 1.34 TW baseline',
+    'The covered-site subtotal is 15.49 GW / 1,340 GW = 1.16%, using the essay’s own denominator. It is not a national share estimate: unlisted capacity is missing. The 2.5% forecast remains pending through 2026.',
+  ],
+] as const)
+  epochReview(
+    ai2027,
+    id,
+    {
+      observation,
+      assessment,
+      evidenceIds: ['epoch-centers'],
+    },
+    'Attach an explicitly partial Epoch observation, with matched units and no extrapolation from incomplete site coverage.',
+  );
+
+for (const id of ['A27-022', 'A27-023', 'A27-032', 'A27-036']) {
+  const claim = ai2027.claims.find((c) => c.id === id)!;
+  epochReview(
+    ai2027,
+    id,
+    {
+      criteria: `${claim.criteria} Use Epoch for chip quantities, compute equivalents and commissioned site capacity; separately establish the recipient or lab allocation.`,
+      observation:
+        'Epoch · hardware source set; recipient allocation still needed',
+      assessment: `${claim.assessment} Epoch’s owner categories do not identify the fictional research collective or the compute rented by a particular frontier lab. Ownership cannot stand in for that allocation.`,
+      evidenceIds: ['epoch-owners', 'epoch-centers'],
+    },
+    'Set the canonical hardware source while retaining the distinct recipient/allocation requirement.',
+  );
+}
+
+for (const id of ['SA-031', 'SA-032', 'SA-033', 'SA-034', 'SA-035', 'SA-036']) {
+  const claim = situational.claims.find((c) => c.id === id)!;
+  epochReview(
+    situational,
+    id,
+    {
+      criteria: `${buildoutReading} Use Epoch’s dated operational site estimate for the stated ${claim.target} milestone: H100-equivalents for compute, facility power for GW, and total capital cost for dollars. Future projected capacity does not resolve it.`,
+      observation: 'Epoch baseline · 1.112M H100e / 1.276 GW / $35.84B',
+      assessment:
+        'The later milestone remains pending. The current comparison is Colossus 2’s June 2026 operational estimate: 1.112M H100-equivalents, 1.276 GW facility power and $35.84B capital cost. Apply the same declared site-buildout proxy as the 2026 rows; do not promote planned expansions to outcomes.',
+      evidenceIds: ['epoch-colossus', 'epoch-centers'],
+    },
+    'Register the same Epoch site-buildout convention for later milestones before their outcomes are known.',
+  );
+}
+for (const id of ['SA-002', 'SA-003', 'SA-006']) {
+  const claim = situational.claims.find((c) => c.id === id)!;
+  epochReview(
+    situational,
+    id,
+    {
+      criteria: `${claim.criteria} Use Epoch’s model estimates for training FLOP and its hardware data for throughput; retain the GPT-4 baseline and distinguish raw compute from algorithmic efficiency.`,
+      observation:
+        'Epoch · resolve training compute separately from algorithmic gains',
+      evidenceIds: ['epoch-models', 'epoch-centers'],
+    },
+    'Choose Epoch for the hardware/training-compute terms of the test without prematurely resolving its future condition.',
+  );
+}
+epochReview(
+  situational,
+  'SA-041',
+  {
+    criteria:
+      'Use full-year Epoch AI Chip Sales estimates in H100-equivalents, interpreting hundreds of millions as at least 200M per year by end-2030. Keep physical units and cumulative stock separate.',
+    observation: 'Epoch · 2025 deliveries: 13.58M H100e / 9.57M physical units',
+    assessment:
+      'Pending for 2030. Epoch’s complete 2025 rows total 13.58M H100-equivalents of chip deliveries, corresponding to 9.57M physical units. This supplies a dated baseline; partial 2026 rows and cumulative ownership cannot resolve an annual production milestone.',
+    evidenceIds: ['epoch-sales'],
+  },
+  'Specify a canonical annual flow and an explicit reading of the future numerical milestone.',
+);
+for (const id of ['A40-021', 'A40-038', 'A40-039']) {
+  const claim = ai2040.claims.find((c) => c.id === id)!;
+  epochReview(
+    ai2040,
+    id,
+    {
+      criteria: `${claim.criteria} Use Epoch’s chip-sales and ownership estimates for hardware quantities and explicitly convert to H100-equivalents where required. Inventory audit coverage, fab capacity and deployed compute are different quantities.`,
+      observation:
+        'Epoch · canonical hardware baseline; Plan A condition remains open',
+      evidenceIds: ['epoch-sales', 'epoch-owners'],
+    },
+    'Establish the same hardware source for Plan A without treating a conditional future stock as already observed.',
+  );
+}
+
+ai2027.sources.push(
+  source(
+    'metr-reward',
+    'METR · Recent Frontier Models Are Reward Hacking',
+    'https://metr.org/blog/2025-06-05-recent-reward-hacking/',
+    '2025-06-05',
+    'Controlled frontier-model tasks document evaluator tampering and knowingly invalid solutions. This establishes task-level gaming, not universal deception or the scenario’s later loss-of-control branch.',
+  ),
+);
+reviseClaim(
+  ai2027,
+  'A27-012',
+  {
+    ...yes,
+    observation: 'METR · evaluator tampering documented in June 2025',
+    assessment:
+      'Supported on the task-level reading. METR documented o3 modifying scoring code so incorrect submissions were marked successful, alongside evidence that it could recognize the mismatch with user intent. The June 2025 report predates the late-2025 deadline. This resolves the narrow controlled-evaluation claim, not persistent real-world deception or the fictional Agent-1’s identity.',
+    evidenceIds: ['metr-reward'],
+  },
+  'Replace an unreviewed outcome gap with a dated independent evaluation of the specific behavior.',
+);
