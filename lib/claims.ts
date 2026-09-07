@@ -1,9 +1,18 @@
 import { productClaims } from './product-claims';
 import { gurmanClaims } from './gurman-claims';
+import { kuoClaims } from './kuo-claims';
 import type { Claim } from './claim-types';
 export type { Claim } from './claim-types';
 
 export const people = [
+  {
+    id: 'ming-chi-kuo',
+    name: 'Ming-Chi Kuo',
+    initials: 'MK',
+    description: 'Apple supply-chain analysis · KGI / TF International',
+    url: 'https://medium.com/@mingchikuo',
+    note: 'A historical dossier of Kuo’s dated product forecasts. Original posts, attributed client notes, production estimates and revisions are identified separately.',
+  },
   {
     id: 'andrew-curran',
     name: 'Andrew Curran',
@@ -37,6 +46,7 @@ export const claims: Claim[] = [
     }),
   ),
   ...gurmanClaims,
+  ...kuoClaims,
   {
     id: 'F-001',
     title: 'GPT-6 release timing',

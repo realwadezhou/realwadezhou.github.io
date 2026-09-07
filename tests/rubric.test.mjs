@@ -56,9 +56,28 @@ const { gurmanClaims } = dataModule('../lib/gurman-claims.ts', {
   '../public/data/gurman-outcome-sources.json': additional,
   './apple-launches': { launchById },
 });
+const kuoCorpus = JSON.parse(
+  fs.readFileSync(
+    new URL('../public/data/kuo-forecasts.json', import.meta.url),
+    'utf8',
+  ),
+);
+const kuoAdditional = JSON.parse(
+  fs.readFileSync(
+    new URL('../public/data/kuo-outcome-sources.json', import.meta.url),
+    'utf8',
+  ),
+);
+const { kuoClaims } = dataModule('../lib/kuo-claims.ts', {
+  '../public/data/kuo-forecasts.json': kuoCorpus,
+  '../public/data/kuo-outcome-sources.json': kuoAdditional,
+  './apple-launches': { launchById },
+});
+const { paginate } = dataModule('../lib/pagination.ts');
 const { claims } = dataModule('../lib/claims.ts', {
   './product-claims': { productClaims },
   './gurman-claims': { gurmanClaims },
+  './kuo-claims': { kuoClaims },
 });
 const deadline = { kind: 'by', end: '2024-06-30' };
 const month = { kind: 'during', start: '2024-06-01', end: '2024-06-30' };
@@ -240,7 +259,7 @@ test('every forecast-launch and supplementary evidence link resolves', () => {
     for (const id of claim.launchIds || [])
       assert.ok(launchById.has(id), `${claim.id}: ${id}`);
   const ids = new Set(claims.map((claim) => claim.id));
-  for (const source of additional.sources) {
+  for (const source of [...additional.sources, ...kuoAdditional.sources]) {
     assert.ok(source.claimIds.length);
     for (const id of source.claimIds) assert.ok(ids.has(id));
   }
@@ -265,4 +284,70 @@ test('ambiguous season, uncertain attribution, and post-event leads do not enter
   assert.equal(earlier.familyId, revised.familyId);
   assert.equal(earlier.status, 'Contradicted');
   assert.equal(revised.status, 'Supported');
+});
+
+test('row limits include every match in All mode and clamp pages after filtering', () => {
+  const rows = Array.from({ length: 216 }, (_, i) => i);
+  assert.deepEqual(paginate(rows, 8, 'all'), {
+    pageCount: 1,
+    current: 0,
+    visible: rows,
+  });
+  assert.deepEqual(paginate(rows, 8, 25).visible, rows.slice(200));
+  assert.deepEqual(paginate(rows.slice(0, 3), 8, 10), {
+    pageCount: 1,
+    current: 0,
+    visible: [0, 1, 2],
+  });
+  assert.deepEqual(paginate([], 4, 'all'), {
+    pageCount: 1,
+    current: 0,
+    visible: [],
+  });
+  for (const size of [10, 25, 50, 100]) {
+    const pages = Array.from(
+      { length: paginate(rows, 0, size).pageCount },
+      (_, page) => paginate(rows, page, size).visible,
+    );
+    assert.deepEqual(pages.flat(), rows);
+  }
+});
+test('Kuo revisions retain the original forecast and distinguish production from launch', () => {
+  const claim = (id) => kuoClaims.find((row) => row.id === id);
+  assert.equal(kuoClaims.length, 216);
+  assert.equal(Object.keys(kuoCorpus.sources).length, 50);
+  for (const [earlier, later] of [
+    ['K-126', 'K-152'],
+    ['K-171', 'K-172'],
+    ['K-177', 'K-178'],
+  ]) {
+    assert.equal(claim(earlier).familyId, claim(later).familyId);
+    assert.equal(claim(earlier).status, 'Contradicted');
+    assert.equal(claim(later).status, 'Supported');
+    assert.ok(claim(earlier).published < claim(later).published);
+  }
+  for (const row of kuoClaims.filter((row) => /production/i.test(row.title)))
+    assert.equal(row.status, 'Not assessed', row.id);
+  assert.equal(claim('K-158').timing.label, 'Early');
+  assert.equal(claim('K-200').status, 'Unresolvable');
+  assert.deepEqual(claim('K-046').probability, {
+    kind: 'lower-bound',
+    value: 0.7,
+    strict: true,
+  });
+  assert.deepEqual(claim('K-048').probability, {
+    kind: 'lower-bound',
+    value: 0.5,
+    strict: true,
+  });
+  assert.ok(
+    claim('K-114').timing.observations.some((o) => o.date === '2020-06-22'),
+  );
+  for (const row of kuoClaims) {
+    assert.equal(row.personId, 'ming-chi-kuo');
+    assert.ok(row.published <= kuoCorpus.asOf);
+    for (const observation of row.timing.observations)
+      assert.ok(observation.date <= kuoCorpus.asOf);
+    assert.equal(row.reviewState, 'Provisional');
+  }
 });

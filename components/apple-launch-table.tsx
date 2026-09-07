@@ -1,5 +1,7 @@
 'use client';
 import { useState } from 'react';
+import { RowCountSelect } from './row-count-select';
+import { paginate, type RowCount } from '@/lib/pagination';
 import {
   appleLaunches,
   availabilityText,
@@ -27,6 +29,7 @@ export function AppleLaunchTable({
   const [year, setYear] = useState('');
   const [order, setOrder] = useState('newest');
   const [page, setPage] = useState(0);
+  const [rowCount, setRowCount] = useState<RowCount>(25);
   const categories = [
     ...new Set(appleLaunches.map((launch) => launch.category)),
   ].sort();
@@ -51,8 +54,7 @@ export function AppleLaunchTable({
         ? b.announcementDate.localeCompare(a.announcementDate)
         : a.announcementDate.localeCompare(b.announcementDate),
     );
-  const pageCount = Math.max(1, Math.ceil(rows.length / 25));
-  const current = Math.min(page, pageCount - 1);
+  const { pageCount, current, visible } = paginate(rows, page, rowCount);
   return (
     <section aria-label="Apple launch reference">
       <div className="research-summary">
@@ -128,6 +130,13 @@ export function AppleLaunchTable({
             <option value="oldest">Oldest announcement</option>
           </select>
         </label>
+        <RowCountSelect
+          value={rowCount}
+          onChange={(value) => {
+            setRowCount(value);
+            setPage(0);
+          }}
+        />
       </div>
       <p className="fine-print" aria-live="polite">
         {rows.length} matching launch records · Expand a product for sources and
@@ -143,7 +152,7 @@ export function AppleLaunchTable({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {rows.slice(current * 25, (current + 1) * 25).map((launch) => {
+          {visible.map((launch) => {
             const related = claims.filter((claim) =>
               claim.launchIds?.includes(launch.id),
             );
@@ -229,18 +238,27 @@ export function AppleLaunchTable({
         <p className="empty-state">No launches match these filters.</p>
       )}
       <div className="research-pagination">
-        <button disabled={current === 0} onClick={() => setPage(current - 1)}>
-          Previous
-        </button>
-        <span>
-          Page {current + 1} of {pageCount}
-        </span>
-        <button
-          disabled={current + 1 === pageCount}
-          onClick={() => setPage(current + 1)}
-        >
-          Next
-        </button>
+        {rowCount === 'all' ? (
+          <span aria-live="polite">Showing all {rows.length} rows</span>
+        ) : (
+          <>
+            <button
+              disabled={current === 0}
+              onClick={() => setPage(current - 1)}
+            >
+              Previous
+            </button>
+            <span>
+              Page {current + 1} of {pageCount}
+            </span>
+            <button
+              disabled={current + 1 === pageCount}
+              onClick={() => setPage(current + 1)}
+            >
+              Next
+            </button>
+          </>
+        )}
       </div>
     </section>
   );

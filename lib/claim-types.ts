@@ -31,6 +31,7 @@ export type Claim = {
   sourceState: string;
   summary: string;
   context: string;
+  probability?: { kind: 'lower-bound'; value: number; strict: boolean };
   quote?: string;
   quoteSourceId?: string;
   assessment: string;

@@ -8,6 +8,7 @@ const views = [
   'method',
   'andrew-curran',
   'mark-gurman',
+  'ming-chi-kuo',
   'apple-launches',
 ] as const;
 export default async function Home({

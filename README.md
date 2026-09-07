@@ -6,9 +6,9 @@ A small research website for inspectable technology forecasts. Built with React,
 
 Run `npm install`, then `npm run dev`. Validate the application with `npx oxlint app lib components/grading-rubric.tsx`, `npx tsc --noEmit`, `node --experimental-strip-types --test tests/rubric.test.mjs`, and `npm run build`.
 
-The claim data is manually curated. `lib/claims.ts` combines the original cases in `lib/product-claims.ts` with the historical Gurman corpus through `lib/gurman-claims.ts`. It is a selective retrospective collection, not a complete corpus or a ranking. Sources, missing evidence, and provisional assessments are displayed in each case panel. There is no automatic X or Grok connection.
+The claim data is manually curated. `lib/claims.ts` combines the original cases in `lib/product-claims.ts` with the historical Gurman and Kuo corpora through `lib/gurman-claims.ts` and `lib/kuo-claims.ts`. It is a selective retrospective collection, not a complete corpus or a ranking. Sources, missing evidence, and provisional assessments are displayed in each case panel. There is no automatic X or Grok connection.
 
-Views cover product releases, model releases, people, essay evaluations, the grading rubric, and reusable Apple launch dates. The Gurman dossier and forecast index support product, year, verdict, statement-type, and text filters. The site is owner-private by default.
+Views cover product releases, model releases, people, essay evaluations, the grading rubric, and reusable Apple launch dates. The Gurman and Kuo dossiers and forecast index support product, year, verdict, statement-type, and text filters. The site is owner-private by default.
 
 `lib/rubric.ts` defines every allowed grade, timing label, resolution clarity, evidence level, and review state. The UI renders the same definitions used by the data types. Date rules distinguish deadlines from bounded windows and use calendar-day arithmetic. Tests cover boundary dates, early/late/overdue outcomes, invalid input, source references, and the distinction between a specification forecast and a timing forecast.
 
@@ -26,3 +26,9 @@ Each checked claim records its retrospective resolution rule, source-linked find
 See `docs/gurman-research.md` for collection boundaries and the evaluation method. Reuse a launch ID across reporters and revisions; a shipped product can resolve several claims without duplicating its dates. A source-response hash identifies the retrieved response, not a pre-event archive. The source corpus is not a complete inventory of Gurman's reporting, and claim counts must not be presented as career accuracy.
 
 Validation note: `npm run lint` includes the generated component catalog, which has 19 known lint errors in unmodified starter components/hooks. The scoped application lint, TypeScript check, timing/evidence tests, and production build are the validation checks for this update. Browser interaction testing has not been performed.
+
+## Kuo expansion and table controls
+
+The Kuo dossier adds 216 claims from 50 source pages across 72 families and 10 hardware categories (2015–2025 reports; outcomes reviewed September 7, 2026). See `docs/kuo-research.md` for scope, counts, limitations, revisions and attribution rules. Three original Medium posts are distinguished from public attributions. The raw ledger is `public/data/kuo-forecasts.json`; `GET /api/kuo` exports all evaluated records and evidence.
+
+Forecast and Apple-launch tables offer 10, 25, 50, 100 or All rows. All applies to the current filtered results. Changing the row count returns to the first page; filtering clamps pagination to prevent an empty stale page. Probability lower bounds in Kuo’s WWDC calls are displayed without converting them into exact probabilities.

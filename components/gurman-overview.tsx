@@ -147,7 +147,7 @@ export function GurmanOverview({
   );
 }
 
-function TableCoverage({
+export function TableCoverage({
   rows,
   categories,
 }: {
