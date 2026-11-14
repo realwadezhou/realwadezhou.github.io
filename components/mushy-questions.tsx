@@ -421,6 +421,15 @@ export function MushyQuestions() {
                         {p.title ?? p.docId}
                       </span>
                     )}
+                    {p.categories.length > 0 && (
+                      <span className="cat-tags">
+                        {p.categories.map((c) => (
+                          <span key={c} className="cat-tag">
+                            {c}
+                          </span>
+                        ))}
+                      </span>
+                    )}
                   </TableCell>
                   <TableCell>
                     {p.p == null

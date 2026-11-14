@@ -54,6 +54,7 @@ export type MushyPoint = {
   datePrecision: 'day' | 'month';
   title: string | null;
   outlet: string | null;
+  categories: string[];
   author: string | null;
   authorKind: 'person' | 'interview' | 'institutional' | null;
   url: string | null;
@@ -106,6 +107,7 @@ export type MushyQuestion = {
 export type MushyExport = {
   generated: string;
   readers: string[];
+  categories: string[];
   primaryRule: string;
   report: string;
   questions: MushyQuestion[];

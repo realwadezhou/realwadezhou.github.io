@@ -12,7 +12,7 @@ import { mushyData } from '@/lib/mushy';
 import { SortableHead, useSortable } from './sortable-head';
 import type { MushyPoint, MushyQuestion } from '@/lib/hindsight-types';
 
-type GroupBy = 'author' | 'outlet';
+type GroupBy = 'author' | 'outlet' | 'category';
 type Stance = MushyPoint & { qid: string; p: number; diffuse: boolean };
 
 const pct = (p: number | null) => (p == null ? '—' : `${Math.round(p * 100)}%`);
@@ -21,9 +21,15 @@ const signed = (x: number | null) =>
   x == null ? '—' : `${x > 0 ? '+' : ''}${x.toFixed(3)}`;
 const mean = (xs: number[]) =>
   xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null;
-const keyOf = (p: MushyPoint, by: GroupBy) =>
-  (by === 'author' ? p.author : p.outlet) ??
-  (by === 'author' ? '(unknown author)' : '(unknown outlet)');
+const keysOf = (p: MushyPoint, by: GroupBy): string[] =>
+  by === 'category'
+    ? p.categories.length
+      ? p.categories
+      : ['(uncategorised)']
+    : [
+        (by === 'author' ? p.author : p.outlet) ??
+          (by === 'author' ? '(unknown author)' : '(unknown outlet)'),
+      ];
 
 /** One stance per group per question: the latest article (protocol §10). */
 function stances(
@@ -31,23 +37,26 @@ function stances(
   reader: string,
   by: GroupBy,
   wellPosedOnly: boolean,
+  category: string,
 ): Map<string, Stance[]> {
-  const latest = new Map<string, Stance>();
+  // An article with several categories counts once in each of them.
+  const latest = new Map<string, [string, Stance]>();
   for (const q of questions) {
     if (wellPosedOnly && q.diffuse) continue;
     for (const p of q.points) {
       if (p.reader !== reader || p.p == null) continue;
-      const k = `${keyOf(p, by)}\u0000${q.qid}`;
-      const prev = latest.get(k);
-      if (!prev || p.date > prev.date)
-        latest.set(k, { ...p, p: p.p, qid: q.qid, diffuse: q.diffuse });
+      if (category && !p.categories.includes(category)) continue;
+      for (const g of keysOf(p, by)) {
+        // Authors/outlets: latest article per question (protocol §10). Categories: every article.
+        const k = by === 'category' ? `${g}\u0000${q.qid}\u0000${p.docId}` : `${g}\u0000${q.qid}`;
+        const prev = latest.get(k);
+        if (!prev || p.date > prev[1].date)
+          latest.set(k, [g, { ...p, p: p.p, qid: q.qid, diffuse: q.diffuse }]);
+      }
     }
   }
   const groups = new Map<string, Stance[]>();
-  for (const s of latest.values()) {
-    const g = keyOf(s, by);
-    groups.set(g, [...(groups.get(g) ?? []), s]);
-  }
+  for (const [g, s] of latest.values()) groups.set(g, [...(groups.get(g) ?? []), s]);
   return groups;
 }
 
@@ -75,11 +84,12 @@ export function MushyCalibration() {
   const [reader, setReader] = useState(mushyData.readers[0]);
   const [wellPosed, setWellPosed] = useState(false);
   const [minN, setMinN] = useState(1);
+  const [category, setCategory] = useState('');
   const [selected, setSelected] = useState<string | null>(null);
 
   const groups = useMemo(
-    () => stances(mushyData.questions, reader, by, wellPosed),
-    [reader, by, wellPosed],
+    () => stances(mushyData.questions, reader, by, wellPosed, category),
+    [reader, by, wellPosed, category],
   );
   const rows = [...groups.entries()]
     .map(([g, xs]) => ({ g, ...summary(xs) }))
@@ -124,7 +134,9 @@ export function MushyCalibration() {
       <div className="research-summary">
         <p>
           How well did pundits’ implied probabilities match what happened?
-          One stance per {by} per question (the latest article, protocol §10),
+          {by === 'category'
+            ? 'Every article × question stance counts; an article tagged with two categories counts in both.'
+            : `One stance per ${by} per question (the latest article, protocol §10).`}
           read at the primary deadline. Brier: 0 is perfect, 0.25 is always
           saying 50%. Δ vs consensus: Brier minus that of a trailing consensus
           of earlier articles; negative means beating the room. Readings are
@@ -144,6 +156,22 @@ export function MushyCalibration() {
           >
             <option value="author">Author</option>
             <option value="outlet">Outlet</option>
+            <option value="category">Category</option>
+          </select>
+        </label>
+        <label>
+          Category{' '}
+          <select
+            value={category}
+            onChange={(e) => {
+              setCategory(e.target.value);
+              setSelected(null);
+            }}
+          >
+            <option value="">All</option>
+            {mushyData.categories.map((c) => (
+              <option key={c}>{c}</option>
+            ))}
           </select>
         </label>
         <label>
@@ -187,8 +215,8 @@ export function MushyCalibration() {
         <Table className="fit-table calib-table">
           <TableHeader>
             <TableRow>
-              <SortableHead label={by === 'author' ? 'Author' : 'Outlet'} column="name" sort={groupSort.sort} onSort={groupSort.toggle} />
-              <SortableHead label="Questions" column="n" sort={groupSort.sort} onSort={groupSort.toggle} numeric />
+              <SortableHead label={by === 'author' ? 'Author' : by === 'outlet' ? 'Outlet' : 'Category'} column="name" sort={groupSort.sort} onSort={groupSort.toggle} />
+              <SortableHead label={by === 'category' ? 'Stances' : 'Questions'} column="n" sort={groupSort.sort} onSort={groupSort.toggle} numeric />
               <SortableHead label="Articles" column="articles" sort={groupSort.sort} onSort={groupSort.toggle} numeric />
               <SortableHead
                 label="Hit rate"

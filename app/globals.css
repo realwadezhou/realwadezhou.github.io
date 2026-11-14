@@ -1439,8 +1439,26 @@ h1 {
   gap: 16px;
   margin: 16px 0;
 }
+.mushy-filters label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
 .mushy-filters select {
   max-width: min(640px, 100%);
+  background: var(--muted);
+  border: 1px solid var(--input);
+  border-radius: 6px;
+  padding: 4px 8px;
+  color: inherit;
+  font: inherit;
+}
+.mushy-filters select:hover {
+  border-color: var(--muted-foreground);
+}
+.mushy-filters select:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 1px;
 }
 .mushy-badges {
   display: flex;
@@ -1530,4 +1548,18 @@ h1 {
 }
 .sort-arrow.active {
   opacity: 1;
+}
+.cat-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+.cat-tag {
+  font-size: 11px;
+  line-height: 1.4;
+  padding: 0 6px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted-foreground);
 }
