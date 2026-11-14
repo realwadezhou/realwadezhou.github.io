@@ -167,8 +167,8 @@ export function MushyCalibration() {
         Brier {num(overall.brier)} · Δ vs consensus {signed(overall.delta)} (n=
         {overall.nDelta}).
       </p>
-      <div className="table-scroll">
-        <Table>
+      <div>
+        <Table className="fit-table calib-table">
           <TableHeader>
             <TableRow>
               <TableHead>{by === 'author' ? 'Author' : 'Outlet'}</TableHead>
@@ -193,7 +193,11 @@ export function MushyCalibration() {
                 }
                 onClick={() => setSelected(selected === r.g ? null : r.g)}
               >
-                <TableCell>{r.g}</TableCell>
+                <TableCell>
+                  <span className="clamp-2" title={r.g}>
+                    {r.g}
+                  </span>
+                </TableCell>
                 <TableCell>{r.n}</TableCell>
                 <TableCell>{r.articles}</TableCell>
                 <TableCell>{pct(r.hit)}</TableCell>
@@ -216,8 +220,8 @@ export function MushyCalibration() {
         Well calibrated: observed close to the reading.
         {selected ? ' Click the row again to show all.' : ' Click a row above to filter.'}
       </p>
-      <div className="table-scroll">
-        <Table>
+      <div>
+        <Table className="fit-table">
           <TableHeader>
             <TableRow>
               <TableHead>Category</TableHead>

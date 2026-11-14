@@ -55,6 +55,7 @@ export type MushyPoint = {
   title: string | null;
   outlet: string | null;
   author: string | null;
+  authorKind: 'person' | 'interview' | 'institutional' | null;
   url: string | null;
   reader: string;
   stance: 'yes' | 'no' | 'none' | null;

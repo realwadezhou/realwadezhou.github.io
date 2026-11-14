@@ -342,8 +342,18 @@ export function MushyQuestions() {
         <h3 className="hindsight-heading">
           Articles ({rows.length}; mean reading {pct(mean)})
         </h3>
-        <div className="table-scroll">
-          <Table>
+        <div>
+          <Table className="fit-table">
+            <colgroup>
+              <col style={{ width: '14%' }} />
+              <col style={{ width: '11%' }} />
+              <col style={{ width: '9%' }} />
+              <col style={{ width: '28%' }} />
+              <col style={{ width: '12%' }} />
+              <col className="hide-narrow" style={{ width: '9%' }} />
+              <col style={{ width: '7%' }} />
+              <col className="hide-narrow" style={{ width: '10%' }} />
+            </colgroup>
             <TableHeader>
               <TableRow>
                 <TableHead>Author</TableHead>
@@ -351,11 +361,13 @@ export function MushyQuestions() {
                 <TableHead>Date</TableHead>
                 <TableHead>Article</TableHead>
                 <TableHead>Reading</TableHead>
-                <TableHead>Commitment</TableHead>
+                <TableHead className="hide-narrow" title="Commitment rung: stated, flat call, hedged, implicit">
+                  Commit.
+                </TableHead>
                 <TableHead title="(reading − outcome)²; 0 is perfect, 0.25 is a coin flip">
                   Brier
                 </TableHead>
-                <TableHead title="Article Brier minus the Brier of the trailing consensus (earlier articles only, this one excluded). Negative = beat the consensus.">
+                <TableHead className="hide-narrow" title="Article Brier minus the Brier of the trailing consensus (earlier articles only, this one excluded). Negative = beat the consensus.">
                   Δ vs consensus
                 </TableHead>
               </TableRow>
@@ -369,15 +381,18 @@ export function MushyQuestions() {
                   <TableCell>
                     {p.url ? (
                       <a
-                        className="text-link"
+                        className="text-link clamp-2"
                         href={p.url}
                         target="_blank"
                         rel="noreferrer"
+                        title={p.title ?? p.docId}
                       >
                         {p.title ?? p.docId}
                       </a>
                     ) : (
-                      (p.title ?? p.docId)
+                      <span className="clamp-2" title={p.title ?? p.docId}>
+                        {p.title ?? p.docId}
+                      </span>
                     )}
                   </TableCell>
                   <TableCell>
@@ -385,9 +400,11 @@ export function MushyQuestions() {
                       ? 'no stance'
                       : `${pct(p.p)} · ${p.category?.replace(/_/g, ' ')}`}
                   </TableCell>
-                  <TableCell>{COMMITMENT[p.commitment ?? 0] || '—'}</TableCell>
+                  <TableCell className="hide-narrow">
+                    {COMMITMENT[p.commitment ?? 0] || '—'}
+                  </TableCell>
                   <TableCell>{p.brier == null ? '—' : p.brier.toFixed(3)}</TableCell>
-                  <TableCell>
+                  <TableCell className="hide-narrow">
                     {p.deltaVsConsensus == null
                       ? '—'
                       : `${p.deltaVsConsensus > 0 ? '+' : ''}${p.deltaVsConsensus.toFixed(3)}`}

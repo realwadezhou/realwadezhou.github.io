@@ -201,7 +201,7 @@ export function VoxPilot() {
           lower is better; “always 50%” is the floor to beat. Errors are in
           percentage points (pp).
         </p>
-        <Table className="rubric-table">
+        <Table className="rubric-table fit-table">
           <TableHeader>
             <TableRow>
               <TableHead>Recovery method</TableHead>
@@ -325,7 +325,7 @@ export function VoxPilot() {
           This is a leakage diagnostic, not proof of leakage: directional errors
           alone cannot establish their cause. Unresolved items are excluded.
         </p>
-        <Table className="rubric-table">
+        <Table className="rubric-table fit-table">
           <TableHeader>
             <TableRow>
               <TableHead>Model</TableHead>
@@ -428,7 +428,7 @@ export function VoxPilot() {
         Human guesses are inferred; — means unavailable. Open an item for bands
         and reasoning.
       </p>
-      <Table className="launch-table hindsight-items">
+      <Table className="launch-table hindsight-items fit-table">
         <TableHeader>
           <TableRow>
             <TableHead>Statement</TableHead>
