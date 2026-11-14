@@ -40,3 +40,19 @@ test('no article text, quotes or model reasons are exported', () => {
   assert.ok(!raw.includes('"reason"'));
   assert.ok(!raw.includes('"text_path"'));
 });
+
+test('brier equals (reading - outcome)^2 and consensus delta is consistent', () => {
+  for (const q of mushy.questions)
+    for (const p of q.points) {
+      assert.equal(p.outcome, q.outcome, q.qid);
+      if (p.p === null) {
+        assert.equal(p.brier, null);
+        continue;
+      }
+      assert.ok(Math.abs(p.brier - (p.p - q.outcome) ** 2) < 1e-3, q.qid);
+      if (p.deltaVsConsensus !== null) {
+        const cb = (p.consensusBefore - q.outcome) ** 2;
+        assert.ok(Math.abs(p.deltaVsConsensus - (p.brier - cb)) < 1e-3, q.qid);
+      }
+    }
+});

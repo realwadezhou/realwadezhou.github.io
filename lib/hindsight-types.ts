@@ -63,6 +63,10 @@ export type MushyPoint = {
   p: Probability;
   low: Probability;
   high: Probability;
+  outcome: 0 | 1;
+  brier: number | null;
+  consensusBefore: number | null;
+  deltaVsConsensus: number | null;
 };
 
 export type MushySeries = {

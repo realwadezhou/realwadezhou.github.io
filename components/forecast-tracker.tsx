@@ -58,6 +58,7 @@ import { GradingRubric } from '@/components/grading-rubric';
 import { ResearchStatus } from '@/components/research-status';
 import { VoxPilot } from '@/components/vox-pilot';
 import { MushyQuestions } from '@/components/mushy-questions';
+import { MushyCalibration } from '@/components/mushy-calibration';
 import { OntologyOverview } from '@/components/ontology-overview';
 import { rungForClaim } from '@/lib/ontology';
 
@@ -72,6 +73,7 @@ type View =
   | 'research'
   | 'research-vox'
   | 'research-mushy'
+  | 'research-calibration'
   | 'research-ontology'
   | 'andrew-curran'
   | 'mark-gurman'
@@ -90,6 +92,7 @@ const titles: Record<View, string> = {
   research: 'Research status',
   'research-vox': 'Vox pilot',
   'research-mushy': 'Pundits vs markets',
+  'research-calibration': 'Pundit calibration',
   'research-ontology': 'How we grade',
   'andrew-curran': 'Andrew Curran',
   'mark-gurman': 'Mark Gurman',
@@ -103,6 +106,8 @@ const descriptions: Record<View, string> = {
     'Vox Future Perfect, 2019–2026. Recover the author’s stated probability with the number hidden.',
   'research-mushy':
     'What pundits implied over time, against markets, Metaculus and the outcome. 34 frozen questions.',
+  'research-calibration':
+    'How well pundits’ implied probabilities matched outcomes, by author and outlet.',
   'research-ontology':
     'Claim verdicts and inferred priors: two kinds of grading, with explicit rungs and provenance.',
   'ai-2027': 'A scenario of AI research automation and two possible endings.',
@@ -230,6 +235,7 @@ function Navigation({
               ['research', '/research'],
               ['research-vox', '/research/vox'],
               ['research-mushy', '/research/mushy'],
+              ['research-calibration', '/research/calibration'],
               ['research-ontology', '/research/ontology'],
             ] as const).map(([key, href]) => (
               <SidebarMenuItem key={key}>
@@ -561,6 +567,8 @@ export default function ForecastTracker({
             <VoxPilot />
           ) : view === 'research-mushy' ? (
             <MushyQuestions />
+          ) : view === 'research-calibration' ? (
+            <MushyCalibration />
           ) : view === 'research-ontology' ? (
             <OntologyOverview />
           ) : view === 'people' ? (

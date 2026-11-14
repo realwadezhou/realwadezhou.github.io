@@ -230,7 +230,10 @@ function QuestionChart({
         {q.conventionalWisdom[reader]?.bandwidthDays
           ? ` (bandwidth ${q.conventionalWisdom[reader].bandwidthDays} days)`
           : ''}
-        . Dashed vertical: outcome known ({q.settledOn}).
+        . Dashed vertical: outcome known ({q.settledOn}). Brier compares each
+        reading with the outcome. Δ vs consensus compares it with a trailing
+        consensus built only from earlier articles: negative means the article
+        beat the room.
       </p>
       {series.length > 0 && (
         <ul className="fine-print mushy-series-notes">
@@ -343,18 +346,26 @@ export function MushyQuestions() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Date</TableHead>
+                <TableHead>Author</TableHead>
                 <TableHead>Outlet</TableHead>
+                <TableHead>Date</TableHead>
                 <TableHead>Article</TableHead>
                 <TableHead>Reading</TableHead>
                 <TableHead>Commitment</TableHead>
+                <TableHead title="(reading − outcome)²; 0 is perfect, 0.25 is a coin flip">
+                  Brier
+                </TableHead>
+                <TableHead title="Article Brier minus the Brier of the trailing consensus (earlier articles only, this one excluded). Negative = beat the consensus.">
+                  Δ vs consensus
+                </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {rows.map((p) => (
                 <TableRow key={p.docId}>
-                  <TableCell>{p.date}</TableCell>
+                  <TableCell>{p.author ?? '—'}</TableCell>
                   <TableCell>{p.outlet ?? '—'}</TableCell>
+                  <TableCell>{p.date}</TableCell>
                   <TableCell>
                     {p.url ? (
                       <a
@@ -375,6 +386,12 @@ export function MushyQuestions() {
                       : `${pct(p.p)} · ${p.category?.replace(/_/g, ' ')}`}
                   </TableCell>
                   <TableCell>{COMMITMENT[p.commitment ?? 0] || '—'}</TableCell>
+                  <TableCell>{p.brier == null ? '—' : p.brier.toFixed(3)}</TableCell>
+                  <TableCell>
+                    {p.deltaVsConsensus == null
+                      ? '—'
+                      : `${p.deltaVsConsensus > 0 ? '+' : ''}${p.deltaVsConsensus.toFixed(3)}`}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

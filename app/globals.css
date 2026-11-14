@@ -1476,3 +1476,10 @@ h1 {
   font-size: 12px;
   color: var(--muted-foreground);
 }
+.mushy-row {
+  cursor: pointer;
+}
+.mushy-row-selected {
+  cursor: pointer;
+  background: var(--muted);
+}
