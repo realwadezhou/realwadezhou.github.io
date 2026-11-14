@@ -27,6 +27,7 @@ import {
   SheetTitle,
 } from '@/components/ui/sheet';
 import { RowCountSelect } from './row-count-select';
+import { SortableHead, useSortable } from './sortable-head';
 import { paginate, type RowCount } from '@/lib/pagination';
 import {
   hindsightModels,
@@ -174,7 +175,20 @@ export function VoxPilot() {
         b.published.localeCompare(a.published) ||
         a.id.localeCompare(b.id),
     );
-  const { visible, current, pageCount } = paginate(rows, page, rowCount);
+  const midOf = (item: HindsightItem, name: string) =>
+    item.inferred.find((entry) => entry.model === name)?.mid ?? null;
+  const itemSort = useSortable(rows, {
+    statement: (i) => i.statement,
+    year: (i) => i.year,
+    author: (i) => i.author,
+    stated: (i) => i.statedP,
+    human: (i) => i.human?.p ?? null,
+    outcome: (i) => i.outcome,
+    ...Object.fromEntries(
+      hindsightModels.map((name) => [`mid:${name}`, (i: HindsightItem) => midOf(i, name)]),
+    ),
+  });
+  const { visible, current, pageCount } = paginate(itemSort.sorted, page, rowCount);
   const scatterItems = voxPilot.items.flatMap((item) => {
     const mid = item.inferred.find((entry) => entry.model === model)?.mid;
     return mid == null ? [] : [{ ...item, mid }];
@@ -431,15 +445,21 @@ export function VoxPilot() {
       <Table className="launch-table hindsight-items fit-table">
         <TableHeader>
           <TableRow>
-            <TableHead>Statement</TableHead>
-            <TableHead>Year</TableHead>
-            <TableHead>Author</TableHead>
-            <TableHead>Stated</TableHead>
+            <SortableHead label="Statement" column="statement" sort={itemSort.sort} onSort={(c, n) => { itemSort.toggle(c, n); setPage(0); }} />
+            <SortableHead label="Year" column="year" sort={itemSort.sort} onSort={(c, n) => { itemSort.toggle(c, n); setPage(0); }} numeric />
+            <SortableHead label="Author" column="author" sort={itemSort.sort} onSort={(c, n) => { itemSort.toggle(c, n); setPage(0); }} />
+            <SortableHead label="Stated" column="stated" sort={itemSort.sort} onSort={(c, n) => { itemSort.toggle(c, n); setPage(0); }} numeric />
             {hindsightModels.map((name) => (
-              <TableHead key={name}>{name} · mid</TableHead>
+              <SortableHead
+                key={name}
+                label={`${name} · mid`}
+                column={`mid:${name}`}
+                sort={itemSort.sort} onSort={(c, n) => { itemSort.toggle(c, n); setPage(0); }}
+                numeric
+              />
             ))}
-            <TableHead>Human</TableHead>
-            <TableHead>Outcome</TableHead>
+            <SortableHead label="Human" column="human" sort={itemSort.sort} onSort={(c, n) => { itemSort.toggle(c, n); setPage(0); }} numeric />
+            <SortableHead label="Outcome" column="outcome" sort={itemSort.sort} onSort={(c, n) => { itemSort.toggle(c, n); setPage(0); }} numeric />
           </TableRow>
         </TableHeader>
         <TableBody>

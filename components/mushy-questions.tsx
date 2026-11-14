@@ -17,11 +17,11 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableHead,
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
 import { mushyData } from '@/lib/mushy';
+import { SortableHead, useSortable } from './sortable-head';
 import type { MushyPoint, MushyQuestion } from '@/lib/hindsight-types';
 
 const DAY = 86_400_000;
@@ -278,6 +278,16 @@ export function MushyQuestions() {
   const rows = q.points
     .filter((p) => p.reader === reader)
     .sort((a, b) => a.date.localeCompare(b.date));
+  const { sorted, sort, toggle } = useSortable(rows, {
+    author: (p) => p.author,
+    outlet: (p) => p.outlet,
+    date: (p) => p.date,
+    article: (p) => p.title ?? p.docId,
+    reading: (p) => p.p,
+    commitment: (p) => p.commitment,
+    brier: (p) => p.brier,
+    delta: (p) => p.deltaVsConsensus,
+  });
   const stances = rows.filter((p) => p.p != null);
   const mean = stances.length
     ? stances.reduce((s, p) => s + (p.p as number), 0) / stances.length
@@ -356,24 +366,41 @@ export function MushyQuestions() {
             </colgroup>
             <TableHeader>
               <TableRow>
-                <TableHead>Author</TableHead>
-                <TableHead>Outlet</TableHead>
-                <TableHead>Date</TableHead>
-                <TableHead>Article</TableHead>
-                <TableHead>Reading</TableHead>
-                <TableHead className="hide-narrow" title="Commitment rung: stated, flat call, hedged, implicit">
-                  Commit.
-                </TableHead>
-                <TableHead title="(reading − outcome)²; 0 is perfect, 0.25 is a coin flip">
-                  Brier
-                </TableHead>
-                <TableHead className="hide-narrow" title="Article Brier minus the Brier of the trailing consensus (earlier articles only, this one excluded). Negative = beat the consensus.">
-                  Δ vs consensus
-                </TableHead>
+                <SortableHead label="Author" column="author" sort={sort} onSort={toggle} />
+                <SortableHead label="Outlet" column="outlet" sort={sort} onSort={toggle} />
+                <SortableHead label="Date" column="date" sort={sort} onSort={toggle} />
+                <SortableHead label="Article" column="article" sort={sort} onSort={toggle} />
+                <SortableHead label="Reading" column="reading" sort={sort} onSort={toggle} numeric />
+                <SortableHead
+                  label="Commit."
+                  column="commitment"
+                  sort={sort}
+                  onSort={toggle}
+                  numeric
+                  className="hide-narrow"
+                  title="Commitment rung: 1 stated, 2 flat call, 3 hedged, 4 implicit"
+                />
+                <SortableHead
+                  label="Brier"
+                  column="brier"
+                  sort={sort}
+                  onSort={toggle}
+                  numeric
+                  title="(reading − outcome)²; 0 is perfect, 0.25 is a coin flip"
+                />
+                <SortableHead
+                  label="Δ vs consensus"
+                  column="delta"
+                  sort={sort}
+                  onSort={toggle}
+                  numeric
+                  className="hide-narrow"
+                  title="Article Brier minus the Brier of the trailing consensus (earlier articles only). Negative = beat the consensus."
+                />
               </TableRow>
             </TableHeader>
             <TableBody>
-              {rows.map((p) => (
+              {sorted.map((p) => (
                 <TableRow key={p.docId}>
                   <TableCell>{p.author ?? '—'}</TableCell>
                   <TableCell>{p.outlet ?? '—'}</TableCell>

@@ -5,11 +5,11 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableHead,
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
 import { mushyData } from '@/lib/mushy';
+import { SortableHead, useSortable } from './sortable-head';
 import type { MushyPoint, MushyQuestion } from '@/lib/hindsight-types';
 
 type GroupBy = 'author' | 'outlet';
@@ -103,6 +103,22 @@ export function MushyCalibration() {
     }))
     .sort((a, b) => (a.reading ?? 0) - (b.reading ?? 0));
 
+  const groupSort = useSortable(rows, {
+    name: (r) => r.g,
+    n: (r) => r.n,
+    articles: (r) => r.articles,
+    hit: (r) => r.hit,
+    brier: (r) => r.brier,
+    delta: (r) => r.delta,
+    boldness: (r) => r.boldness,
+  });
+  const relSort = useSortable(reliability, {
+    category: (r) => r.reading,
+    n: (r) => r.n,
+    reading: (r) => r.reading,
+    observed: (r) => r.observed,
+  });
+
   return (
     <section aria-label="Calibration by author and outlet">
       <div className="research-summary">
@@ -171,21 +187,29 @@ export function MushyCalibration() {
         <Table className="fit-table calib-table">
           <TableHeader>
             <TableRow>
-              <TableHead>{by === 'author' ? 'Author' : 'Outlet'}</TableHead>
-              <TableHead>Questions</TableHead>
-              <TableHead>Articles</TableHead>
-              <TableHead title="Share of stances leaning the right way (50% readings excluded)">
-                Hit rate
-              </TableHead>
-              <TableHead>Mean Brier</TableHead>
-              <TableHead>Δ vs consensus</TableHead>
-              <TableHead title="Mean distance of readings from 50%">
-                Boldness
-              </TableHead>
+              <SortableHead label={by === 'author' ? 'Author' : 'Outlet'} column="name" sort={groupSort.sort} onSort={groupSort.toggle} />
+              <SortableHead label="Questions" column="n" sort={groupSort.sort} onSort={groupSort.toggle} numeric />
+              <SortableHead label="Articles" column="articles" sort={groupSort.sort} onSort={groupSort.toggle} numeric />
+              <SortableHead
+                label="Hit rate"
+                column="hit"
+                sort={groupSort.sort} onSort={groupSort.toggle}
+                numeric
+                title="Share of stances leaning the right way (50% readings excluded)"
+              />
+              <SortableHead label="Mean Brier" column="brier" sort={groupSort.sort} onSort={groupSort.toggle} numeric />
+              <SortableHead label="Δ vs consensus" column="delta" sort={groupSort.sort} onSort={groupSort.toggle} numeric />
+              <SortableHead
+                label="Boldness"
+                column="boldness"
+                sort={groupSort.sort} onSort={groupSort.toggle}
+                numeric
+                title="Mean distance of readings from 50%"
+              />
             </TableRow>
           </TableHeader>
           <TableBody>
-            {rows.map((r) => (
+            {groupSort.sorted.map((r) => (
               <TableRow
                 key={r.g}
                 className={
@@ -224,14 +248,14 @@ export function MushyCalibration() {
         <Table className="fit-table">
           <TableHeader>
             <TableRow>
-              <TableHead>Category</TableHead>
-              <TableHead>Stances</TableHead>
-              <TableHead>Reading</TableHead>
-              <TableHead>Observed</TableHead>
+              <SortableHead label="Category" column="category" sort={relSort.sort} onSort={relSort.toggle} numeric />
+              <SortableHead label="Stances" column="n" sort={relSort.sort} onSort={relSort.toggle} numeric />
+              <SortableHead label="Reading" column="reading" sort={relSort.sort} onSort={relSort.toggle} numeric />
+              <SortableHead label="Observed" column="observed" sort={relSort.sort} onSort={relSort.toggle} numeric />
             </TableRow>
           </TableHeader>
           <TableBody>
-            {reliability.map((r) => (
+            {relSort.sorted.map((r) => (
               <TableRow key={r.c}>
                 <TableCell>{r.c.replace(/_/g, ' ')}</TableCell>
                 <TableCell>{r.n}</TableCell>

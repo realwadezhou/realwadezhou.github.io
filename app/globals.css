@@ -1512,3 +1512,22 @@ h1 {
 .calib-table th:first-child {
   width: 30%;
 }
+.sort-head {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+.sort-arrow {
+  font-size: 10px;
+  opacity: 0.35;
+}
+.sort-arrow.active {
+  opacity: 1;
+}
