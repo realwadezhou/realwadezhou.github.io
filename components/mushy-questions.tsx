@@ -178,7 +178,9 @@ function QuestionChart({
                   ? '6 3'
                   : s.provider === 'Kalshi'
                     ? '2 3'
-                    : undefined
+                    : s.provider === 'Predictit'
+                      ? '8 2 2 2'
+                      : undefined
               }
               dot={false}
               isAnimationActive={false}
