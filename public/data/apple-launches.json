@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-05",
+  "asOf": "2026-11-13",
   "scope": "Major product generations and selected services, 2015–2026; exact dates only when sourced. Not a complete SKU inventory.",
   "launches": [
     {
@@ -4182,15 +4182,15 @@
       "availabilityMilestone": "Customer / store availability",
       "availabilityStatus": "Apple-stated",
       "notes": "",
-      "verifiedAt": "2026-09-05",
+      "verifiedAt": "2026-11-13",
       "sources": [
         {
           "url": "https://www.apple.com/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max/",
           "title": "Apple unveils iPhone 17 Pro and iPhone 17 Pro Max, the most powerful and advanced Pro models ever",
+          "publishedDate": "2025-09-09",
           "publishedText": "September 9, 2025",
-          "sha256": "12fa5fb4178c5cf505772e800be0518bdf770c0831ac9d578be21031c5a2db17",
-          "accessed": "2026-09-05",
-          "publishedDate": "2025-09-09"
+          "accessed": "2026-11-14",
+          "sha256": "425dae04d471e66cfd50a158da210ae55a8a63a9325bafd829c107674d741e17"
         }
       ],
       "milestoneSources": {
@@ -4269,15 +4269,15 @@
       "availabilityMilestone": "Customer / store availability",
       "availabilityStatus": "Apple-stated",
       "notes": "",
-      "verifiedAt": "2026-09-05",
+      "verifiedAt": "2026-11-13",
       "sources": [
         {
           "url": "https://www.apple.com/newsroom/2025/09/introducing-apple-watch-ultra-3/",
           "title": "Introducing Apple Watch Ultra 3",
+          "publishedDate": "2025-09-09",
           "publishedText": "September 9, 2025",
-          "sha256": "efd1c05593d18e43202ea7ebb336a282e302b29e050f32eeae2aeb54d09f6e02",
-          "accessed": "2026-09-05",
-          "publishedDate": "2025-09-09"
+          "accessed": "2026-11-14",
+          "sha256": "48114f2ce48fae10438eb63c0ce5017608639171d10e809ae9abd014638c0951"
         }
       ],
       "milestoneSources": {
@@ -4530,15 +4530,15 @@
       "availabilityMilestone": "Customer / store availability",
       "availabilityStatus": "Apple-stated",
       "notes": "",
-      "verifiedAt": "2026-09-05",
+      "verifiedAt": "2026-11-13",
       "sources": [
         {
           "url": "https://www.apple.com/newsroom/2026/03/apple-introduces-macbook-pro-with-all-new-m5-pro-and-m5-max/",
           "title": "Apple introduces MacBook Pro with all‑new M5 Pro and M5 Max, delivering breakthrough pro performance and next-level on-device AI",
+          "publishedDate": "2026-03-03",
           "publishedText": "March 3, 2026",
-          "sha256": "f13be278511f1ec271eead3fd8633a74c7562c645bb0b00d76ab31eec0a0b927",
-          "accessed": "2026-09-05",
-          "publishedDate": "2026-03-03"
+          "accessed": "2026-11-14",
+          "sha256": "114417fad2bef8c08d8a74cb87061276f2ed13049fc971a23e467bc5fd314c2c"
         }
       ],
       "milestoneSources": {
@@ -4617,15 +4617,15 @@
       "availabilityMilestone": "Customer / store availability",
       "availabilityStatus": "Apple-stated",
       "notes": "",
-      "verifiedAt": "2026-09-05",
+      "verifiedAt": "2026-11-13",
       "sources": [
         {
           "url": "https://www.apple.com/newsroom/2026/03/say-hello-to-macbook-neo/",
           "title": "Say hello to MacBook Neo",
+          "publishedDate": "2026-03-04",
           "publishedText": "March 4, 2026",
-          "sha256": "50090e3f0a113328493781d5a1b7b10aa1dc4bcbc72a6310c706217a9530512f",
-          "accessed": "2026-09-05",
-          "publishedDate": "2026-03-04"
+          "accessed": "2026-11-14",
+          "sha256": "2b681709a9c45f7c895594cc5fc82ff3ebb20159b07d45a658b0ef80f71f9bb9"
         }
       ],
       "milestoneSources": {
@@ -4666,16 +4666,16 @@
     {
       "id": "siri-ai",
       "category": "Software",
-      "product": "Siri AI (preview)",
+      "product": "Siri AI",
       "announcementDate": "2026-06-08",
       "orderDate": null,
-      "availabilityDate": null,
+      "availabilityDate": "2026-09-14",
       "region": "US / first launch markets",
-      "availabilityPrecision": null,
-      "availabilityMilestone": "Customer / store availability",
-      "availabilityStatus": "Exact date not entered",
-      "notes": "Developer preview announced; general availability not yet entered.",
-      "verifiedAt": "2026-09-05",
+      "availabilityPrecision": "day",
+      "availabilityMilestone": "Public beta rollout in English",
+      "availabilityStatus": "Apple-stated",
+      "notes": "English public beta rollout began September 14 on supported devices; this is not unrestricted general availability. Additional languages released October 26. HomePod mini 2 rollout remains a separate future update.",
+      "verifiedAt": "2026-11-13",
       "sources": [
         {
           "url": "https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/",
@@ -4684,12 +4684,36 @@
           "sha256": "3b06c3b8f7fd803ae70d155eae0f04ab1eeb3e2ef7059df54d64cf5905cb4599",
           "accessed": "2026-09-05",
           "publishedDate": "2026-06-08"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+          "title": "Siri AI, a profoundly more capable and personal assistant powered by the next generation of Apple Intelligence, is here",
+          "publishedDate": "2026-09-14",
+          "publishedText": "September 14, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "c735b023453bea1b5405ab6eb41a675a06bd5996d34cde3736e7b847355872f6"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/10/siri-ai-is-available-in-more-languages-starting-today/",
+          "title": "Siri AI is available in more languages starting today",
+          "publishedDate": "2026-10-26",
+          "publishedText": "October 26, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "2c32a7777ce0ac8852a8ff1db3a38792bda9a86a1ff28f96c10315beb5b86556"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available/",
+          "title": "Major updates for Apple’s software platforms are now available",
+          "publishedDate": "2026-09-14",
+          "publishedText": "September 14, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "f4933b37edbc473c908b6781583257bf185cd41504f540ef5e624834d92a6aa7"
         }
       ],
       "milestoneSources": {
         "announcementDate": "https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/",
         "orderDate": null,
-        "availabilityDate": null
+        "availabilityDate": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/"
       }
     },
     {
@@ -4702,9 +4726,9 @@
       "region": "US / first launch markets",
       "availabilityPrecision": "day",
       "availabilityMilestone": "Customer / store availability",
-      "availabilityStatus": "Scheduled",
-      "notes": "September 22 is scheduled future availability as of September 5, not an observed launch.",
-      "verifiedAt": "2026-09-05",
+      "availabilityStatus": "Apple-stated",
+      "notes": "Apple’s September 22 availability report confirms the previously announced customer/store launch. Mac Studio with 512GB memory was separately scheduled for late October.",
+      "verifiedAt": "2026-11-13",
       "sources": [
         {
           "url": "https://www.apple.com/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra/",
@@ -4713,12 +4737,20 @@
           "sha256": "d4c7d13aca0b0343fb4fd2e406e8e0c4521a16db03a607f2499b0d443294bea6",
           "accessed": "2026-09-05",
           "publishedDate": "2026-08-25"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/the-new-mac-mini-and-mac-studio-are-available-today/",
+          "title": "The new Mac mini and Mac Studio are available today",
+          "publishedDate": "2026-09-22",
+          "publishedText": "September 22, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "d845ad95c1b84a66510c47e03b035b3be5aac534c60ac989b2fc6a1b6cf03a93"
         }
       ],
       "milestoneSources": {
         "announcementDate": "https://www.apple.com/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra/",
         "orderDate": "https://www.apple.com/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra/",
-        "availabilityDate": "https://www.apple.com/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra/"
+        "availabilityDate": "https://www.apple.com/newsroom/2026/09/the-new-mac-mini-and-mac-studio-are-available-today/"
       }
     },
     {
@@ -4731,9 +4763,9 @@
       "region": "US / first launch markets",
       "availabilityPrecision": "day",
       "availabilityMilestone": "Customer / store availability",
-      "availabilityStatus": "Scheduled",
-      "notes": "September 22 is scheduled future availability as of September 5, not an observed launch.",
-      "verifiedAt": "2026-09-05",
+      "availabilityStatus": "Apple-stated",
+      "notes": "Apple’s September 22 availability report confirms the previously announced customer/store launch. Mac Studio with 512GB memory was separately scheduled for late October.",
+      "verifiedAt": "2026-11-13",
       "sources": [
         {
           "url": "https://www.apple.com/newsroom/2026/08/apple-unveils-a-more-powerful-mac-mini-featuring-the-all-new-m6-and-m5-pro/",
@@ -4742,12 +4774,501 @@
           "sha256": "306e1a561c43bf444bcd56215fbe7839ba3b8e0188f5bd1a025d0987c1dcfab5",
           "accessed": "2026-09-05",
           "publishedDate": "2026-08-25"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/the-new-mac-mini-and-mac-studio-are-available-today/",
+          "title": "The new Mac mini and Mac Studio are available today",
+          "publishedDate": "2026-09-22",
+          "publishedText": "September 22, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "d845ad95c1b84a66510c47e03b035b3be5aac534c60ac989b2fc6a1b6cf03a93"
         }
       ],
       "milestoneSources": {
         "announcementDate": "https://www.apple.com/newsroom/2026/08/apple-unveils-a-more-powerful-mac-mini-featuring-the-all-new-m6-and-m5-pro/",
         "orderDate": "https://www.apple.com/newsroom/2026/08/apple-unveils-a-more-powerful-mac-mini-featuring-the-all-new-m6-and-m5-pro/",
-        "availabilityDate": "https://www.apple.com/newsroom/2026/08/apple-unveils-a-more-powerful-mac-mini-featuring-the-all-new-m6-and-m5-pro/"
+        "availabilityDate": "https://www.apple.com/newsroom/2026/09/the-new-mac-mini-and-mac-studio-are-available-today/"
+      }
+    },
+    {
+      "id": "iphone-18-pro",
+      "category": "iPhone",
+      "product": "iPhone 18 Pro / Pro Max",
+      "announcementDate": "2026-09-09",
+      "orderDate": "2026-09-12",
+      "availabilityDate": "2026-09-18",
+      "region": "US / first launch markets",
+      "availabilityPrecision": "day",
+      "availabilityMilestone": "Customer / store availability",
+      "availabilityStatus": "Apple-stated",
+      "notes": "",
+      "verifiedAt": "2026-11-13",
+      "sources": [
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",
+          "title": "Apple debuts iPhone 18 Pro and iPhone 18 Pro Max",
+          "publishedDate": "2026-09-09",
+          "publishedText": "September 9, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "3b38f11861eed021e3da74f953f1e794c62cd1017caaac735d8781ddc23a8ae5"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/the-latest-iphone-apple-watch-and-airpods-lineups-arrive-in-stores-worldwide/",
+          "title": "iPhone 18 Pro, Apple Watch Series 12, Apple Watch Ultra 4, and AirPods 5 arrive in stores worldwide",
+          "publishedDate": "2026-09-18",
+          "publishedText": "September 18, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "d6deb971c581e45ba5dec00ca85dad098f96a2fa52606b339e972efbee709794"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/final-cut-camera-now-supports-variable-aperture-on-iphone-18-pro/",
+          "title": "Final Cut Camera now supports variable aperture on iPhone 18 Pro and even more pro options with iOS 27",
+          "publishedDate": "2026-09-29",
+          "publishedText": "September 29, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "deb07f848869efc204a0befdd21c9e4912de1f7370e37df4e1fd940bdc6992e0"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/get-ready-to-experience-iphone-18-pro-the-new-apple-watch-lineup-and-airpods-5/",
+          "title": "Get ready to experience iPhone 18 Pro, the next generation of Apple Watch, and AirPods 5",
+          "publishedDate": "2026-09-11",
+          "publishedText": "September 11, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "6d1df94c676e4b2a76a58a069c261198933f2a68e2051b140071e61d5264ecb8"
+        }
+      ],
+      "milestoneSources": {
+        "announcementDate": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",
+        "orderDate": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",
+        "availabilityDate": "https://www.apple.com/newsroom/2026/09/the-latest-iphone-apple-watch-and-airpods-lineups-arrive-in-stores-worldwide/"
+      }
+    },
+    {
+      "id": "iphone-duo",
+      "category": "iPhone",
+      "product": "iPhone Duo",
+      "announcementDate": "2026-09-09",
+      "orderDate": "2026-10-16",
+      "availabilityDate": "2026-10-23",
+      "region": "US / first launch markets",
+      "availabilityPrecision": "day",
+      "availabilityMilestone": "Customer / store availability",
+      "availabilityStatus": "Apple-stated",
+      "notes": "",
+      "verifiedAt": "2026-11-13",
+      "sources": [
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+          "title": "Apple unveils iPhone Duo",
+          "publishedDate": "2026-09-09",
+          "publishedText": "September 9, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "daa963e1c1e32210898347675632bf689670a49802202ea7555dddc418373b2e"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/10/iphone-duo-arrives-at-apple-store-locations-worldwide/",
+          "title": "iPhone Duo arrives at Apple Store locations worldwide",
+          "publishedDate": "2026-10-23",
+          "publishedText": "October 23, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "eb5eaf10eb4d8becf7ccf87fc799710888e13878a916aa556736a884a3d21d92"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/10/developers-bring-incredible-new-app-experiences-to-iphone-duo/",
+          "title": "Developers bring incredible new app experiences to iPhone Duo",
+          "publishedDate": "2026-10-22",
+          "publishedText": "October 22, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "5b89dbdb8bed441204836b21507f801611808876e1b491dfc9992e3577879f7f"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/",
+          "title": "Open up to new possibilities with iPhone Duo",
+          "publishedDate": "2026-10-15",
+          "publishedText": "October 15, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "5b2e35b3f9b9616b3bf19c34bb18ef53c4a0ffb43ee3f76b33bc38b2604a5ce5"
+        }
+      ],
+      "milestoneSources": {
+        "announcementDate": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+        "orderDate": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+        "availabilityDate": "https://www.apple.com/newsroom/2026/10/iphone-duo-arrives-at-apple-store-locations-worldwide/"
+      }
+    },
+    {
+      "id": "watch-12",
+      "category": "Apple Watch",
+      "product": "Apple Watch Series 12",
+      "announcementDate": "2026-09-09",
+      "orderDate": "2026-09-09",
+      "availabilityDate": "2026-09-18",
+      "region": "US / first launch markets",
+      "availabilityPrecision": "day",
+      "availabilityMilestone": "Customer / store availability",
+      "availabilityStatus": "Apple-stated",
+      "notes": "",
+      "verifiedAt": "2026-11-13",
+      "sources": [
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/introducing-apple-watch-series-12-with-the-all-new-health-sensing-system/",
+          "title": "Introducing Apple Watch Series 12, with the all-new Health Sensing System",
+          "publishedDate": "2026-09-09",
+          "publishedText": "September 9, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "ded28e5673796278351fbf7509752cbd253e51aee94520f3d2812393a8300f8c"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/the-latest-iphone-apple-watch-and-airpods-lineups-arrive-in-stores-worldwide/",
+          "title": "iPhone 18 Pro, Apple Watch Series 12, Apple Watch Ultra 4, and AirPods 5 arrive in stores worldwide",
+          "publishedDate": "2026-09-18",
+          "publishedText": "September 18, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "d6deb971c581e45ba5dec00ca85dad098f96a2fa52606b339e972efbee709794"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/get-ready-to-experience-iphone-18-pro-the-new-apple-watch-lineup-and-airpods-5/",
+          "title": "Get ready to experience iPhone 18 Pro, the next generation of Apple Watch, and AirPods 5",
+          "publishedDate": "2026-09-11",
+          "publishedText": "September 11, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "6d1df94c676e4b2a76a58a069c261198933f2a68e2051b140071e61d5264ecb8"
+        }
+      ],
+      "milestoneSources": {
+        "announcementDate": "https://www.apple.com/newsroom/2026/09/introducing-apple-watch-series-12-with-the-all-new-health-sensing-system/",
+        "orderDate": "https://www.apple.com/newsroom/2026/09/introducing-apple-watch-series-12-with-the-all-new-health-sensing-system/",
+        "availabilityDate": "https://www.apple.com/newsroom/2026/09/the-latest-iphone-apple-watch-and-airpods-lineups-arrive-in-stores-worldwide/"
+      }
+    },
+    {
+      "id": "watch-ultra-4",
+      "category": "Apple Watch",
+      "product": "Apple Watch Ultra 4",
+      "announcementDate": "2026-09-09",
+      "orderDate": "2026-09-09",
+      "availabilityDate": "2026-09-18",
+      "region": "US / first launch markets",
+      "availabilityPrecision": "day",
+      "availabilityMilestone": "Customer / store availability",
+      "availabilityStatus": "Apple-stated",
+      "notes": "",
+      "verifiedAt": "2026-11-13",
+      "sources": [
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/apple-unveils-apple-watch-ultra-4/",
+          "title": "Apple unveils Apple Watch Ultra 4",
+          "publishedDate": "2026-09-09",
+          "publishedText": "September 9, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "006b79f46d8ba2199cb697e9a2942ce0808f653ef8c34701a69c77104fc5687a"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/the-latest-iphone-apple-watch-and-airpods-lineups-arrive-in-stores-worldwide/",
+          "title": "iPhone 18 Pro, Apple Watch Series 12, Apple Watch Ultra 4, and AirPods 5 arrive in stores worldwide",
+          "publishedDate": "2026-09-18",
+          "publishedText": "September 18, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "d6deb971c581e45ba5dec00ca85dad098f96a2fa52606b339e972efbee709794"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/get-ready-to-experience-iphone-18-pro-the-new-apple-watch-lineup-and-airpods-5/",
+          "title": "Get ready to experience iPhone 18 Pro, the next generation of Apple Watch, and AirPods 5",
+          "publishedDate": "2026-09-11",
+          "publishedText": "September 11, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "6d1df94c676e4b2a76a58a069c261198933f2a68e2051b140071e61d5264ecb8"
+        }
+      ],
+      "milestoneSources": {
+        "announcementDate": "https://www.apple.com/newsroom/2026/09/apple-unveils-apple-watch-ultra-4/",
+        "orderDate": "https://www.apple.com/newsroom/2026/09/apple-unveils-apple-watch-ultra-4/",
+        "availabilityDate": "https://www.apple.com/newsroom/2026/09/the-latest-iphone-apple-watch-and-airpods-lineups-arrive-in-stores-worldwide/"
+      }
+    },
+    {
+      "id": "airpods-5",
+      "category": "AirPods",
+      "product": "AirPods (5th generation)",
+      "announcementDate": "2026-09-09",
+      "orderDate": "2026-09-09",
+      "availabilityDate": "2026-09-18",
+      "region": "US / first launch markets",
+      "availabilityPrecision": "day",
+      "availabilityMilestone": "Customer / store availability",
+      "availabilityStatus": "Apple-stated",
+      "notes": "",
+      "verifiedAt": "2026-11-13",
+      "sources": [
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/apple-introduces-airpods-5-with-best-in-class-open-ear-active-noise-cancellation/",
+          "title": "Apple introduces AirPods 5, featuring best-in-class open‑ear Active Noise Cancellation",
+          "publishedDate": "2026-09-09",
+          "publishedText": "September 9, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "3cbbc4231aef2afa7b788113b5541bcb13c5c9314f6cb0bb26dc0bf5fe045f27"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/the-latest-iphone-apple-watch-and-airpods-lineups-arrive-in-stores-worldwide/",
+          "title": "iPhone 18 Pro, Apple Watch Series 12, Apple Watch Ultra 4, and AirPods 5 arrive in stores worldwide",
+          "publishedDate": "2026-09-18",
+          "publishedText": "September 18, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "d6deb971c581e45ba5dec00ca85dad098f96a2fa52606b339e972efbee709794"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/09/get-ready-to-experience-iphone-18-pro-the-new-apple-watch-lineup-and-airpods-5/",
+          "title": "Get ready to experience iPhone 18 Pro, the next generation of Apple Watch, and AirPods 5",
+          "publishedDate": "2026-09-11",
+          "publishedText": "September 11, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "6d1df94c676e4b2a76a58a069c261198933f2a68e2051b140071e61d5264ecb8"
+        }
+      ],
+      "milestoneSources": {
+        "announcementDate": "https://www.apple.com/newsroom/2026/09/apple-introduces-airpods-5-with-best-in-class-open-ear-active-noise-cancellation/",
+        "orderDate": "https://www.apple.com/newsroom/2026/09/apple-introduces-airpods-5-with-best-in-class-open-ear-active-noise-cancellation/",
+        "availabilityDate": "https://www.apple.com/newsroom/2026/09/the-latest-iphone-apple-watch-and-airpods-lineups-arrive-in-stores-worldwide/"
+      }
+    },
+    {
+      "id": "homeview",
+      "category": "Home",
+      "product": "Apple HomeView",
+      "announcementDate": "2026-10-13",
+      "orderDate": "2026-10-13",
+      "availabilityDate": "2026-11-13",
+      "region": "US / first launch markets",
+      "availabilityPrecision": "day",
+      "availabilityMilestone": "Customer / store availability",
+      "availabilityStatus": "Apple-stated",
+      "notes": "",
+      "verifiedAt": "2026-11-13",
+      "sources": [
+        {
+          "url": "https://www.apple.com/newsroom/2026/10/meet-apple-homeview-a-new-way-to-enjoy-entertainment-and-manage-the-home/",
+          "title": "Meet Apple HomeView, a new way to enjoy entertainment, stay connected, and manage the home",
+          "publishedDate": "2026-10-13",
+          "publishedText": "October 13, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "bac8dc7523394a59fea645f892f2b6c69f0cc56535d670890bd949f12e3807a1"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/11/apple-homeview-available-today/",
+          "title": "Apple HomeView available today",
+          "publishedDate": "2026-11-13",
+          "publishedText": "November 13, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "436e5aa275f0f53dfecd76a57f56dec73d906a01152c05af4398faf95e03f932"
+        }
+      ],
+      "milestoneSources": {
+        "announcementDate": "https://www.apple.com/newsroom/2026/10/meet-apple-homeview-a-new-way-to-enjoy-entertainment-and-manage-the-home/",
+        "orderDate": "https://www.apple.com/newsroom/2026/10/meet-apple-homeview-a-new-way-to-enjoy-entertainment-and-manage-the-home/",
+        "availabilityDate": "https://www.apple.com/newsroom/2026/11/apple-homeview-available-today/"
+      }
+    },
+    {
+      "id": "apple-tv-4k-2026",
+      "category": "Apple TV",
+      "product": "Apple TV 4K (4th generation)",
+      "announcementDate": "2026-10-13",
+      "orderDate": "2026-10-13",
+      "availabilityDate": "2026-11-13",
+      "region": "US / first launch markets",
+      "availabilityPrecision": "day",
+      "availabilityMilestone": "Customer / store availability",
+      "availabilityStatus": "Apple-stated",
+      "notes": "",
+      "verifiedAt": "2026-11-13",
+      "sources": [
+        {
+          "url": "https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/",
+          "title": "Apple unveils the new Apple TV 4K, supercharged by Siri AI",
+          "publishedDate": "2026-10-13",
+          "publishedText": "October 13, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "2b978f3be47f0bb166e93f50fa4ad98445d1dc33d5c5a8739d26ec6f325ddd89"
+        }
+      ],
+      "milestoneSources": {
+        "announcementDate": "https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/",
+        "orderDate": "https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/",
+        "availabilityDate": "https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/"
+      }
+    },
+    {
+      "id": "homepod-mini-2",
+      "category": "HomePod",
+      "product": "HomePod mini (2nd generation)",
+      "announcementDate": "2026-10-13",
+      "orderDate": "2026-10-13",
+      "availabilityDate": "2026-10-30",
+      "region": "US / first launch markets",
+      "availabilityPrecision": "day",
+      "availabilityMilestone": "Customer / store availability",
+      "availabilityStatus": "Apple-stated",
+      "notes": "Hardware availability is October 30. Apple says Siri AI arrives in a future software update; hardware shipment does not establish that feature’s delivery.",
+      "verifiedAt": "2026-11-13",
+      "sources": [
+        {
+          "url": "https://www.apple.com/newsroom/2026/10/apple-announces-the-next-generation-of-homepod-mini/",
+          "title": "Apple announces the next generation of HomePod mini with support for Siri AI, beautiful new colors, and rich sound",
+          "publishedDate": "2026-10-13",
+          "publishedText": "October 13, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "b953831d94d7f11ea912adea9fd36a1c555e4987b9739857c249018bcbc233e0"
+        }
+      ],
+      "milestoneSources": {
+        "announcementDate": "https://www.apple.com/newsroom/2026/10/apple-announces-the-next-generation-of-homepod-mini/",
+        "orderDate": "https://www.apple.com/newsroom/2026/10/apple-announces-the-next-generation-of-homepod-mini/",
+        "availabilityDate": "https://www.apple.com/newsroom/2026/10/apple-announces-the-next-generation-of-homepod-mini/"
+      }
+    },
+    {
+      "id": "ipad-mini-2026",
+      "category": "iPad",
+      "product": "iPad mini (OLED / A20 Pro)",
+      "announcementDate": "2026-10-26",
+      "orderDate": "2026-10-28",
+      "availabilityDate": "2026-11-06",
+      "region": "US / first launch markets",
+      "availabilityPrecision": "day",
+      "availabilityMilestone": "Customer / store availability",
+      "availabilityStatus": "Apple-stated",
+      "notes": "",
+      "verifiedAt": "2026-11-13",
+      "sources": [
+        {
+          "url": "https://www.apple.com/newsroom/2026/10/apple-gives-ipad-mini-its-biggest-update-ever/",
+          "title": "Apple gives iPad mini its biggest update ever",
+          "publishedDate": "2026-10-26",
+          "publishedText": "October 26, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "d0d7d01b4de6bf395bd94b95855386debebbffac62891850d5b1c0848a8c495c"
+        }
+      ],
+      "milestoneSources": {
+        "announcementDate": "https://www.apple.com/newsroom/2026/10/apple-gives-ipad-mini-its-biggest-update-ever/",
+        "orderDate": "https://www.apple.com/newsroom/2026/10/apple-gives-ipad-mini-its-biggest-update-ever/",
+        "availabilityDate": "https://www.apple.com/newsroom/2026/10/apple-gives-ipad-mini-its-biggest-update-ever/"
+      }
+    },
+    {
+      "id": "imac-m6",
+      "category": "Mac",
+      "product": "iMac (M6)",
+      "announcementDate": "2026-10-27",
+      "orderDate": "2026-10-28",
+      "availabilityDate": "2026-11-06",
+      "region": "US / first launch markets",
+      "availabilityPrecision": "day",
+      "availabilityMilestone": "Customer / store availability",
+      "availabilityStatus": "Apple-stated",
+      "notes": "",
+      "verifiedAt": "2026-11-13",
+      "sources": [
+        {
+          "url": "https://www.apple.com/newsroom/2026/10/apple-unveils-new-imac-with-m6/",
+          "title": "Apple unveils new iMac with M6, delivering a major boost in performance and AI capabilities",
+          "publishedDate": "2026-10-27",
+          "publishedText": "October 27, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "d1fe12340c5fcfaf7c4fcc14b695b00c924e3c75219d916b07e3c8edb7883f3e"
+        }
+      ],
+      "milestoneSources": {
+        "announcementDate": "https://www.apple.com/newsroom/2026/10/apple-unveils-new-imac-with-m6/",
+        "orderDate": "https://www.apple.com/newsroom/2026/10/apple-unveils-new-imac-with-m6/",
+        "availabilityDate": "https://www.apple.com/newsroom/2026/10/apple-unveils-new-imac-with-m6/"
+      }
+    },
+    {
+      "id": "macbook-pro-m6",
+      "category": "Mac",
+      "product": "MacBook Pro 14-inch (M6)",
+      "announcementDate": "2026-10-27",
+      "orderDate": "2026-10-28",
+      "availabilityDate": "2026-11-06",
+      "region": "US / first launch markets",
+      "availabilityPrecision": "day",
+      "availabilityMilestone": "Customer / store availability",
+      "availabilityStatus": "Apple-stated",
+      "notes": "",
+      "verifiedAt": "2026-11-13",
+      "sources": [
+        {
+          "url": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+          "title": "Apple introduces the new 14‑inch MacBook Pro with M6",
+          "publishedDate": "2026-10-27",
+          "publishedText": "October 27, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "4d737fb720ed596f50abbb256cf096e1b21ef6b9e2195f2d46631cbc6d993692"
+        }
+      ],
+      "milestoneSources": {
+        "announcementDate": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+        "orderDate": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/",
+        "availabilityDate": "https://www.apple.com/newsroom/2026/10/apple-introduces-the-new-14-inch-macbook-pro-with-m6/"
+      }
+    },
+    {
+      "id": "macbook-pro-oled",
+      "category": "Mac",
+      "product": "MacBook Pro 14/16-inch (PROLED XDR / Touch)",
+      "announcementDate": "2026-10-28",
+      "orderDate": "2026-10-28",
+      "availabilityDate": "2026-11-06",
+      "region": "US / first launch markets",
+      "availabilityPrecision": "day",
+      "availabilityMilestone": "Customer / store availability",
+      "availabilityStatus": "Apple-stated",
+      "notes": "",
+      "verifiedAt": "2026-11-13",
+      "sources": [
+        {
+          "url": "https://www.apple.com/newsroom/2026/10/apple-unveils-groundbreaking-macbook-pro-with-proled-xdr-display/",
+          "title": "Apple unveils groundbreaking MacBook Pro with PROLED XDR Display and Touch for the first time on Mac",
+          "publishedDate": "2026-10-28",
+          "publishedText": "October 28, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "c2ae371aca33e99f4b32f0e210b7cbaaf37e41419149410c20ce30384a6a7cf2"
+        }
+      ],
+      "milestoneSources": {
+        "announcementDate": "https://www.apple.com/newsroom/2026/10/apple-unveils-groundbreaking-macbook-pro-with-proled-xdr-display/",
+        "orderDate": "https://www.apple.com/newsroom/2026/10/apple-unveils-groundbreaking-macbook-pro-with-proled-xdr-display/",
+        "availabilityDate": "https://www.apple.com/newsroom/2026/10/apple-unveils-groundbreaking-macbook-pro-with-proled-xdr-display/"
+      }
+    },
+    {
+      "id": "apple-home-collection",
+      "category": "Home",
+      "product": "Apple Home Collection",
+      "announcementDate": "2026-10-13",
+      "orderDate": null,
+      "availabilityDate": null,
+      "region": "US / first launch markets",
+      "availabilityPrecision": null,
+      "availabilityMilestone": "Customer / store availability",
+      "availabilityStatus": "Exact date not entered",
+      "notes": "Announced October 13. Apple says availability begins in December, with select accessories in early 2027; no exact day inferred. Developed with LG Electronics and Schneider Electric.",
+      "verifiedAt": "2026-11-13",
+      "sources": [
+        {
+          "url": "https://www.apple.com/newsroom/2026/10/introducing-apple-home-collection-a-new-lineup-of-smart-home-accessories/",
+          "title": "Introducing Apple Home Collection, a new lineup of smart home accessories",
+          "publishedDate": "2026-10-13",
+          "publishedText": "October 13, 2026",
+          "accessed": "2026-11-14",
+          "sha256": "b6550083b0441c1ca9b2ae957f1bfbf9e3347d9f80ec078e4aea4f4bfc53ee7c"
+        }
+      ],
+      "milestoneSources": {
+        "announcementDate": "https://www.apple.com/newsroom/2026/10/introducing-apple-home-collection-a-new-lineup-of-smart-home-accessories/",
+        "orderDate": null,
+        "availabilityDate": null
       }
     }
   ]

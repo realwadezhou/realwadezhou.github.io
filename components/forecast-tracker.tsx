@@ -55,6 +55,11 @@ import { AppleLaunchTable } from '@/components/apple-launch-table';
 import { GurmanOverview } from '@/components/gurman-overview';
 import { KuoOverview } from '@/components/kuo-overview';
 import { GradingRubric } from '@/components/grading-rubric';
+import { ResearchStatus } from '@/components/research-status';
+import { VoxPilot } from '@/components/vox-pilot';
+import { MushyQuestions } from '@/components/mushy-questions';
+import { OntologyOverview } from '@/components/ontology-overview';
+import { rungForClaim } from '@/lib/ontology';
 
 type View =
   | EssaySlug
@@ -64,6 +69,10 @@ type View =
   | 'capabilities'
   | 'people'
   | 'method'
+  | 'research'
+  | 'research-vox'
+  | 'research-mushy'
+  | 'research-ontology'
   | 'andrew-curran'
   | 'mark-gurman'
   | 'ming-chi-kuo'
@@ -78,12 +87,24 @@ const titles: Record<View, string> = {
   capabilities: 'Capabilities & adoption',
   people: 'People',
   method: 'Grading rubric',
+  research: 'Research status',
+  'research-vox': 'Vox pilot',
+  'research-mushy': 'Pundits vs markets',
+  'research-ontology': 'How we grade',
   'andrew-curran': 'Andrew Curran',
   'mark-gurman': 'Mark Gurman',
   'ming-chi-kuo': 'Ming-Chi Kuo',
   'apple-launches': 'Apple launch dates',
 };
 const descriptions: Record<View, string> = {
+  research:
+    'Companion project progress: recover implied priors from prose and test for hindsight leakage.',
+  'research-vox':
+    'Vox Future Perfect, 2019–2026. Recover the author’s stated probability with the number hidden.',
+  'research-mushy':
+    'What pundits implied over time, against markets, Metaculus and the outcome. 34 frozen questions.',
+  'research-ontology':
+    'Claim verdicts and inferred priors: two kinds of grading, with explicit rungs and provenance.',
   'ai-2027': 'A scenario of AI research automation and two possible endings.',
   'ai-2040-plan-a':
     'A proposed path to a slower, internationally governed transition.',
@@ -103,7 +124,7 @@ const descriptions: Record<View, string> = {
   'andrew-curran': 'AI reporting and commentary · @AndrewCurran_',
   'mark-gurman': 'Technology reporting · 2015–2026 historical dossier',
   'ming-chi-kuo':
-    'Apple supply-chain forecasts · 2015–2025 reports, evaluated September 2026',
+    'Apple supply-chain forecasts · 2015–2026 reports, reviewed November 2026',
   'apple-launches':
     'A reusable reference for announcement dates, orders, and availability—linked to forecast evaluations.',
 };
@@ -126,7 +147,10 @@ function Navigation({
 }) {
   const { setOpenMobile } = useSidebar();
   const go = (next: View) => {
-    if (essays.some((essay) => essay.slug === view)) {
+    if (
+      essays.some((essay) => essay.slug === view) ||
+      view.startsWith('research')
+    ) {
       window.location.assign(`/?view=${next}`);
       return;
     }
@@ -197,6 +221,33 @@ function Navigation({
             {nav('andrew-curran', FileText)}
             {nav('mark-gurman', FileText)}
             {nav('ming-chi-kuo', FileText)}
+          </SidebarMenu>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>RESEARCH</SidebarGroupLabel>
+          <SidebarMenu>
+            {([
+              ['research', '/research'],
+              ['research-vox', '/research/vox'],
+              ['research-mushy', '/research/mushy'],
+              ['research-ontology', '/research/ontology'],
+            ] as const).map(([key, href]) => (
+              <SidebarMenuItem key={key}>
+                <SidebarMenuButton
+                  className="nav-item"
+                  isActive={view === key}
+                  render={
+                    <Link
+                      href={href}
+                      aria-current={view === key ? 'page' : undefined}
+                    />
+                  }
+                >
+                  <BookOpen />
+                  <span>{titles[key]}</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
           </SidebarMenu>
         </SidebarGroup>
         <SidebarGroup>
@@ -490,7 +541,7 @@ export default function ForecastTracker({
             <ChevronRight size={13} aria-hidden="true" />
             <span>{titles[view]}</span>
           </div>
-          <span className="edition">7 September 2026</span>
+          <span className="edition">13 November 2026</span>
         </header>
         <div id="main-content" className="page-content" tabIndex={-1}>
           <div className="page-heading">
@@ -504,6 +555,14 @@ export default function ForecastTracker({
             <AppleLaunchTable claims={claims} select={setSelected} />
           ) : view === 'method' ? (
             <GradingRubric />
+          ) : view === 'research' ? (
+            <ResearchStatus />
+          ) : view === 'research-vox' ? (
+            <VoxPilot />
+          ) : view === 'research-mushy' ? (
+            <MushyQuestions />
+          ) : view === 'research-ontology' ? (
+            <OntologyOverview />
           ) : view === 'people' ? (
             <div className="people-list">
               {people.map((p) => (
@@ -740,7 +799,13 @@ export default function ForecastTracker({
                           </span>
                         </TableCell>
                         <TableCell>
-                          <Status value={c.status} />
+                          <Status value={c.status} />{' '}
+                          <span
+                            className="status status-neutral hindsight-badge"
+                            title="Commitment rung"
+                          >
+                            {rungForClaim(c)}
+                          </span>
                           <span className="cell-note">{c.statusNote}</span>
                         </TableCell>
                         <TableCell>

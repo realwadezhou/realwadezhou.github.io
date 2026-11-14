@@ -46,7 +46,7 @@ export function GurmanOverview({
           </strong>
         </p>
         <p>
-          Reports from 2015–2026, spanning iPhone, Mac, iPad, Watch, audio, TV,
+          Reports from 2015–2026, reviewed against launches through November 13, 2026, spanning iPhone, Mac, iPad, Watch, audio, TV,
           services, and Vision. Every assessment is provisional. Most Bloomberg
           reporting is recovered through dated public attribution; original
           Gurman articles and an interview are identified separately.

@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-07",
+  "asOf": "2026-11-13",
   "sources": [
     {
       "claimIds": [
@@ -166,6 +166,20 @@
       "observationDate": null,
       "observationLabel": null,
       "accessed": "2026-09-07"
+    },
+    {
+      "claimIds": [
+        "K-215",
+        "K-267"
+      ],
+      "label": "Apple · iPhone Duo technical specifications",
+      "url": "https://www.apple.com/iphone-duo/specs/",
+      "published": "2026 model; page publication date not displayed",
+      "accessed": "2026-11-14",
+      "role": "Outcome",
+      "note": "Complete current specification: authentication, front camera and enclosure dimensions. Captured retrospectively; no original launch-day snapshot claimed.",
+      "observationDate": null,
+      "observationLabel": null
     }
   ]
 }
