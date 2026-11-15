@@ -49,13 +49,16 @@ export default defineConfig(async () => {
     server: isCodexSeatbeltSandbox
       ? { watch: { useFsEvents: false, usePolling: true } }
       : undefined,
-    plugins: [
-      vinext(),
-      sites(),
-      cloudflare({
-        viteEnvironment: { name: 'rsc', childEnvironments: ['ssr'] },
-        config: localBindingConfig,
-      }),
-    ],
+    // Static export (GitHub Pages) needs neither the Sites hosting plugin nor the Workers runtime.
+    plugins: process.env.STATIC_EXPORT
+      ? [vinext()]
+      : [
+          vinext(),
+          sites(),
+          cloudflare({
+            viteEnvironment: { name: 'rsc', childEnvironments: ['ssr'] },
+            config: localBindingConfig,
+          }),
+        ],
   };
 });

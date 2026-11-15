@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useSyncExternalStore } from 'react';
 import {
   CartesianGrid,
   ComposedChart,
@@ -300,8 +300,11 @@ export function QuestionChart({
   );
 }
 
-/** initialQid: deep link from the home page (/research/mushy?q=<qid>), read on the server. */
-export function MushyQuestions({ initialQid }: { initialQid?: string }) {
+const noSubscribe = () => () => {};
+const urlQid = () => new URLSearchParams(window.location.search).get('q');
+
+/** Deep links from the home page (/research/mushy?q=<qid>) are read in the browser: the site is static. */
+export function MushyQuestions() {
   const questions = useMemo(
     () =>
       [...mushyData.questions].sort(
@@ -314,11 +317,13 @@ export function MushyQuestions({ initialQid }: { initialQid?: string }) {
       ),
     [],
   );
-  const [qid, setQid] = useState(
-    initialQid && questions.some((x) => x.qid === initialQid)
-      ? initialQid
-      : questions[0]?.qid,
-  );
+  const linked = useSyncExternalStore(noSubscribe, urlQid, () => null);
+  const [picked, setQid] = useState<string | null>(null);
+  const qid =
+    picked ??
+    (linked && questions.some((x) => x.qid === linked)
+      ? linked
+      : questions[0]?.qid);
   const [reader, setReader] = useState(mushyData.readers[0]);
   const q = questions.find((x) => x.qid === qid) ?? questions[0];
   const rows = q.points

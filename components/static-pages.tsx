@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/page-link';
 
 /** How the quantifying-vibes charts and leaderboard are scored. */
 export function VibesScoring() {
@@ -157,7 +157,7 @@ export function About() {
           it compared with the markets.
         </li>
         <li>
-          <Link href="/?view=products">
+          <Link href="/forecasts/products">
             <strong>Explicit forecasts</strong>
           </Link>
           : dated calls, graded one by one, building a track record per person.

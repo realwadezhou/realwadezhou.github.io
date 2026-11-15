@@ -1,6 +1,12 @@
 import { notFound } from 'next/navigation';
 import ForecastTracker from '@/components/forecast-tracker';
 import { essays } from '@/lib/essays';
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return essays.map((essay) => ({ slug: essay.slug }));
+}
 export async function generateMetadata({
   params,
 }: {

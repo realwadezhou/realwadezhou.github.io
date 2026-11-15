@@ -2,7 +2,7 @@
 import { RowCountSelect } from './row-count-select';
 import { paginate, type RowCount } from '@/lib/pagination';
 import { useState, type CSSProperties } from 'react';
-import Link from 'next/link';
+import Link from '@/components/page-link';
 import {
   ArrowUpRight,
   BookOpen,
@@ -260,7 +260,7 @@ const NAV: { group: string | null; items: NavItem[] }[] = [
     items: [
       {
         label: 'Apple releases',
-        href: '/?view=products',
+        href: '/forecasts/products',
         views: [
           'products',
           'all',
@@ -275,7 +275,7 @@ const NAV: { group: string | null; items: NavItem[] }[] = [
       },
       {
         label: 'Scoring system',
-        href: '/?view=method',
+        href: '/forecasts/method',
         views: ['method'],
         Icon: Ruler,
       },
@@ -578,13 +578,10 @@ function ClaimDetail({
 }
 export default function ForecastTracker({
   initialView = 'home',
-  initialQid,
 }: {
   initialView?: View;
-  /** Pundit priors: question to open first. */
-  initialQid?: string;
 }) {
-  const [view, updateView] = useState<View>(initialView);
+  const view = initialView;
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('');
   const [year, setYear] = useState('');
@@ -593,16 +590,8 @@ export default function ForecastTracker({
   const [page, setPage] = useState(0);
   const [rowCount, setRowCount] = useState<RowCount>(25);
   const [sort, setSort] = useState('newest');
-  const setView = (next: View) => {
-    updateView(next);
-    setQuery('');
-    setCategory('');
-    setYear('');
-    setGrade('');
-    setKind('');
-    setPage(0);
-    window.history.replaceState(null, '', `/?view=${next}`);
-  };
+  // Forecast views have their own static pages (/forecasts/<view>).
+  const setView = (next: View) => window.location.assign(`/forecasts/${next}`);
   const essay = essays.find((item) => item.slug === view);
   const [selected, setSelected] = useState<Claim | null>(null);
   const collection = claims.filter(
@@ -694,7 +683,7 @@ export default function ForecastTracker({
           ) : view === 'research-vox' ? (
             <VoxPilot />
           ) : view === 'research-mushy' ? (
-            <MushyQuestions initialQid={initialQid} />
+            <MushyQuestions />
           ) : view === 'research-calibration' ? (
             <MushyCalibration />
           ) : view === 'research-ontology' ? (

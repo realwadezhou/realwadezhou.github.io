@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/page-link';
 import { hindsightChecklist, hindsightModels, voxPilot } from '@/lib/hindsight';
 
 function ChecklistText({ text }: { text: string }) {

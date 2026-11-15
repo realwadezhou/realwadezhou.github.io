@@ -53,7 +53,7 @@ export function KuoOverview({
           <button className="text-link" onClick={openLaunches}>
             Explore {appleLaunches.length} Apple launches →
           </button>
-          <a className="text-link" href="/api/kuo" download>
+          <a className="text-link" href="/downloads/kuo-evaluations.json" download>
             Download all evaluations · JSON
           </a>
           <a className="text-link" href="/data/kuo-forecasts.json" download>

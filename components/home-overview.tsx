@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/page-link';
 import { ChevronRight } from 'lucide-react';
 import { mushyData } from '@/lib/mushy';
 import { QuestionChart } from './mushy-questions';

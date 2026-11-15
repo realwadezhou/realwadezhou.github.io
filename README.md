@@ -21,7 +21,7 @@ Each checked claim records its retrospective resolution rule, source-linked find
 - `scripts/collect-apple-newsroom.py`: optional discovery pass over Apple's yearly archives; not a grading engine. `docs/apple-newsroom-index.json` and `docs/apple-launch-candidates.json` retain article metadata only. Discovery candidates are not automatically launch records.
 - `scripts/build-gurman-corpus.py`: 201-claim expansion ledger, with concise paraphrases, qualifiers, source dates, outcomes, families, and launch IDs. Run it after editing to regenerate `public/data/gurman-forecasts.json`. Preserve existing IDs: append new rows, retain revisions, and record changes to already-published assessments.
 - `public/data/gurman-outcome-sources.json`: supplementary evidence for cancellations and specifications. These references supplement the shared launch catalog.
-- `GET /api/gurman`: complete 205-claim dossier, including original cases, all evidence, assessments, and review histories, generated from the same canonical data used by the UI.
+- `/downloads/gurman-evaluations.json` (written at build by `scripts/export-downloads.mjs`): complete 205-claim dossier, including original cases, all evidence, assessments, and review histories, generated from the same canonical data used by the UI.
 
 See `docs/gurman-research.md` for collection boundaries and the evaluation method. Reuse a launch ID across reporters and revisions; a shipped product can resolve several claims without duplicating its dates. A source-response hash identifies the retrieved response, not a pre-event archive. The source corpus is not a complete inventory of Gurman's reporting, and claim counts must not be presented as career accuracy.
 
@@ -29,7 +29,7 @@ Validation note: `npm run lint` includes the generated component catalog, which 
 
 ## Kuo expansion and table controls
 
-The Kuo dossier adds 216 claims from 50 source pages across 72 families and 10 hardware categories (2015–2025 reports; outcomes reviewed September 7, 2026). See `docs/kuo-research.md` for scope, counts, limitations, revisions and attribution rules. Three original Medium posts are distinguished from public attributions. The raw ledger is `public/data/kuo-forecasts.json`; `GET /api/kuo` exports all evaluated records and evidence.
+The Kuo dossier adds 216 claims from 50 source pages across 72 families and 10 hardware categories (2015–2025 reports; outcomes reviewed September 7, 2026). See `docs/kuo-research.md` for scope, counts, limitations, revisions and attribution rules. Three original Medium posts are distinguished from public attributions. The raw ledger is `public/data/kuo-forecasts.json`; `/downloads/kuo-evaluations.json` exports all evaluated records and evidence.
 
 Forecast and Apple-launch tables offer 10, 25, 50, 100 or All rows. All applies to the current filtered results. Changing the row count returns to the first page; filtering clamps pagination to prevent an empty stale page. Probability lower bounds in Kuo’s WWDC calls are displayed without converting them into exact probabilities.
 
