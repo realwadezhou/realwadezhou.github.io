@@ -38,17 +38,22 @@ function stances(
   by: GroupBy,
   wellPosedOnly: boolean,
   category: string,
+  batch: string,
 ): Map<string, Stance[]> {
   // An article with several categories counts once in each of them.
   const latest = new Map<string, [string, Stance]>();
   for (const q of questions) {
     if (wellPosedOnly && q.diffuse) continue;
+    if (batch && String(q.batch) !== batch) continue;
     for (const p of q.points) {
       if (p.reader !== reader || p.p == null) continue;
       if (category && !p.categories.includes(category)) continue;
       for (const g of keysOf(p, by)) {
         // Authors/outlets: latest article per question (protocol §10). Categories: every article.
-        const k = by === 'category' ? `${g}\u0000${q.qid}\u0000${p.docId}` : `${g}\u0000${q.qid}`;
+        const k =
+          by === 'category'
+            ? `${g}\u0000${q.qid}\u0000${p.docId}`
+            : `${g}\u0000${q.qid}`;
         const prev = latest.get(k);
         if (!prev || p.date > prev[1].date)
           latest.set(k, [g, { ...p, p: p.p, qid: q.qid, diffuse: q.diffuse }]);
@@ -56,7 +61,8 @@ function stances(
     }
   }
   const groups = new Map<string, Stance[]>();
-  for (const [g, s] of latest.values()) groups.set(g, [...(groups.get(g) ?? []), s]);
+  for (const [g, s] of latest.values())
+    groups.set(g, [...(groups.get(g) ?? []), s]);
   return groups;
 }
 
@@ -85,11 +91,12 @@ export function MushyCalibration() {
   const [wellPosed, setWellPosed] = useState(false);
   const [minN, setMinN] = useState(1);
   const [category, setCategory] = useState('');
+  const [batch, setBatch] = useState('');
   const [selected, setSelected] = useState<string | null>(null);
 
   const groups = useMemo(
-    () => stances(mushyData.questions, reader, by, wellPosed, category),
-    [reader, by, wellPosed, category],
+    () => stances(mushyData.questions, reader, by, wellPosed, category, batch),
+    [reader, by, wellPosed, category, batch],
   );
   const rows = [...groups.entries()]
     .map(([g, xs]) => ({ g, ...summary(xs) }))
@@ -193,6 +200,16 @@ export function MushyCalibration() {
           </select>
         </label>
         <label>
+          Question set{' '}
+          <select value={batch} onChange={(e) => setBatch(e.target.value)}>
+            <option value="">All</option>
+            <option value="1">MVP set</option>
+            <option value="2">Batch 2</option>
+            <option value="3">2026 midterms</option>
+            <option value="4">AI capabilities and adoption</option>
+          </select>
+        </label>
+        <label>
           Min. questions{' '}
           <select
             value={minN}
@@ -215,22 +232,59 @@ export function MushyCalibration() {
         <Table className="fit-table calib-table">
           <TableHeader>
             <TableRow>
-              <SortableHead label={by === 'author' ? 'Author' : by === 'outlet' ? 'Outlet' : 'Category'} column="name" sort={groupSort.sort} onSort={groupSort.toggle} />
-              <SortableHead label={by === 'category' ? 'Stances' : 'Questions'} column="n" sort={groupSort.sort} onSort={groupSort.toggle} numeric />
-              <SortableHead label="Articles" column="articles" sort={groupSort.sort} onSort={groupSort.toggle} numeric />
+              <SortableHead
+                label={
+                  by === 'author'
+                    ? 'Author'
+                    : by === 'outlet'
+                      ? 'Outlet'
+                      : 'Category'
+                }
+                column="name"
+                sort={groupSort.sort}
+                onSort={groupSort.toggle}
+              />
+              <SortableHead
+                label={by === 'category' ? 'Stances' : 'Questions'}
+                column="n"
+                sort={groupSort.sort}
+                onSort={groupSort.toggle}
+                numeric
+              />
+              <SortableHead
+                label="Articles"
+                column="articles"
+                sort={groupSort.sort}
+                onSort={groupSort.toggle}
+                numeric
+              />
               <SortableHead
                 label="Hit rate"
                 column="hit"
-                sort={groupSort.sort} onSort={groupSort.toggle}
+                sort={groupSort.sort}
+                onSort={groupSort.toggle}
                 numeric
                 title="Share of stances leaning the right way (50% readings excluded)"
               />
-              <SortableHead label="Mean Brier" column="brier" sort={groupSort.sort} onSort={groupSort.toggle} numeric />
-              <SortableHead label="Δ vs consensus" column="delta" sort={groupSort.sort} onSort={groupSort.toggle} numeric />
+              <SortableHead
+                label="Mean Brier"
+                column="brier"
+                sort={groupSort.sort}
+                onSort={groupSort.toggle}
+                numeric
+              />
+              <SortableHead
+                label="Δ vs consensus"
+                column="delta"
+                sort={groupSort.sort}
+                onSort={groupSort.toggle}
+                numeric
+              />
               <SortableHead
                 label="Boldness"
                 column="boldness"
-                sort={groupSort.sort} onSort={groupSort.toggle}
+                sort={groupSort.sort}
+                onSort={groupSort.toggle}
                 numeric
                 title="Mean distance of readings from 50%"
               />
@@ -270,16 +324,42 @@ export function MushyCalibration() {
       <p className="fine-print">
         When a piece read as a given category, how often did the event happen?
         Well calibrated: observed close to the reading.
-        {selected ? ' Click the row again to show all.' : ' Click a row above to filter.'}
+        {selected
+          ? ' Click the row again to show all.'
+          : ' Click a row above to filter.'}
       </p>
       <div>
         <Table className="fit-table">
           <TableHeader>
             <TableRow>
-              <SortableHead label="Category" column="category" sort={relSort.sort} onSort={relSort.toggle} numeric />
-              <SortableHead label="Stances" column="n" sort={relSort.sort} onSort={relSort.toggle} numeric />
-              <SortableHead label="Reading" column="reading" sort={relSort.sort} onSort={relSort.toggle} numeric />
-              <SortableHead label="Observed" column="observed" sort={relSort.sort} onSort={relSort.toggle} numeric />
+              <SortableHead
+                label="Category"
+                column="category"
+                sort={relSort.sort}
+                onSort={relSort.toggle}
+                numeric
+              />
+              <SortableHead
+                label="Stances"
+                column="n"
+                sort={relSort.sort}
+                onSort={relSort.toggle}
+                numeric
+              />
+              <SortableHead
+                label="Reading"
+                column="reading"
+                sort={relSort.sort}
+                onSort={relSort.toggle}
+                numeric
+              />
+              <SortableHead
+                label="Observed"
+                column="observed"
+                sort={relSort.sort}
+                onSort={relSort.toggle}
+                numeric
+              />
             </TableRow>
           </TableHeader>
           <TableBody>

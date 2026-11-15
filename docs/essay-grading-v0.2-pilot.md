@@ -10,6 +10,15 @@ horizon of 2026-11 for 60 claims and 2026-09 for 2.
 
 **Status: draft grades, not adopted.** The site still shows rubric 0.1.
 
+**Correction, 2026-11-15: Terra had live web search in all 62 runs.** An audit of the Codex
+session logs found that `codex exec` gave the model a web-search tool by default. Every
+essay-grading run used it. So the evidence below came partly from live search, not only
+model memory. That's why both spot-checked citations were real, current pages. The
+"knowledge horizon" field is meaningless (the model also has a clock). The cached grades
+are quarantined. Codex calls are now sealed by default. A re-run should either feed
+evidence briefs to a sealed model (the rubric's design), or allow search deliberately
+and log every query.
+
 ## What changed
 
 | Rubric 0.1 | → 0.2 thesis verdict | Claims |
@@ -81,8 +90,8 @@ See decision 1.
    - SA-028–030: Mostly, but Unresolvable on a strict reading.
    - SA-037: Yes, but Too early on a strict reading.
    - SA-017: Mostly, but Partly on a strict reading.
-5. **The evidence is model memory.** Both spot-checks held, but the rubric's
-   evidence briefs don't exist yet, and every cited item needs a working
+5. **The evidence came partly from live web search** (see the correction above),
+   not from the rubric's evidence briefs. Every cited item needs a working
    link before grades are adopted.
 
 ## Decisions for Wade

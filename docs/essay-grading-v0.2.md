@@ -68,7 +68,11 @@ article never decides a grade by itself.
 | Evidence | dated items with sources | Each with what it shows |
 
 Definitions:
-- **Yes:** the thesis came true in substance by the deadline.
+- **Yes:** the thesis came true in substance by the deadline. **Early success is
+  Yes** (adopted 2026-11-15, Wade): if the indicators are met before the horizon
+  ends, the verdict is Yes with timing *Early*, and the date it resolved is
+  recorded. *Too early* applies only to claims not yet met, or claims that
+  explicitly require a state to persist to the deadline.
 - **Mostly:** it came true with a minor shortfall in scope or size.
 - **Partly:** real but substantially smaller, narrower or slower than claimed.
 - **No:** the deadline passed and the thesis clearly failed, or reliable
@@ -78,6 +82,15 @@ Definitions:
 - **Unresolvable:** no defensible test remains even after step 2.
 
 Rules:
+- **Grade the claim at the tracker's level of detail** (adopted 2026-11-15). The
+  essay's wider argument is context. A narrow claim ("agents submit code for
+  review") is not graded as the essay's whole vision.
+- **No added requirements.** The verdict uses the reading's indicators as fixed,
+  and may not demand things the author left open (e.g. one site vs several). If it
+  disagrees with the reading, it flags it.
+- **One measure per quantity.** Related quantity claims (e.g. the $500B / $1T /
+  $2T / $8T investment ladder) are graded on the same named series. Annualised run
+  rates from reliable sources count, and are stated as such.
 - **Resolve on substance.** If the outcome is reached by a different
   mechanism, the thesis can be Yes while the detail verdict is lower.
 - **Absence of evidence is not No,** unless the indicator is something that
@@ -98,8 +111,10 @@ Rules:
 
 ## Process and review
 
-- A model (pilot: GPT-6.1 Terra) drafts steps 1–3 for every claim, with
-  the essay text and the evidence briefs in its input. Its knowledge horizon
+- Steps 1–2 and step 3 are **separate model calls** (adopted 2026-11-15). The
+  reading and indicators come from the essay text with no web access; the verdict
+  takes them as fixed input and uses web search, logging every query and URL.
+  Evidence briefs are optional shared context, not a requirement. Its knowledge horizon
   is recorded, and anything after it is marked Too early or Unresolvable,
   not guessed.
 - Wade adjudicates Core claims and any claim where the model's charitable

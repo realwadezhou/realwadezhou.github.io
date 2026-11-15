@@ -96,6 +96,11 @@ export type MushyQuestion = {
   priority: boolean;
   diffuse: boolean;
   outcomeAware: boolean;
+  /** 1 = MVP set; 2 = question-first collection (2026-11-15), frozen; 3 = 2026 midterms, draft; 4 = AI capabilities and adoption, draft. */
+  batch: 1 | 2 | 3 | 4;
+  draft: boolean;
+  /** Position in the demo shortlist (presentation only), or null. */
+  demo: number | null;
   points: MushyPoint[];
   conventionalWisdom: Record<
     string,
