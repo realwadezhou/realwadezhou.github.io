@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/page-link';
 import {
   gradingKinds,
   provenances,
@@ -87,7 +87,7 @@ export function OntologyOverview() {
       <p className="rubric-note">
         Rubric {RUBRIC_VERSION} still governs claim verdicts. Prior grading is a
         separate research track.{' '}
-        <Link href="/?view=method">Read the Grading rubric →</Link>
+        <Link href="/forecasts/method">Read the Grading rubric →</Link>
       </p>
     </div>
   );

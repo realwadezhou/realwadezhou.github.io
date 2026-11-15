@@ -7,7 +7,9 @@
   },
   "scripts": {
     "dev": "vinext dev",
+    "prebuild": "node scripts/export-downloads.mjs",
     "build": "vinext build",
+    "build:pages": "node scripts/export-downloads.mjs && STATIC_EXPORT=1 vinext build && node scripts/pages-postbuild.mjs",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
     "format": "oxfmt"

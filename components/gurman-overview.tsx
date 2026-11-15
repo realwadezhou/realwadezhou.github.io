@@ -55,7 +55,7 @@ export function GurmanOverview({
           <button className="text-link" onClick={openLaunches}>
             Explore {appleLaunches.length} Apple launches →
           </button>
-          <a className="text-link" href="/api/gurman" download>
+          <a className="text-link" href="/downloads/gurman-evaluations.json" download>
             Download all evaluations · JSON
           </a>
           <a className="text-link" href="/data/gurman-forecasts.json" download>

@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/page-link';
 import { ArrowUpRight, ChevronRight, BookOpen } from 'lucide-react';
 import {
   Sheet,
@@ -349,7 +349,7 @@ export function EssayEvaluation({ essay }: { essay: Essay }) {
           capability. No pre-publication archive or second human review is
           recorded. Sources were accessed on {ESSAY_AS_OF}.
         </p>
-        <Link className="text-link" href="/?view=method">
+        <Link className="text-link" href="/forecasts/method">
           Read rubric {RUBRIC_VERSION}
           <ChevronRight size={14} />
         </Link>
