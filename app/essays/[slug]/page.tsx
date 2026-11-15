@@ -9,7 +9,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const essay = essays.find((item) => item.slug === slug);
   return {
-    title: essay ? `${essay.title} — Forecast Index` : 'Essay not found',
+    title: essay ? `${essay.title} — Hindsight Research` : 'Essay not found',
   };
 }
 export default async function EssayRoute({

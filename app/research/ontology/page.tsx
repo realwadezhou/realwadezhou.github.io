@@ -1,6 +1,6 @@
 import ForecastTracker from '@/components/forecast-tracker';
 
-export const metadata = { title: 'How we grade — Forecast Index' };
+export const metadata = { title: 'How we grade — Hindsight Research' };
 
 export default function OntologyRoute() {
   return (

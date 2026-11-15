@@ -83,12 +83,15 @@ function PointTooltip({
   );
 }
 
-function QuestionChart({
+export function QuestionChart({
   q,
   reader,
+  compact = false,
 }: {
   q: MushyQuestion;
   reader: string;
+  /** Small multiple for the home page: no legend, axis titles or notes. */
+  compact?: boolean;
 }) {
   const dots: Dot[] = q.points
     .filter((p) => p.reader === reader && p.p != null)
@@ -115,6 +118,7 @@ function QuestionChart({
       .filter(inDomain)
       .map(([d, p]) => ({ x: ts(d), y: p, name: s.name })),
   }));
+  const tickCount = compact ? 3 : 6;
   const noStance = q.points.filter(
     (p) => p.reader === reader && p.p == null,
   ).length;
@@ -122,41 +126,66 @@ function QuestionChart({
     <>
       <ChartContainer
         config={chartConfig}
-        className="mushy-chart"
+        className={compact ? 'mushy-chart mushy-chart-compact' : 'mushy-chart'}
         aria-label={`${q.text} Probability over time: pundit readings by ${reader}, a smoothed conventional-wisdom line${series.length ? ', reference forecasts' : ''}, and the resolution.`}
       >
-        <ComposedChart margin={{ top: 20, right: 30, bottom: 30, left: 20 }}>
+        <ComposedChart
+          margin={
+            compact
+              ? { top: 8, right: 12, bottom: 4, left: -18 }
+              : { top: 20, right: 30, bottom: 30, left: 20 }
+          }
+        >
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis
             type="number"
             dataKey="x"
             domain={domain}
             ticks={Array.from(
-              { length: 6 },
+              { length: tickCount },
               (_, i) =>
                 Math.round(
-                  (domain[0] + ((domain[1] - domain[0]) * i) / 5) / DAY,
+                  (domain[0] +
+                    ((domain[1] - domain[0]) * i) / (tickCount - 1)) /
+                    DAY,
                 ) * DAY,
             )}
             tickFormatter={fmtDate}
             allowDataOverflow
-            label={{ value: 'Date', position: 'insideBottom', offset: -15 }}
+            fontSize={compact ? 11 : undefined}
+            label={
+              compact
+                ? undefined
+                : { value: 'Date', position: 'insideBottom', offset: -15 }
+            }
           />
           <YAxis
             type="number"
             dataKey="y"
             domain={[0, 1]}
-            ticks={[0, 0.25, 0.5, 0.75, 1]}
+            ticks={compact ? [0, 0.5, 1] : [0, 0.25, 0.5, 0.75, 1]}
             tickFormatter={(v: number) => pct(v)}
-            label={{
-              value: 'Probability',
-              angle: -90,
-              position: 'insideLeft',
-              offset: -5,
-            }}
+            fontSize={compact ? 11 : undefined}
+            label={
+              compact
+                ? undefined
+                : {
+                    value: 'Probability',
+                    angle: -90,
+                    position: 'insideLeft',
+                    offset: -5,
+                  }
+            }
           />
           <ChartTooltip content={<PointTooltip />} />
-          <Legend verticalAlign="top" height={32} />
+          <Legend
+            verticalAlign="top"
+            height={compact ? 26 : 32}
+            iconSize={compact ? 9 : 14}
+            wrapperStyle={
+              compact ? { fontSize: 11, lineHeight: '14px' } : undefined
+            }
+          />
           <ReferenceLine
             x={settled}
             stroke="currentColor"
@@ -168,8 +197,9 @@ function QuestionChart({
               key={s.id}
               data={s.data}
               dataKey="y"
-              name={`${s.provider}${q.ladder.length > 1 && s.rung ? ` · ${s.rung}` : ''}`}
+              name={`${s.provider}${q.ladder.length > 1 && s.rung ? ` · ${compact ? s.rung.slice(0, 7) : s.rung}` : ''}`}
               type="stepAfter"
+              legendType="plainline"
               stroke={`var(--color-${s.key})`}
               strokeOpacity={!s.rung || s.rung === q.primaryRung ? 1 : 0.55}
               strokeWidth={2}
@@ -189,8 +219,9 @@ function QuestionChart({
           <Line
             data={cw}
             dataKey="y"
-            name="Conventional wisdom (smoothed)"
+            name={compact ? 'Consensus' : 'Conventional wisdom (smoothed)'}
             type="monotone"
+            legendType="plainline"
             stroke="var(--color-pundits)"
             strokeWidth={2}
             dot={false}
@@ -198,44 +229,52 @@ function QuestionChart({
           />
           <Scatter
             data={dots}
-            name="Pundit readings"
+            name={compact ? 'Articles' : 'Pundit readings'}
             fill="var(--color-pundits)"
             fillOpacity={0.55}
             shape="cross"
+            legendType="cross"
             isAnimationActive={false}
           />
           <ReferenceDot
             x={settled}
             y={q.outcome}
-            r={7}
+            r={compact ? 5 : 7}
             fill="var(--resolution-mark, #6250d6)"
             stroke="var(--background)"
             strokeWidth={2}
             label={{
-              value: q.outcome ? 'Resolved yes' : 'Resolved no',
-              position: q.outcome ? 'bottom' : 'top',
-              offset: 10,
-              fill: 'currentColor',
-              fontSize: 12,
+              value: compact
+                ? 'Resolved'
+                : q.outcome
+                  ? 'Resolved yes'
+                  : 'Resolved no',
+              position: compact ? 'left' : q.outcome ? 'bottom' : 'top',
+              offset: compact ? 7 : 10,
+              fill: 'var(--resolution-mark, #6250d6)',
+              fontSize: compact ? 10 : 12,
+              fontWeight: 600,
             }}
           />
         </ComposedChart>
       </ChartContainer>
-      <p className="fine-print">
-        Each cross is one article, read by {reader} at the{' '}
-        {q.ladder.length > 1 ? `primary rung (${q.primaryRung})` : 'deadline'}.{' '}
-        {noStance} article{noStance === 1 ? '' : 's'} took no stance and{' '}
-        {noStance === 1 ? 'is' : 'are'} not plotted. The line is a
-        Gaussian-weighted average of the crosses
-        {q.conventionalWisdom[reader]?.bandwidthDays
-          ? ` (bandwidth ${q.conventionalWisdom[reader].bandwidthDays} days)`
-          : ''}
-        . Dashed vertical: outcome known ({q.settledOn}). Brier compares each
-        reading with the outcome. Δ vs consensus compares it with a trailing
-        consensus built only from earlier articles: negative means the article
-        beat the room.
-      </p>
-      {series.length > 0 && (
+      {!compact && (
+        <p className="fine-print">
+          Each cross is one article, read by {reader} at the{' '}
+          {q.ladder.length > 1 ? `primary rung (${q.primaryRung})` : 'deadline'}
+          . {noStance} article{noStance === 1 ? '' : 's'} took no stance and{' '}
+          {noStance === 1 ? 'is' : 'are'} not plotted. The line is a
+          Gaussian-weighted average of the crosses
+          {q.conventionalWisdom[reader]?.bandwidthDays
+            ? ` (bandwidth ${q.conventionalWisdom[reader].bandwidthDays} days)`
+            : ''}
+          . Dashed vertical: outcome known ({q.settledOn}). Brier compares each
+          reading with the outcome. Δ vs consensus compares it with a trailing
+          consensus built only from earlier articles: negative means the article
+          beat the room.
+        </p>
+      )}
+      {!compact && series.length > 0 && (
         <ul className="fine-print mushy-series-notes">
           {q.series.map((s) => (
             <li key={s.id}>
@@ -261,18 +300,25 @@ function QuestionChart({
   );
 }
 
-export function MushyQuestions() {
+/** initialQid: deep link from the home page (/research/mushy?q=<qid>), read on the server. */
+export function MushyQuestions({ initialQid }: { initialQid?: string }) {
   const questions = useMemo(
     () =>
       [...mushyData.questions].sort(
         (a, b) =>
+          (a.demo ?? 99) - (b.demo ?? 99) ||
+          a.batch - b.batch ||
           Number(b.priority) - Number(a.priority) ||
           Number(b.series.length > 0) - Number(a.series.length > 0) ||
           a.qid.localeCompare(b.qid),
       ),
     [],
   );
-  const [qid, setQid] = useState(questions[0]?.qid);
+  const [qid, setQid] = useState(
+    initialQid && questions.some((x) => x.qid === initialQid)
+      ? initialQid
+      : questions[0]?.qid,
+  );
   const [reader, setReader] = useState(mushyData.readers[0]);
   const q = questions.find((x) => x.qid === qid) ?? questions[0];
   const rows = q.points
@@ -298,21 +344,51 @@ export function MushyQuestions() {
         <p>
           What pundits implied, over time, against what markets and Metaculus
           said and what happened. Each article’s probability is read by a model
-          from its prose (pass 4), on frozen questions. Readings are not yet
-          validated against careful human labels; see{' '}
-          <code>{mushyData.report}</code>.
+          from its prose (pass 4), on frozen questions. The demo shortlist was
+          picked for readable charts after seeing results; summary numbers use
+          every question. Readings are not yet validated against careful human
+          labels; see <code>{mushyData.report}</code>.
         </p>
       </div>
       <div className="filter-row mushy-filters">
         <label>
           Question{' '}
-          <select value={q.qid} onChange={(e) => setQid(e.target.value)}>
-            {questions.map((x) => (
-              <option key={x.qid} value={x.qid}>
-                {x.priority ? '★ ' : ''}
-                {x.qid} — {x.text.slice(0, 70)}
-                {x.text.length > 70 ? '…' : ''}
-              </option>
+          <select
+            value={q.qid}
+            onChange={(e) => {
+              setQid(e.target.value);
+              window.history.replaceState(null, '', `?q=${e.target.value}`);
+            }}
+          >
+            {(['demo', 1, 2, 3, 4] as const).map((b) => (
+              <optgroup
+                key={b}
+                label={
+                  b === 'demo'
+                    ? 'Demo shortlist'
+                    : b === 1
+                      ? 'MVP set'
+                      : b === 2
+                        ? 'Batch 2 (question-first collection)'
+                        : b === 3
+                          ? '2026 midterms (draft questions)'
+                          : 'AI capabilities and adoption (draft questions)'
+                }
+              >
+                {questions
+                  .filter((x) =>
+                    b === 'demo'
+                      ? x.demo != null
+                      : x.batch === b && x.demo == null,
+                  )
+                  .map((x) => (
+                    <option key={x.qid} value={x.qid}>
+                      {x.priority ? '★ ' : ''}
+                      {x.qid} — {x.text.slice(0, 70)}
+                      {x.text.length > 70 ? '…' : ''}
+                    </option>
+                  ))}
+              </optgroup>
             ))}
           </select>
         </label>
@@ -333,6 +409,9 @@ export function MushyQuestions() {
             {q.settledOn}
           </span>
           {q.priority && <span className="badge">★ Priority set</span>}
+          {q.draft && (
+            <span className="badge">Draft question, not yet frozen</span>
+          )}
           {q.diffuse && <span className="badge">Diffuse topic</span>}
           {q.outcomeAware && (
             <span className="badge">Threshold chosen knowing outcome</span>
@@ -366,11 +445,37 @@ export function MushyQuestions() {
             </colgroup>
             <TableHeader>
               <TableRow>
-                <SortableHead label="Author" column="author" sort={sort} onSort={toggle} />
-                <SortableHead label="Outlet" column="outlet" sort={sort} onSort={toggle} />
-                <SortableHead label="Date" column="date" sort={sort} onSort={toggle} />
-                <SortableHead label="Article" column="article" sort={sort} onSort={toggle} />
-                <SortableHead label="Reading" column="reading" sort={sort} onSort={toggle} numeric />
+                <SortableHead
+                  label="Author"
+                  column="author"
+                  sort={sort}
+                  onSort={toggle}
+                />
+                <SortableHead
+                  label="Outlet"
+                  column="outlet"
+                  sort={sort}
+                  onSort={toggle}
+                />
+                <SortableHead
+                  label="Date"
+                  column="date"
+                  sort={sort}
+                  onSort={toggle}
+                />
+                <SortableHead
+                  label="Article"
+                  column="article"
+                  sort={sort}
+                  onSort={toggle}
+                />
+                <SortableHead
+                  label="Reading"
+                  column="reading"
+                  sort={sort}
+                  onSort={toggle}
+                  numeric
+                />
                 <SortableHead
                   label="Commit."
                   column="commitment"
@@ -439,7 +544,9 @@ export function MushyQuestions() {
                   <TableCell className="hide-narrow">
                     {COMMITMENT[p.commitment ?? 0] || '—'}
                   </TableCell>
-                  <TableCell>{p.brier == null ? '—' : p.brier.toFixed(3)}</TableCell>
+                  <TableCell>
+                    {p.brier == null ? '—' : p.brier.toFixed(3)}
+                  </TableCell>
                   <TableCell className="hide-narrow">
                     {p.deltaVsConsensus == null
                       ? '—'

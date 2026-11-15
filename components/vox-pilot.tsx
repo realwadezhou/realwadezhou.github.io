@@ -198,12 +198,17 @@ export function VoxPilot() {
     <section aria-label="Vox recovery pilot">
       <div className="research-summary">
         <p>
-          <strong>Best-case pilot.</strong> Vox’s prose was written to justify a
-          number the team had already agreed, so this shows the reading step can
-          work, not that it works on mushy op-eds.
+          A lot of calibration work is needed on our harness. This page shows efforts on 
+          just one test.
+        </p>
+
+        <p>
+          Vox’s "X things we think will happen in 20xx" is chosen as a test 
+          case because they include both explicit probability values as well as 
+          verbal reasoning. This helps us test our calibration.
         </p>
         <p>
-          Stated probabilities come from Vox; model and human estimates are
+          The stated probabilities come from Vox. Model and human estimates are
           inferred. Export: <time>{voxPilot.generated}</time>. All analyses
           below use the full pilot; filters apply only to the item table.
         </p>
