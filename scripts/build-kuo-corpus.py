@@ -2,6 +2,7 @@
 Run from any directory to regenerate public/data/kuo-forecasts.json.
 """
 import json
+from apple_review import apply_review
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sources = {}; claims = []
@@ -243,6 +244,7 @@ def write():
   if row['status']=='Not assessed' and any(term in (row['target']+' '+row['title']).lower() for term in ['production','manufactur']): row['timing']='Not assessed'
   if row['familyId'] in ['airpower','imac-pro-roadmap','foldable-ipad','foldable-iphone'] and row['status']=='Contradicted': row['timing']='Overdue'
  result = dict(asOf='2026-09-07', scope='Selective historical Kuo corpus, 2015 onward; distinct dated claims and revisions, not a complete census or career accuracy estimate.', sources=sources, claims=claims)
+ result = apply_review(result, 'kuo')
  (ROOT/'public/data/kuo-forecasts.json').write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
- print(len(claims), 'claims;',len(sources),'sources')
+ print(len(result['claims']), 'claims;',len(result['sources']),'sources')
 if __name__=='__main__': write()

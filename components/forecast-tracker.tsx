@@ -7,12 +7,15 @@ import {
   ArrowUpRight,
   BookOpen,
   ChevronRight,
-  Cpu,
   FileText,
-  Layers,
+  Home as HomeIcon,
+  Info,
+  LineChart,
   Radio,
+  Ruler,
   Smartphone,
-  Users,
+  Target,
+  Trophy,
 } from 'lucide-react';
 import {
   Sidebar,
@@ -55,20 +58,51 @@ import { AppleLaunchTable } from '@/components/apple-launch-table';
 import { GurmanOverview } from '@/components/gurman-overview';
 import { KuoOverview } from '@/components/kuo-overview';
 import { GradingRubric } from '@/components/grading-rubric';
+import { ResearchStatus } from '@/components/research-status';
+import { VoxPilot } from '@/components/vox-pilot';
+import { MushyQuestions } from '@/components/mushy-questions';
+import { MushyCalibration } from '@/components/mushy-calibration';
+import { OntologyOverview } from '@/components/ontology-overview';
+import { rungForClaim } from '@/lib/ontology';
+import { HomeOverview } from '@/components/home-overview';
+import {
+  About,
+  EssayScoring,
+  ResearchOverview,
+  VibesScoring,
+} from '@/components/static-pages';
+import { mushyData } from '@/lib/mushy';
 
 type View =
   | EssaySlug
+  | 'home'
+  | 'essays'
+  | 'vibes-scoring'
+  | 'essay-scoring'
+  | 'about'
+  | 'research-checklist'
   | 'all'
   | 'models'
   | 'products'
   | 'capabilities'
   | 'people'
   | 'method'
+  | 'research'
+  | 'research-vox'
+  | 'research-mushy'
+  | 'research-calibration'
+  | 'research-ontology'
   | 'andrew-curran'
   | 'mark-gurman'
   | 'ming-chi-kuo'
   | 'apple-launches';
 const titles: Record<View, string> = {
+  home: 'Hindsight Research',
+  essays: 'Major AI essays',
+  'vibes-scoring': 'Scoring system: quantifying vibes',
+  'essay-scoring': 'Scoring system: essays',
+  about: 'About',
+  'research-checklist': 'Internal checklist',
   'ai-2027': 'AI 2027',
   'ai-2040-plan-a': 'AI 2040: Plan A',
   'situational-awareness': 'Situational Awareness',
@@ -78,12 +112,37 @@ const titles: Record<View, string> = {
   capabilities: 'Capabilities & adoption',
   people: 'People',
   method: 'Grading rubric',
+  research: 'Research',
+  'research-vox': 'Vox pilot',
+  'research-mushy': 'Pundit priors',
+  'research-calibration': 'Leaderboard',
+  'research-ontology': 'How we grade',
   'andrew-curran': 'Andrew Curran',
   'mark-gurman': 'Mark Gurman',
   'ming-chi-kuo': 'Ming-Chi Kuo',
   'apple-launches': 'Apple launch dates',
 };
 const descriptions: Record<View, string> = {
+  home: 'What did pundits and analysts believe? How accurate were they?',
+  essays:
+    'Longer essays about AI, broken down into individual claims and graded on current evidence.',
+  'vibes-scoring':
+    'How we convert vibes into probabilities and score implicit predictions.',
+  'essay-scoring':
+    'Rubric 0.2: a sealed reading of each claim, then a verdict with cited evidence.',
+  about: 'What this project is, and how it works.',
+  'research-checklist':
+    'Internal working checklist for the research pipeline. Not linked from the navigation.',
+  research:
+    'Where the project stands: early findings, current work, and what is not yet reliable.',
+  'research-vox':
+    'Vox Future Perfect, 2019–2026. Recover the author’s stated probability with the number hidden.',
+  'research-mushy':
+    'What pundits implied over time, against markets, Metaculus and the outcome.',
+  'research-calibration':
+    'How well pundits’ implied probabilities matched outcomes, by author and outlet.',
+  'research-ontology':
+    'Claim verdicts and inferred priors: two kinds of grading, with explicit rungs and provenance.',
   'ai-2027': 'A scenario of AI research automation and two possible endings.',
   'ai-2040-plan-a':
     'A proposed path to a slower, internationally governed transition.',
@@ -103,10 +162,55 @@ const descriptions: Record<View, string> = {
   'andrew-curran': 'AI reporting and commentary · @AndrewCurran_',
   'mark-gurman': 'Technology reporting · 2015–2026 historical dossier',
   'ming-chi-kuo':
-    'Apple supply-chain forecasts · 2015–2025 reports, evaluated September 2026',
+    'Apple supply-chain forecasts · 2015–2026 reports, reviewed November 2026',
   'apple-launches':
     'A reusable reference for announcement dates, orders, and availability—linked to forecast evaluations.',
 };
+/** Update when publishing changes to the site. */
+const LAST_UPDATED = '15 November 2026';
+const SECTIONS: [string, View[]][] = [
+  [
+    'Quantifying vibes',
+    ['research-mushy', 'research-calibration', 'vibes-scoring'],
+  ],
+  [
+    'Explicit forecasts',
+    [
+      'all',
+      'models',
+      'products',
+      'capabilities',
+      'people',
+      'method',
+      'andrew-curran',
+      'mark-gurman',
+      'ming-chi-kuo',
+      'apple-launches',
+    ],
+  ],
+  [
+    'Essay evaluations',
+    [
+      'essays',
+      'essay-scoring',
+      'ai-2027',
+      'ai-2040-plan-a',
+      'situational-awareness',
+    ],
+  ],
+  [
+    'The project',
+    [
+      'research',
+      'research-checklist',
+      'research-vox',
+      'research-ontology',
+      'about',
+    ],
+  ],
+];
+const sectionOf = (view: View) =>
+  SECTIONS.find(([, views]) => views.includes(view))?.[0] ?? 'Home';
 function Status({ value }: { value: Claim['status'] }) {
   return (
     <span
@@ -117,104 +221,151 @@ function Status({ value }: { value: Claim['status'] }) {
     </span>
   );
 }
-function Navigation({
-  view,
-  change,
-}: {
-  view: View;
-  change: (view: View) => void;
-}) {
+type NavItem = {
+  label: string;
+  href: string;
+  views: View[];
+  Icon: typeof BookOpen;
+};
+const NAV: { group: string | null; items: NavItem[] }[] = [
+  {
+    group: null,
+    items: [{ label: 'Home', href: '/', views: ['home'], Icon: HomeIcon }],
+  },
+  {
+    group: 'QUANTIFYING VIBES',
+    items: [
+      {
+        label: 'Pundit priors',
+        href: '/research/mushy',
+        views: ['research-mushy'],
+        Icon: LineChart,
+      },
+      {
+        label: 'Leaderboard',
+        href: '/research/calibration',
+        views: ['research-calibration'],
+        Icon: Trophy,
+      },
+      {
+        label: 'Scoring system',
+        href: '/research/scoring',
+        views: ['vibes-scoring'],
+        Icon: Ruler,
+      },
+    ],
+  },
+  {
+    group: 'EXPLICIT FORECASTS',
+    items: [
+      {
+        label: 'Apple releases',
+        href: '/?view=products',
+        views: [
+          'products',
+          'all',
+          'models',
+          'mark-gurman',
+          'ming-chi-kuo',
+          'andrew-curran',
+          'apple-launches',
+          'people',
+        ],
+        Icon: Smartphone,
+      },
+      {
+        label: 'Scoring system',
+        href: '/?view=method',
+        views: ['method'],
+        Icon: Ruler,
+      },
+    ],
+  },
+  {
+    group: 'ESSAY EVALUATIONS',
+    items: [
+      {
+        label: 'Major AI essays',
+        href: '/essays',
+        views: [
+          'essays',
+          'capabilities',
+          'ai-2027',
+          'ai-2040-plan-a',
+          'situational-awareness',
+        ],
+        Icon: BookOpen,
+      },
+      {
+        label: 'Scoring system',
+        href: '/research/essay-scoring',
+        views: ['essay-scoring'],
+        Icon: Ruler,
+      },
+    ],
+  },
+  {
+    group: 'THE PROJECT',
+    items: [
+      {
+        label: 'Research',
+        href: '/research',
+        views: ['research', 'research-checklist', 'research-ontology'],
+        Icon: FileText,
+      },
+      {
+        label: 'Calibration',
+        href: '/research/vox',
+        views: ['research-vox'],
+        Icon: Target,
+      },
+      { label: 'About', href: '/about', views: ['about'], Icon: Info },
+    ],
+  },
+];
+function Navigation({ view }: { view: View }) {
   const { setOpenMobile } = useSidebar();
-  const go = (next: View) => {
-    if (essays.some((essay) => essay.slug === view)) {
-      window.location.assign(`/?view=${next}`);
-      return;
-    }
-    change(next);
-    setOpenMobile(false);
-  };
-  const nav = (key: View, Icon: typeof Layers) => (
-    <SidebarMenuItem key={key}>
-      <SidebarMenuButton
-        className="nav-item"
-        isActive={view === key}
-        onClick={() => go(key)}
-        aria-current={view === key ? 'page' : undefined}
-      >
-        <Icon />
-        <span>{titles[key]}</span>
-      </SidebarMenuButton>
-    </SidebarMenuItem>
-  );
   return (
     <Sidebar className="site-sidebar">
       <SidebarHeader className="brand">
         <Radio size={21} strokeWidth={1.8} />
-        <span>Forecast Index</span>
+        <span className="brand-name">
+          <span>Hindsight Research</span>
+          <span className="brand-version">v0.2</span>
+        </span>
       </SidebarHeader>
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>EXPLORE</SidebarGroupLabel>
-          <SidebarMenu>
-            {nav('all', Layers)}
-            {nav('people', Users)}
-          </SidebarMenu>
-        </SidebarGroup>
-        <SidebarGroup>
-          <SidebarGroupLabel>FORECAST TYPES</SidebarGroupLabel>
-          <SidebarMenu>
-            {nav('models', Cpu)}
-            {nav('products', Smartphone)}
-            {nav('capabilities', BookOpen)}
-          </SidebarMenu>
-        </SidebarGroup>
-        <SidebarGroup>
-          <SidebarGroupLabel>ESSAY EVALUATIONS</SidebarGroupLabel>
-          <SidebarMenu>
-            {essays.map((essay) => (
-              <SidebarMenuItem key={essay.slug}>
-                <SidebarMenuButton
-                  className="nav-item"
-                  isActive={view === essay.slug}
-                  render={
-                    <Link
-                      href={`/essays/${essay.slug}`}
-                      aria-label={essay.title}
-                      aria-current={view === essay.slug ? 'page' : undefined}
-                    />
-                  }
-                >
-                  <BookOpen />
-                  <span>{essay.title}</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            ))}
-          </SidebarMenu>
-        </SidebarGroup>
-        <SidebarGroup>
-          <SidebarGroupLabel>PEOPLE</SidebarGroupLabel>
-          <SidebarMenu>
-            {nav('andrew-curran', FileText)}
-            {nav('mark-gurman', FileText)}
-            {nav('ming-chi-kuo', FileText)}
-          </SidebarMenu>
-        </SidebarGroup>
-        <SidebarGroup>
-          <SidebarGroupLabel>THE PROJECT</SidebarGroupLabel>
-          <SidebarMenu>
-            {nav('apple-launches', Smartphone)}
-            {nav('method', BookOpen)}
-          </SidebarMenu>
-        </SidebarGroup>
+        {NAV.map(({ group, items }) => (
+          <SidebarGroup key={group ?? 'top'}>
+            {group && <SidebarGroupLabel>{group}</SidebarGroupLabel>}
+            <SidebarMenu>
+              {items.map(({ label, href, views, Icon }) => {
+                const active = views.includes(view);
+                return (
+                  <SidebarMenuItem key={href}>
+                    <SidebarMenuButton
+                      className="nav-item"
+                      isActive={active}
+                      render={
+                        <Link
+                          href={href}
+                          onClick={() => setOpenMobile(false)}
+                          aria-current={active ? 'page' : undefined}
+                        />
+                      }
+                    >
+                      <Icon />
+                      <span>{label}</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
+            </SidebarMenu>
+          </SidebarGroup>
+        ))}
       </SidebarContent>
       <SidebarFooter className="sidebar-note">
-        <span className="pilot-label">Pilot research</span>
-        <p>
-          A growing corpus.
-          <br />
-          An auditable record.
-        </p>
-        <span>Started September 2026</span>
+        <span>Site last updated {LAST_UPDATED}</span>
       </SidebarFooter>
     </Sidebar>
   );
@@ -426,9 +577,12 @@ function ClaimDetail({
   );
 }
 export default function ForecastTracker({
-  initialView = 'all',
+  initialView = 'home',
+  initialQid,
 }: {
   initialView?: View;
+  /** Pundit priors: question to open first. */
+  initialQid?: string;
 }) {
   const [view, updateView] = useState<View>(initialView);
   const [query, setQuery] = useState('');
@@ -481,29 +635,70 @@ export default function ForecastTracker({
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
-      <Navigation view={view} change={setView} />
+      <Navigation view={view} />
       <SidebarInset>
         <header className="topbar">
           <div className="breadcrumb">
             <SidebarTrigger className="sidebar-toggle" />
-            <span>Research</span>
-            <ChevronRight size={13} aria-hidden="true" />
-            <span>{titles[view]}</span>
+            <span>{sectionOf(view)}</span>
+            {view !== 'home' && (
+              <>
+                <ChevronRight size={13} aria-hidden="true" />
+                <span>{titles[view]}</span>
+              </>
+            )}
           </div>
-          <span className="edition">7 September 2026</span>
+          <span className="edition">{LAST_UPDATED}</span>
         </header>
         <div id="main-content" className="page-content" tabIndex={-1}>
           <div className="page-heading">
-            <div className="eyebrow">AI & TECHNOLOGY</div>
+            <div className="eyebrow">
+              {view === 'home' ? 'Version 0.2' : sectionOf(view).toUpperCase()}
+            </div>
             <h1>{titles[view]}</h1>
             <p className="intro">{descriptions[view]}</p>
           </div>
           {essay ? (
             <EssayEvaluation essay={essay} />
+          ) : view === 'home' ? (
+            <HomeOverview />
+          ) : view === 'essays' ? (
+            <EssayCollection />
+          ) : view === 'vibes-scoring' ? (
+            <VibesScoring />
+          ) : view === 'essay-scoring' ? (
+            <EssayScoring />
+          ) : view === 'about' ? (
+            <About />
           ) : view === 'apple-launches' ? (
             <AppleLaunchTable claims={claims} select={setSelected} />
           ) : view === 'method' ? (
             <GradingRubric />
+          ) : view === 'research' ? (
+            <ResearchOverview
+              questions={mushyData.questions.length}
+              readings={
+                mushyData.questions
+                  .flatMap((q) => q.points)
+                  .filter(
+                    (p) => p.p != null && p.reader === mushyData.readers[0],
+                  ).length
+              }
+              references={mushyData.questions.reduce(
+                (n, q) => n + q.series.length,
+                0,
+              )}
+            />
+          ) : view === 'research-checklist' ? (
+            <ResearchStatus />
+          ) : view === 'research-vox' ? (
+            <VoxPilot />
+          ) : view === 'research-mushy' ? (
+            <MushyQuestions initialQid={initialQid} />
+          ) : view === 'research-calibration' ? (
+            <MushyCalibration />
+          ) : view === 'research-ontology' ? (
+            <OntologyOverview />
           ) : view === 'people' ? (
             <div className="people-list">
               {people.map((p) => (
@@ -740,7 +935,13 @@ export default function ForecastTracker({
                           </span>
                         </TableCell>
                         <TableCell>
-                          <Status value={c.status} />
+                          <Status value={c.status} />{' '}
+                          <span
+                            className="status status-neutral hindsight-badge"
+                            title="Commitment rung"
+                          >
+                            {rungForClaim(c)}
+                          </span>
                           <span className="cell-note">{c.statusNote}</span>
                         </TableCell>
                         <TableCell>
@@ -849,8 +1050,10 @@ export default function ForecastTracker({
             </>
           )}
           <footer className="page-footer">
-            <span>Forecast Index</span>
-            <span>Sources first. Conclusions revisable.</span>
+            <span>Hindsight Research</span>
+            <span>
+              Project is in early testing. All numbers are subject to revision.
+            </span>
           </footer>
         </div>
       </SidebarInset>

@@ -1,3 +1,4 @@
+from apple_review import apply_review
 """Curated Apple launch dates, backed by first-party newsroom references.
 Dates are ISO calendar dates in the first launch market, normally the US.
 Empty dates are deliberately unknown, never inferred from the announcement.
@@ -282,6 +283,6 @@ if __name__=='__main__':
   row['milestoneSources']={field:row['sources'][i]['url'] if row[field] else None for field,i in zip(['announcementDate','orderDate','availabilityDate'],indices)}
   for source in row['sources']:
    source['publishedDate']=datetime.strptime(source['publishedText'],'%B %d, %Y').strftime('%Y-%m-%d')
- (ROOT/'public/data/apple-launches.json').write_text(json.dumps({'asOf':'2026-09-05','scope':'Major product generations and selected services, 2015–2026; exact dates only when sourced. Not a complete SKU inventory.','launches':rows},indent=2,ensure_ascii=False)+'\n')
+ (ROOT/'public/data/apple-launches.json').write_text(json.dumps(apply_review({'asOf':'2026-09-05','scope':'Major product generations and selected services, 2015–2026; exact dates only when sourced. Not a complete SKU inventory.','launches':rows}, 'launches'),indent=2,ensure_ascii=False)+'\n')
  (CACHE/'all.json').write_text(json.dumps(fetched,indent=2,ensure_ascii=False))
  print('LAUNCHES',len(rows),'SOURCES',len(set(s['url'] for row in rows for s in row['sources'])))

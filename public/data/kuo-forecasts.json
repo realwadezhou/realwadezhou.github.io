@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-07",
+  "asOf": "2026-11-13",
   "scope": "Selective historical Kuo corpus, 2015 onward; distinct dated claims and revisions, not a complete census or career accuracy estimate.",
   "sources": {
     "k15pencil": {
@@ -498,9 +498,319 @@
       "url": "https://www.macrumors.com/2025/03/06/kuo-apple-foldable-iphone-book-style-2000/",
       "label": "Kuo attribution · first foldable iPhone specifications",
       "evidence": "Attributed",
-      "note": "Displayed March 5 Pacific, URL March 6. Future product specifications remain pending as of September 7, 2026; no announcement assumed.",
-      "accessed": "2026-09-07",
+      "note": "Displayed March 5 Pacific; URL and machine timestamp March 6 UTC. Dated public attribution re-read locally for the explicit above-$2,000 threshold and authentication scope. Original Kuo note not independently retrieved.",
+      "accessed": "2026-11-14",
       "access": "Read"
+    },
+    "kcatch-00": {
+      "id": "kcatch-00",
+      "date": "2026-08-10",
+      "url": "https://www.macrumors.com/2026/08/10/apple-cutting-2026-hardware-shipments/",
+      "label": "Kuo attribution · Apple Cutting Back 2026 Hardware Shipments Due to Memory Shortage",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-01": {
+      "id": "kcatch-01",
+      "date": "2026-07-05",
+      "url": "https://www.macrumors.com/2026/07/05/foldable-iphone-to-repeat-iphone-x-story/",
+      "label": "Kuo attribution · 'iPhone Ultra' Likely to 'Repeat the iPhone X Story' With Delayed Launch",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-02": {
+      "id": "kcatch-02",
+      "date": "2026-06-08",
+      "url": "https://www.macrumors.com/2026/06/08/gemini-could-be-the-ceiling-on-apple-ai-ambitions/",
+      "label": "Kuo attribution · Google Gemini Could Be the Ceiling on Apple's AI Ambitions",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-03": {
+      "id": "kcatch-03",
+      "date": "2026-06-03",
+      "url": "https://www.macrumors.com/2026/06/03/kuo-vision-pro-successors-nixed/",
+      "label": "Kuo attribution · Kuo: Apple's Vision Pro Successors Off the Table as Focus Shifts to Smart Glasses",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-04": {
+      "id": "kcatch-04",
+      "date": "2026-06-03",
+      "url": "https://www.macrumors.com/2026/06/03/macbook-neo-production-doubled-says-kuo/",
+      "label": "Kuo attribution · MacBook Neo is So Popular That Apple Reportedly Doubled Production",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-05": {
+      "id": "kcatch-05",
+      "date": "2026-05-29",
+      "url": "https://www.macrumors.com/2026/05/29/iphone-18-pros-camera-upgrade-will-cost-more/",
+      "label": "Kuo attribution · iPhone 18 Pro's Camera Upgrade Will Cost Apple 50% More",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-06": {
+      "id": "kcatch-06",
+      "date": "2026-05-14",
+      "url": "https://www.macrumors.com/2026/05/14/kuo-intel-iphone-ipad-mac-chips/",
+      "label": "Kuo attribution · Report: Intel is Testing Production of Some iPhone, iPad, and Mac Chips",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-07": {
+      "id": "kcatch-07",
+      "date": "2026-05-05",
+      "url": "https://www.macrumors.com/2026/05/05/openai-fast-tracking-ai-phone-2027/",
+      "label": "Kuo attribution · OpenAI Fast-Tracking AI Phone for 2027 Launch, Says Kuo",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-08": {
+      "id": "kcatch-08",
+      "date": "2026-04-27",
+      "url": "https://www.macrumors.com/2026/04/27/openai-working-on-an-ai-smartphone/",
+      "label": "Kuo attribution · OpenAI Reportedly Working on an AI Smartphone to Rival iPhone",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-09": {
+      "id": "kcatch-09",
+      "date": "2026-03-11",
+      "url": "https://www.macrumors.com/2026/03/11/macbook-pro-major-upgrade/",
+      "label": "Kuo attribution · MacBook Pro to Receive 'Major Upgrade' by Early Next Year",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-10": {
+      "id": "kcatch-10",
+      "date": "2026-03-11",
+      "url": "https://www.macrumors.com/2026/03/11/kuo-iphone-18-pro-prices-hold-firm/",
+      "label": "Kuo attribution · Kuo: iPhone 18 Pro Prices Still Likely to Hold Firm This Year",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-11": {
+      "id": "kcatch-11",
+      "date": "2026-03-11",
+      "url": "https://www.macrumors.com/2026/03/11/kuo-macbook-neo-2-no-touchscreen/",
+      "label": "Kuo attribution · MacBook Neo 2 Might Not Feature Touchscreen After All",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-12": {
+      "id": "kcatch-12",
+      "date": "2026-03-08",
+      "url": "https://www.macrumors.com/2026/03/08/macbook-neo-2-could-feature-touchscreen/",
+      "label": "Kuo attribution · MacBook Neo 2 Could Feature Touchscreen",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-13": {
+      "id": "kcatch-13",
+      "date": "2026-02-11",
+      "url": "https://www.macrumors.com/2026/02/11/where-is-airtag-2s-missing-feature/",
+      "label": "Kuo attribution · Where Is AirTag 2's Missing Feature?",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-14": {
+      "id": "kcatch-14",
+      "date": "2026-01-27",
+      "url": "https://www.macrumors.com/2026/01/27/apple-iphone-18-starting-price-steady/",
+      "label": "Kuo attribution · Apple to Keep iPhone 18 Starting Price Steady Despite Rising Memory Costs",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-15": {
+      "id": "kcatch-15",
+      "date": "2026-01-13",
+      "url": "https://www.macrumors.com/2026/01/13/apple-google-ai-deal-is-temporary/",
+      "label": "Kuo attribution · Kuo: Apple's AI Deal With Google Is Temporary and Buys It Time",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-16": {
+      "id": "kcatch-16",
+      "date": "2025-12-18",
+      "url": "https://www.macrumors.com/2025/12/18/foldable-iphone-shortages-into-2027/",
+      "label": "Kuo attribution · Kuo: iPhone Fold Production Challenges Could Limit Supply Next Year",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-17": {
+      "id": "kcatch-17",
+      "date": "2025-11-28",
+      "url": "https://www.macrumors.com/2025/11/28/intel-rumored-to-supply-new-mac-chip/",
+      "label": "Kuo attribution · Apple and Intel Rumored to Partner on Mac Chips Again in a New Way",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-18": {
+      "id": "kcatch-18",
+      "date": "2025-10-22",
+      "url": "https://www.macrumors.com/2025/10/22/iphone-air-supply-chain-cuts/",
+      "label": "Kuo attribution · Apple's iPhone Air Experiment Fails as Supply Chain Cuts Production by 80%",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-19": {
+      "id": "kcatch-19",
+      "date": "2025-10-13",
+      "url": "https://www.macrumors.com/2025/10/13/foldable-iphone-could-be-cheaper-than-expected/",
+      "label": "Kuo attribution · Apple's Foldable iPhone Could Be Cheaper Than Expected",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-20": {
+      "id": "kcatch-20",
+      "date": "2025-09-17",
+      "url": "https://www.macrumors.com/2025/09/17/macbook-with-iphone-chip-production-rumor/",
+      "label": "Kuo attribution · $599 MacBook With iPhone Chip Expected to Enter Production This Year",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-21": {
+      "id": "kcatch-21",
+      "date": "2025-09-17",
+      "url": "https://www.macrumors.com/2025/09/17/kuo-2026-oled-macbook-pro-touch-panel/",
+      "label": "Kuo attribution · Kuo: OLED MacBook Pro to Feature Touch Screen Display",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-22": {
+      "id": "kcatch-22",
+      "date": "2025-09-15",
+      "url": "https://www.macrumors.com/2025/09/15/high-demand-for-iphone-17-but-questions-about-air/",
+      "label": "Kuo attribution · Kuo: High Demand for iPhone 17 Models, But Questions Remain About iPhone Air",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-23": {
+      "id": "kcatch-23",
+      "date": "2025-09-07",
+      "url": "https://www.macrumors.com/2025/09/07/iphone-19-samsung-camera-sensor-rumor/",
+      "label": "Kuo attribution · iPhone 18 Rumor Becomes iPhone 19 Rumor Two Days Before iPhone 17",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-24": {
+      "id": "kcatch-24",
+      "date": "2025-09-07",
+      "url": "https://www.macrumors.com/2025/09/07/airpods-pro-3-this-year-per-kuo/",
+      "label": "Kuo attribution · Kuo: AirPods Pro 3 Coming Soon, But Bigger Upgrade Arriving Next Year",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-25": {
+      "id": "kcatch-25",
+      "date": "2025-09-01",
+      "url": "https://www.macrumors.com/2025/09/01/foldable-iphone-under-screen-touch-id-dismissed/",
+      "label": "Kuo attribution · Foldable iPhone Under-Screen Touch ID Rumor Dismissed by Analyst",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-26": {
+      "id": "kcatch-26",
+      "date": "2025-08-12",
+      "url": "https://www.macrumors.com/2025/08/12/kuo-on-iphone-18-a20-chip-packaging/",
+      "label": "Kuo attribution · A20 Chips in iPhone 18 Models Again Rumored to Feature New Design",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-27": {
+      "id": "kcatch-27",
+      "date": "2025-08-12",
+      "url": "https://www.macrumors.com/2025/08/12/macbook-pro-with-m5-chips-2026-rumor/",
+      "label": "Kuo attribution · MacBook Pro Models With M5 Chips Might Not Launch Until Next Year",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-28": {
+      "id": "kcatch-28",
+      "date": "2025-07-17",
+      "url": "https://www.macrumors.com/2025/07/17/foldable-iphone-galaxy-z-fold-8-crease-free/",
+      "label": "Kuo attribution · Foldable iPhone and Samsung's Galaxy Z Fold 8 Both Expected to Have 'Crease-Free' Screen",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-29": {
+      "id": "kcatch-29",
+      "date": "2025-07-15",
+      "url": "https://www.macrumors.com/2025/07/15/foldable-iphone-crease-free-samsung-display/",
+      "label": "Kuo attribution · Foldable iPhone Said to Feature 'Crease-Free' Display — Here's How",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
+    },
+    "kcatch-30": {
+      "id": "kcatch-30",
+      "date": "2025-06-30",
+      "url": "https://www.macrumors.com/2025/06/30/report-reveals-apple-vision-roadmap/",
+      "label": "Kuo attribution · Report Reveals Apple's Secretive Vision Products Roadmap",
+      "evidence": "Attributed",
+      "access": "Read",
+      "accessed": "2026-11-14",
+      "note": "Dated MacRumors report explicitly attributes the recorded claim to Kuo. Underlying original report not independently retrieved. Retrospective capture; no unchanged pre-outcome snapshot claimed."
     }
   },
   "claims": [
@@ -525,7 +835,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-002",
@@ -548,7 +864,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-003",
@@ -571,7 +893,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-004",
@@ -593,7 +921,13 @@
       "note": "The recovered report does not pin launch to announcement or customer availability; the distinction changes the result.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. The recovered report does not pin launch to announcement or customer availability; the distinction changes the result."
+        }
+      ]
     },
     {
       "id": "K-005",
@@ -615,7 +949,13 @@
       "note": "Do not treat an unlisted sensor in a press release as proof of absence.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. Do not treat an unlisted sensor in a press release as proof of absence."
+        }
+      ]
     },
     {
       "id": "K-006",
@@ -637,7 +977,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-007",
@@ -659,7 +1005,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-008",
@@ -681,7 +1033,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-009",
@@ -703,7 +1061,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-010",
@@ -725,7 +1089,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-011",
@@ -747,7 +1117,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-012",
@@ -769,7 +1145,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-013",
@@ -791,7 +1173,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. "
+        }
+      ]
     },
     {
       "id": "K-014",
@@ -813,7 +1201,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. "
+        }
+      ]
     },
     {
       "id": "K-015",
@@ -835,7 +1229,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-016",
@@ -857,7 +1257,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-017",
@@ -879,7 +1285,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-018",
@@ -901,7 +1313,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-019",
@@ -923,7 +1341,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-020",
@@ -945,7 +1369,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-021",
@@ -967,7 +1397,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-022",
@@ -989,7 +1425,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-023",
@@ -1011,7 +1453,13 @@
       "note": "Naming ambiguity is retained rather than silently matching a different product name.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. Naming ambiguity is retained rather than silently matching a different product name."
+        }
+      ]
     },
     {
       "id": "K-024",
@@ -1033,7 +1481,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-025",
@@ -1055,7 +1509,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-026",
@@ -1077,7 +1537,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-027",
@@ -1099,7 +1565,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-028",
@@ -1121,7 +1593,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-029",
@@ -1143,7 +1621,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-030",
@@ -1165,7 +1649,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-031",
@@ -1188,7 +1678,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-032",
@@ -1210,7 +1706,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-033",
@@ -1232,7 +1734,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-034",
@@ -1254,7 +1762,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-035",
@@ -1276,7 +1790,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-036",
@@ -1298,7 +1818,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-037",
@@ -1320,7 +1846,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-038",
@@ -1342,7 +1874,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-039",
@@ -1364,7 +1902,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-040",
@@ -1386,7 +1930,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-041",
@@ -1408,7 +1958,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-042",
@@ -1430,7 +1986,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-043",
@@ -1452,7 +2014,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-044",
@@ -1474,7 +2042,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-045",
@@ -1496,7 +2070,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-046",
@@ -1522,7 +2102,13 @@
         "strict": true
       },
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-047",
@@ -1544,7 +2130,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-048",
@@ -1570,7 +2162,13 @@
         "strict": true
       },
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-049",
@@ -1592,7 +2190,13 @@
       "note": "The quoted note says touch panel, not a full graphical touchscreen; the headline is stronger than the recovered wording.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. The quoted note says touch panel, not a full graphical touchscreen; the headline is stronger than the recovered wording."
+        }
+      ]
     },
     {
       "id": "K-050",
@@ -1615,7 +2219,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-051",
@@ -1638,7 +2248,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-052",
@@ -1661,7 +2277,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-053",
@@ -1684,7 +2306,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-054",
@@ -1707,7 +2335,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-055",
@@ -1730,7 +2364,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-056",
@@ -1752,7 +2392,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. "
+        }
+      ]
     },
     {
       "id": "K-057",
@@ -1775,7 +2421,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-058",
@@ -1798,7 +2450,13 @@
       "note": "Matched possibility; excluded from expectation-only totals.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. Matched possibility; excluded from expectation-only totals."
+        }
+      ]
     },
     {
       "id": "K-059",
@@ -1821,7 +2479,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-060",
@@ -1844,7 +2508,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-061",
@@ -1867,7 +2537,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-062",
@@ -1890,7 +2566,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-063",
@@ -1913,7 +2595,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-064",
@@ -1936,7 +2624,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-065",
@@ -1958,7 +2652,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-066",
@@ -1980,7 +2680,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-067",
@@ -2002,7 +2708,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-068",
@@ -2024,7 +2736,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-069",
@@ -2046,7 +2764,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-070",
@@ -2068,7 +2792,13 @@
       "note": "This report explicitly says Kuo revised his earlier Air-family identification; the exclusion is assessed as written.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. This report explicitly says Kuo revised his earlier Air-family identification; the exclusion is assessed as written."
+        }
+      ]
     },
     {
       "id": "K-071",
@@ -2090,7 +2820,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-072",
@@ -2112,7 +2848,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-073",
@@ -2132,7 +2874,13 @@
       "note": "Retail availability is not a substitute for a production date.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. Retail availability is not a substitute for a production date."
+        }
+      ]
     },
     {
       "id": "K-074",
@@ -2155,7 +2903,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-075",
@@ -2178,7 +2932,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-076",
@@ -2200,7 +2960,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-077",
@@ -2222,7 +2988,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-078",
@@ -2244,7 +3016,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-079",
@@ -2266,7 +3044,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-080",
@@ -2288,7 +3072,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-081",
@@ -2310,7 +3100,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-082",
@@ -2330,7 +3126,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. "
+        }
+      ]
     },
     {
       "id": "K-083",
@@ -2352,7 +3154,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-084",
@@ -2374,7 +3182,13 @@
       "note": "The sentence gives no explicit date; not counted as an on-time 2019 hit.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. The sentence gives no explicit date; not counted as an on-time 2019 hit."
+        }
+      ]
     },
     {
       "id": "K-085",
@@ -2396,7 +3210,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-086",
@@ -2418,7 +3238,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. "
+        }
+      ]
     },
     {
       "id": "K-087",
@@ -2440,7 +3266,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-088",
@@ -2462,7 +3294,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-089",
@@ -2485,7 +3323,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-090",
@@ -2507,7 +3351,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-091",
@@ -2527,7 +3377,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-092",
@@ -2549,7 +3405,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-093",
@@ -2571,7 +3433,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-094",
@@ -2594,7 +3462,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-095",
@@ -2617,7 +3491,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-096",
@@ -2640,7 +3520,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-097",
@@ -2663,7 +3549,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-098",
@@ -2686,7 +3578,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-099",
@@ -2709,7 +3607,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-100",
@@ -2731,7 +3635,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-101",
@@ -2753,7 +3663,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-102",
@@ -2775,7 +3691,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-103",
@@ -2797,7 +3719,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-104",
@@ -2819,7 +3747,13 @@
       "note": "Approximate count, not an exact 10,000 requirement.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. Approximate count, not an exact 10,000 requirement."
+        }
+      ]
     },
     {
       "id": "K-105",
@@ -2841,7 +3775,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-106",
@@ -2863,7 +3803,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-107",
@@ -2886,7 +3832,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-108",
@@ -2908,7 +3860,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-109",
@@ -2930,7 +3888,13 @@
       "note": "Do not borrow the over-ear detail from the article’s separate discussion of Gurman.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. Do not borrow the over-ear detail from the article’s separate discussion of Gurman."
+        }
+      ]
     },
     {
       "id": "K-110",
@@ -2950,7 +3914,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. "
+        }
+      ]
     },
     {
       "id": "K-111",
@@ -2973,7 +3943,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-112",
@@ -2995,7 +3971,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-113",
@@ -3018,7 +4000,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. "
+        }
+      ]
     },
     {
       "id": "K-114",
@@ -3040,7 +4028,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-115",
@@ -3063,7 +4057,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-116",
@@ -3085,7 +4085,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-117",
@@ -3107,7 +4113,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-118",
@@ -3130,7 +4142,13 @@
       "note": "The interval misses whether counted from the June announcement or November first shipment.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. The interval misses whether counted from the June announcement or November first shipment."
+        }
+      ]
     },
     {
       "id": "K-119",
@@ -3152,7 +4170,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-120",
@@ -3174,7 +4198,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-121",
@@ -3196,7 +4226,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-122",
@@ -3218,7 +4254,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-123",
@@ -3240,7 +4282,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-124",
@@ -3262,7 +4310,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-125",
@@ -3284,7 +4338,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. "
+        }
+      ]
     },
     {
       "id": "K-126",
@@ -3306,7 +4366,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-127",
@@ -3328,7 +4394,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-128",
@@ -3350,7 +4422,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-129",
@@ -3372,7 +4450,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-130",
@@ -3394,7 +4478,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-131",
@@ -3418,7 +4508,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-132",
@@ -3442,7 +4538,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-133",
@@ -3466,7 +4568,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-134",
@@ -3488,7 +4596,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-135",
@@ -3510,7 +4624,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-136",
@@ -3533,7 +4653,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. "
+        }
+      ]
     },
     {
       "id": "K-137",
@@ -3556,7 +4682,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-138",
@@ -3578,7 +4710,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-139",
@@ -3600,7 +4738,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-140",
@@ -3622,7 +4766,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-141",
@@ -3644,7 +4794,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-142",
@@ -3666,7 +4822,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-143",
@@ -3688,7 +4850,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. "
+        }
+      ]
     },
     {
       "id": "K-144",
@@ -3710,7 +4878,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-145",
@@ -3732,7 +4906,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-146",
@@ -3754,7 +4934,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-147",
@@ -3776,7 +4962,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-148",
@@ -3798,7 +4990,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-149",
@@ -3820,7 +5018,13 @@
       "note": "One conjunction in the source; the two radio conditions are retained together.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Mixed; provisional. One conjunction in the source; the two radio conditions are retained together."
+        }
+      ]
     },
     {
       "id": "K-150",
@@ -3842,7 +5046,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-151",
@@ -3864,7 +5074,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-152",
@@ -3886,7 +5102,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-153",
@@ -3908,7 +5130,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-154",
@@ -3930,7 +5158,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-155",
@@ -3952,7 +5186,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-156",
@@ -3975,7 +5215,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-157",
@@ -3997,7 +5243,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-158",
@@ -4019,7 +5271,13 @@
       "note": "During Q4 is not a by-year-end deadline. An early launch misses the stated interval.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. During Q4 is not a by-year-end deadline. An early launch misses the stated interval."
+        }
+      ]
     },
     {
       "id": "K-159",
@@ -4041,7 +5299,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-160",
@@ -4063,7 +5327,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-161",
@@ -4085,7 +5355,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-162",
@@ -4108,7 +5384,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-163",
@@ -4130,7 +5412,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-164",
@@ -4152,7 +5440,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-165",
@@ -4175,7 +5469,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. "
+        }
+      ]
     },
     {
       "id": "K-166",
@@ -4197,7 +5497,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-167",
@@ -4219,7 +5525,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. "
+        }
+      ]
     },
     {
       "id": "K-168",
@@ -4241,7 +5553,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-169",
@@ -4263,7 +5581,13 @@
       "note": "Lower retail pricing was the article’s inference, not the exact claim in Kuo’s quoted post.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. Lower retail pricing was the article’s inference, not the exact claim in Kuo’s quoted post."
+        }
+      ]
     },
     {
       "id": "K-170",
@@ -4285,7 +5609,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. "
+        }
+      ]
     },
     {
       "id": "K-171",
@@ -4307,7 +5637,13 @@
       "note": "Retained separately from the October possibility and April reversal.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. Retained separately from the October possibility and April reversal."
+        }
+      ]
     },
     {
       "id": "K-172",
@@ -4329,7 +5665,13 @@
       "note": "This correction does not erase the January forecast.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. This correction does not erase the January forecast."
+        }
+      ]
     },
     {
       "id": "K-173",
@@ -4351,7 +5693,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-174",
@@ -4374,7 +5722,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-175",
@@ -4397,7 +5751,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-176",
@@ -4421,7 +5781,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-177",
@@ -4443,7 +5809,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-178",
@@ -4465,7 +5837,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-179",
@@ -4487,7 +5865,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-180",
@@ -4509,7 +5893,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-181",
@@ -4531,7 +5921,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-182",
@@ -4553,7 +5949,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-183",
@@ -4575,7 +5977,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-184",
@@ -4597,7 +6005,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-185",
@@ -4619,7 +6033,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-186",
@@ -4641,7 +6061,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-187",
@@ -4663,7 +6089,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-188",
@@ -4686,7 +6118,13 @@
       "note": "Observed prices match the conditional direction; Apple’s internal segmentation intention is not independently established.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. Observed prices match the conditional direction; Apple’s internal segmentation intention is not independently established."
+        }
+      ]
     },
     {
       "id": "K-189",
@@ -4708,7 +6146,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-190",
@@ -4731,7 +6175,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. "
+        }
+      ]
     },
     {
       "id": "K-191",
@@ -4753,7 +6203,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-192",
@@ -4775,7 +6231,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-193",
@@ -4797,7 +6259,13 @@
       "note": "The source compares existing 41/45 mm labels with 45/49 mm; these are case labels, even though its prose calls them screen sizes.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. The source compares existing 41/45 mm labels with 45/49 mm; these are case labels, even though its prose calls them screen sizes."
+        }
+      ]
     },
     {
       "id": "K-194",
@@ -4819,7 +6287,13 @@
       "note": "The finish appeared; the internal yield condition is not independently measured.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. The finish appeared; the internal yield condition is not independently measured."
+        }
+      ]
     },
     {
       "id": "K-195",
@@ -4841,7 +6315,13 @@
       "note": "Interpreted as no new hardware generation; cosmetic finish is separately recorded.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. Interpreted as no new hardware generation; cosmetic finish is separately recorded."
+        }
+      ]
     },
     {
       "id": "K-196",
@@ -4863,7 +6343,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-197",
@@ -4885,7 +6371,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-198",
@@ -4907,7 +6399,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-199",
@@ -4929,7 +6427,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-200",
@@ -4951,7 +6455,13 @@
       "note": "The reported 6.6 inches and Apple’s 6.55-inch measurement can agree after rounding; no precision convention was stated. Do not force a size miss.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. The reported 6.6 inches and Apple’s 6.55-inch measurement can agree after rounding; no precision convention was stated. Do not force a size miss."
+        }
+      ]
     },
     {
       "id": "K-201",
@@ -4973,7 +6483,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-202",
@@ -4997,7 +6513,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-203",
@@ -5021,7 +6543,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Contradicted; provisional. "
+        }
+      ]
     },
     {
       "id": "K-204",
@@ -5043,7 +6571,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-205",
@@ -5065,7 +6599,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-206",
@@ -5087,7 +6627,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-207",
@@ -5109,7 +6655,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-208",
@@ -5131,7 +6683,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Unresolvable; provisional. "
+        }
+      ]
     },
     {
       "id": "K-209",
@@ -5153,7 +6711,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-210",
@@ -5175,7 +6739,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. "
+        }
+      ]
     },
     {
       "id": "K-211",
@@ -5197,7 +6767,13 @@
       "note": "Broad color descriptions, not predicted retail color names.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Supported; provisional. Broad color descriptions, not predicted retail color names."
+        }
+      ]
     },
     {
       "id": "K-212",
@@ -5219,7 +6795,13 @@
       "note": "",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-09-07",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Not assessed; provisional. "
+        }
+      ]
     },
     {
       "id": "K-213",
@@ -5228,18 +6810,31 @@
       "category": "iPhone",
       "title": "Book-style first foldable iPhone",
       "target": "First folding iPhone form",
-      "status": "Pending",
-      "outcome": "The first foldable iPhone has not been announced as of this review. Future specifications remain unresolved.",
-      "launchIds": [],
+      "status": "Supported",
+      "outcome": "Apple announced iPhone Duo as its first foldable iPhone, with a book-style folding form and separate inner and outer displays.",
+      "launchIds": [
+        "iphone-duo"
+      ],
       "qualifier": "Reported expectation",
       "kind": "expectation",
       "deadline": null,
       "start": null,
-      "timing": "Pending",
-      "note": "Other reporters’ leaks and expected events are not launch evidence.",
+      "timing": "Not specified",
+      "note": "First-generation feature condition resolved by Apple’s September 9 announcement; older 2023 launch claims retain their missed deadlines.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-11-13",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Pending; provisional. Other reporters’ leaks and expected events are not launch evidence."
+        },
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Pending → Supported. First model now announced and released."
+        }
+      ]
     },
     {
       "id": "K-214",
@@ -5248,18 +6843,31 @@
       "category": "iPhone",
       "title": "Foldable iPhone priced above $2,000",
       "target": "First model US price",
-      "status": "Pending",
-      "outcome": "The first foldable iPhone has not been announced as of this review. Future specifications remain unresolved.",
-      "launchIds": [],
+      "status": "Contradicted",
+      "outcome": "Apple announced a US starting price of $1,999 for iPhone Duo, below the recorded above-$2,000 threshold.",
+      "launchIds": [
+        "iphone-duo"
+      ],
       "qualifier": "Reported expectation",
       "kind": "expectation",
       "deadline": null,
       "start": null,
-      "timing": "Pending",
-      "note": "Other reporters’ leaks and expected events are not launch evidence.",
+      "timing": "Not specified",
+      "note": "The saved attribution explicitly says above $2,000, not approximately $2,000. $1,999 misses this literal lower bound by one dollar; economically close but below the recorded threshold.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-11-13",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Pending; provisional. Other reporters’ leaks and expected events are not launch evidence."
+        },
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Pending → Contradicted. Re-read the attributed source and compared its explicit lower bound with Apple’s US starting price."
+        }
+      ]
     },
     {
       "id": "K-215",
@@ -5268,18 +6876,31 @@
       "category": "iPhone",
       "title": "Foldable iPhone uses Touch ID side button without Face ID",
       "target": "First model authentication",
-      "status": "Pending",
-      "outcome": "The first foldable iPhone has not been announced as of this review. Future specifications remain unresolved.",
-      "launchIds": [],
+      "status": "Supported",
+      "outcome": "Apple’s complete iPhone Duo specification lists side-button Touch ID as its biometric authentication and does not list Face ID or a TrueDepth system.",
+      "launchIds": [
+        "iphone-duo"
+      ],
       "qualifier": "Reported expectation",
       "kind": "expectation",
       "deadline": null,
       "start": null,
-      "timing": "Pending",
-      "note": "Other reporters’ leaks and expected events are not launch evidence.",
+      "timing": "Not specified",
+      "note": "Complete authentication/camera specification checked, supplementing the launch release’s positive Touch ID statement.",
       "probability": null,
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-11-13",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Pending; provisional. Other reporters’ leaks and expected events are not launch evidence."
+        },
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Pending → Supported. Full technical specifications now support the complete authentication condition."
+        }
+      ]
     },
     {
       "id": "K-216",
@@ -5288,18 +6909,2072 @@
       "category": "iPhone",
       "title": "Approximately 7.8-inch inner and 5.5-inch outer displays",
       "target": "First model displays",
+      "status": "Unresolvable",
+      "outcome": "Apple specifies 7.6-inch inner and 5.4-inch outer displays, versus the reported approximately 7.8 and 5.5 inches.",
+      "launchIds": [
+        "iphone-duo"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not specified",
+      "note": "No approximation tolerance was registered. Exact decimal matching fails while a reasonable rough-size interpretation may pass; preserve ambiguity rather than invent a tolerance after the launch.",
+      "probability": null,
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "history": [
+        {
+          "date": "2026-09-07",
+          "change": "Added to historical corpus. Pending; provisional. Other reporters’ leaks and expected events are not launch evidence."
+        },
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Pending → Unresolvable. Approximate screen-size wording admits verdict-changing interpretations."
+        }
+      ]
+    },
+    {
+      "id": "K-217",
+      "sourceId": "kcatch-01",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "Foldable iPhone announced alongside iPhone 18 Pro",
+      "target": "Same announcement event",
+      "status": "Supported",
+      "outcome": "Apple introduced iPhone Duo and both iPhone 18 Pro models on September 9, 2026.",
+      "launchIds": [
+        "iphone-duo",
+        "iphone-18-pro"
+      ],
+      "qualifier": "Likely",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "On time",
+      "note": "",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Supported; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-218",
+      "sourceId": "kcatch-01",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "Foldable iPhone preorders may wait until Q4 2026",
+      "target": "Preorders during Q4 2026",
+      "status": "Supported",
+      "outcome": "Apple set iPhone Duo preorders for October 16, in Q4.",
+      "launchIds": [
+        "iphone-duo"
+      ],
+      "qualifier": "May",
+      "kind": "possibility",
+      "deadline": "2026-12-31",
+      "start": "2026-10-01",
+      "timing": "On time",
+      "note": "Preorder milestone explicitly predicted; do not substitute the September announcement.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Supported; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-219",
+      "sourceId": "kcatch-01",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "Foldable iPhone may reach customers after iPhone 18 Pro",
+      "target": "Relative customer availability",
+      "status": "Supported",
+      "outcome": "Apple specified September 18 availability for iPhone 18 Pro and October 23 for iPhone Duo; the saved October 23 Apple report confirms Duo in stores.",
+      "launchIds": [
+        "iphone-duo",
+        "iphone-18-pro"
+      ],
+      "qualifier": "May",
+      "kind": "possibility",
+      "deadline": null,
+      "start": null,
+      "timing": "On time",
+      "note": "",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Supported; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-220",
+      "sourceId": "kcatch-01",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "Foldable iPhone could start around $2,299–$2,499",
+      "target": "First model US starting price",
+      "status": "Contradicted",
+      "outcome": "Apple announced a $1,999 US starting price for iPhone Duo, below the reported range.",
+      "launchIds": [
+        "iphone-duo"
+      ],
+      "qualifier": "Could; around",
+      "kind": "possibility",
+      "deadline": null,
+      "start": null,
+      "timing": "Not specified",
+      "note": "Retain possibility language and exclude from expectation-only totals. The approximately $300 gap does not depend on the one-dollar threshold issue in K-214.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Contradicted; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-221",
+      "sourceId": "kcatch-01",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "Foldable iPhone could sell out immediately with 4–6-week waits",
+      "target": "Initial preorder stock and delivery estimates",
+      "status": "Not assessed",
+      "outcome": "The saved launch releases establish the preorder date, not initial sell-through or timestamped delivery waits.",
+      "launchIds": [
+        "iphone-duo"
+      ],
+      "qualifier": "Could",
+      "kind": "possibility",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-222",
+      "sourceId": "kcatch-03",
+      "familyId": "apple-smart-glasses",
+      "category": "Vision",
+      "title": "AI smart glasses ship in 2027",
+      "target": "Customer shipment during 2027",
       "status": "Pending",
-      "outcome": "The first foldable iPhone has not been announced as of this review. Future specifications remain unresolved.",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": "2027-12-31",
+      "start": "2027-01-01",
+      "timing": "Pending",
+      "note": "June 2026 revision supersedes roadmap planning, but does not erase earlier dated calls.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-223",
+      "sourceId": "kcatch-03",
+      "familyId": "apple-xr-glasses",
+      "category": "Vision",
+      "title": "Display-equipped AR glasses arrive no earlier than 2029",
+      "target": "Earliest public release year 2029",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
       "launchIds": [],
       "qualifier": "Reported expectation",
       "kind": "expectation",
       "deadline": null,
       "start": null,
       "timing": "Pending",
-      "note": "Other reporters’ leaks and expected events are not launch evidence.",
-      "probability": null,
+      "note": "This revises the June 2025 roadmap. Do not mark the 2028 internal-production prediction wrong solely because Kuo now reports a change.",
       "reviewState": "Provisional",
-      "assessedAt": "2026-09-07"
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-224",
+      "sourceId": "kcatch-05",
+      "familyId": "iphone-18-pro",
+      "category": "iPhone",
+      "title": "iPhone 18 Pro and Pro Max use variable-aperture main cameras",
+      "target": "Named 2026 Pro generation",
+      "status": "Supported",
+      "outcome": "Apple announced variable aperture on the 48MP Fusion Main camera of both iPhone 18 Pro models.",
+      "launchIds": [
+        "iphone-18-pro"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not specified",
+      "note": "New article reiterates Kuo’s earlier camera call; same family, not independent evidence. Earlier original date was not newly recovered.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Supported; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-225",
+      "sourceId": "kcatch-05",
+      "familyId": "iphone-ultra-wide-2028",
+      "category": "iPhone",
+      "title": "2028 iPhone ultra-wide camera moves to chip-on-board packaging",
+      "target": "2028 iPhone camera architecture",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": "2028-12-31",
+      "start": "2028-01-01",
+      "timing": "Pending",
+      "note": "A future component claim; no 2026 launch can resolve it.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-226",
+      "sourceId": "kcatch-06",
+      "familyId": "apple-intel-foundry",
+      "category": "Apple silicon",
+      "title": "Intel fabrication of lower-end Apple chips ramps in 2027–2028",
+      "target": "Manufacturing ramp during 2027–2028",
+      "status": "Not assessed",
+      "outcome": "No independent manufacturing record is in the saved evidence. Product announcement or retail availability cannot establish this production milestone.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "Covers iPhone, iPad and Mac; exact chip generations unspecified. Kept unassessed because no independent fabrication evidence is in this corpus.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-227",
+      "sourceId": "kcatch-09",
+      "familyId": "macbook-pro-oled",
+      "category": "Mac",
+      "title": "OLED MacBook Pro released between late 2026 and early 2027",
+      "target": "Customer release late 2026–early 2027",
+      "status": "Supported",
+      "outcome": "Apple announced OLED MacBook Pro on October 28 with availability November 6, 2026.",
+      "launchIds": [
+        "macbook-pro-oled"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "On time",
+      "note": "Both announcement and stated customer availability fall in late 2026. No exact invented boundary for “early 2027” is stored; the outcome does not depend on it.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Supported; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-228",
+      "sourceId": "kcatch-09",
+      "familyId": "macbook-air-oled",
+      "category": "Mac",
+      "title": "MacBook Air gains OLED in 2028 or 2029",
+      "target": "MacBook Air display generation in 2028–2029",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": "2029-12-31",
+      "start": "2028-01-01",
+      "timing": "Pending",
+      "note": "",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-229",
+      "sourceId": "kcatch-10",
+      "familyId": "iphone-18-pro",
+      "category": "iPhone",
+      "title": "iPhone 18 Pro starting prices stay unchanged",
+      "target": "US starting prices versus iPhone 17 Pro generation",
+      "status": "Contradicted",
+      "outcome": "The article compares against $1,099/$1,199 starting prices; Apple announced iPhone 18 Pro at $1,199 and Pro Max at $1,299.",
+      "launchIds": [
+        "iphone-17-pro",
+        "iphone-18-pro"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not specified",
+      "note": "Attribute unchanged pricing to Kuo; the exact $1,099/$1,199 figures in the article are attributed to Jeff Pu and describe the comparison. Do not attribute Pu’s independent forecast to Kuo.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Contradicted; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-230",
+      "sourceId": "kcatch-11",
+      "familyId": "macbook-neo-2",
+      "category": "Mac",
+      "title": "Second-generation MacBook Neo may omit a touchscreen",
+      "target": "Second MacBook Neo display input",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "May not",
+      "kind": "possibility",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "March 11 revision retained separately from the September 2025 possible-touchscreen call; neither has resolved.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-231",
+      "sourceId": "kcatch-11",
+      "familyId": "macbook-pro-oled",
+      "category": "Mac",
+      "title": "First touchscreen Mac arrives as OLED MacBook Pro in 2026",
+      "target": "First Mac touchscreen and 2026 release",
+      "status": "Supported",
+      "outcome": "Apple announced Touch on Mac for the first time in its October 28 OLED MacBook Pro release, with November 6 availability.",
+      "launchIds": [
+        "macbook-pro-oled"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": "2026-12-31",
+      "start": "2026-01-01",
+      "timing": "On time",
+      "note": "The MacBook Ultra retail name is Gurman/editorial speculation in this article, not extracted as a Kuo claim.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Supported; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-232",
+      "sourceId": "kcatch-14",
+      "familyId": "iphone-18-pricing",
+      "category": "iPhone",
+      "title": "Apple keeps at least iPhone 18 starting prices flat",
+      "target": "Unspecified iPhone 18 model scope",
+      "status": "Unresolvable",
+      "outcome": "The Pro models increased by $100, but the January wording does not distinguish the lowest-priced iPhone 18 from starting prices across all models.",
+      "launchIds": [
+        "iphone-18-pro"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not specified",
+      "note": "Different reasonable readings change the result. March 11 specifically identifies Pro models and is evaluated separately; do not retroactively narrow January wording.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Unresolvable; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-233",
+      "sourceId": "kcatch-15",
+      "familyId": "apple-ai-server",
+      "category": "Apple silicon",
+      "title": "Apple AI server chips enter mass production in H2 2026",
+      "target": "Internal server-chip production window",
+      "status": "Not assessed",
+      "outcome": "No independent manufacturing record is in the saved evidence. Product announcement or retail availability cannot establish this production milestone.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-234",
+      "sourceId": "kcatch-15",
+      "familyId": "apple-ai-server",
+      "category": "Apple silicon",
+      "title": "Apple-operated AI data centers come online in 2027",
+      "target": "Operational data centers during 2027",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": "2027-12-31",
+      "start": "2027-01-01",
+      "timing": "Pending",
+      "note": "The context is new capacity associated with the reported in-house server chips, not any pre-existing Apple data center.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-235",
+      "sourceId": "kcatch-15",
+      "familyId": "apple-google-ai",
+      "category": "Software",
+      "title": "Google AI partnership is a short-term bridge",
+      "target": "Duration of partnership and control of core AI",
+      "status": "Unresolvable",
+      "outcome": "The report provides no defined end date or observable threshold separating a temporary bridge from a long-term partnership.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "development",
+      "deadline": null,
+      "start": null,
+      "timing": "Not specified",
+      "note": "Strategic narrative retained outside binary expectation totals.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Unresolvable; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-236",
+      "sourceId": "kcatch-16",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "Foldable iPhone announced in H2 2026",
+      "target": "Announcement during second half of 2026",
+      "status": "Supported",
+      "outcome": "Apple announced iPhone Duo September 9, 2026.",
+      "launchIds": [
+        "iphone-duo"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": "2026-12-31",
+      "start": "2026-07-01",
+      "timing": "On time",
+      "note": "",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Supported; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-237",
+      "sourceId": "kcatch-16",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "Foldable iPhone could face shortages through end of 2026",
+      "target": "Supply constraints until at least December 31, 2026",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Could",
+      "kind": "possibility",
+      "deadline": "2026-12-31",
+      "start": null,
+      "timing": "Pending",
+      "note": "A launch on October 23 does not establish abundant supply. Timestamped stock or shipment evidence is needed.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-238",
+      "sourceId": "kcatch-17",
+      "familyId": "apple-intel-foundry",
+      "category": "Apple silicon",
+      "title": "Intel may begin shipping the lowest-end Apple M chip as early as mid-2027",
+      "target": "Intel-fabricated Apple M-series chip supply",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "As early as",
+      "kind": "possibility",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "“As early as mid-2027” is not a hard deadline. Intel is the proposed manufacturer, not the chip designer.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-239",
+      "sourceId": "kcatch-17",
+      "familyId": "apple-intel-foundry",
+      "category": "Apple silicon",
+      "title": "First Intel-fabricated Apple M chip uses Intel 18A",
+      "target": "Manufacturing process of reported first Intel-made M chip",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Future supplier/process condition; no inference from present Apple products.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-240",
+      "sourceId": "kcatch-18",
+      "familyId": "iphone-air",
+      "category": "iPhone",
+      "title": "iPhone Air supplier capacity falls by more than 80% by Q1 2026",
+      "target": "Capacity change from October 2025 through Q1 2026",
+      "status": "Not assessed",
+      "outcome": "Apple launch material does not establish this supplier or component-level condition; independent evidence is still required.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "A missing successor or later sales narrative does not quantify capacity.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-241",
+      "sourceId": "kcatch-18",
+      "familyId": "iphone-air",
+      "category": "iPhone",
+      "title": "Some iPhone Air components are discontinued by end of 2025",
+      "target": "Production of components with long lead times",
+      "status": "Not assessed",
+      "outcome": "Apple launch material does not establish this supplier or component-level condition; independent evidence is still required.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "Not a claim that retail iPhone Air is discontinued.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-242",
+      "sourceId": "kcatch-19",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "Foldable iPhone hinge costs approximately $70–$80 at mass production",
+      "target": "Hinge supplier average selling price",
+      "status": "Not assessed",
+      "outcome": "Apple launch material does not establish this supplier or component-level condition; independent evidence is still required.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "Retail price does not identify component cost.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-243",
+      "sourceId": "kcatch-19",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "Luxshare could become another hinge supplier after 2027",
+      "target": "Possible supplier entry after 2027",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Could",
+      "kind": "possibility",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "No latest date promised. Do not resolve from the first device’s launch.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-244",
+      "sourceId": "kcatch-20",
+      "familyId": "macbook-neo",
+      "category": "Mac",
+      "title": "Budget MacBook enters mass production in Q4 2025",
+      "target": "Manufacturing during Q4 2025",
+      "status": "Not assessed",
+      "outcome": "No independent manufacturing record is in the saved evidence. Product announcement or retail availability cannot establish this production milestone.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "Tighter production window than K-212; retail launch in March 2026 does not establish it. The article’s inferred late-2025/early-2026 retail launch is not a direct Kuo forecast.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-245",
+      "sourceId": "kcatch-20",
+      "familyId": "macbook-neo-2",
+      "category": "Mac",
+      "title": "Second-generation budget MacBook released in 2027",
+      "target": "Second-generation customer release in 2027",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": "2027-12-31",
+      "start": "2027-01-01",
+      "timing": "Pending",
+      "note": "Chip choice and RAM speculation elsewhere in the article are not attributed to Kuo.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-246",
+      "sourceId": "kcatch-21",
+      "familyId": "macbook-pro-oled",
+      "category": "Mac",
+      "title": "First OLED MacBook Pro has a touchscreen",
+      "target": "First OLED MacBook Pro input",
+      "status": "Supported",
+      "outcome": "Apple explicitly introduced Touch alongside the PROLED tandem OLED display.",
+      "launchIds": [
+        "macbook-pro-oled"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not specified",
+      "note": "",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Supported; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-247",
+      "sourceId": "kcatch-21",
+      "familyId": "macbook-pro-oled",
+      "category": "Mac",
+      "title": "OLED MacBook Pro uses on-cell touch technology",
+      "target": "Touch sensor fabrication architecture",
+      "status": "Not assessed",
+      "outcome": "Apple launch material does not establish this supplier or component-level condition; independent evidence is still required.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "Apple says sensors are built into the display, but does not identify on-cell versus in-cell construction. Touchscreen presence alone is insufficient.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-248",
+      "sourceId": "kcatch-21",
+      "familyId": "macbook-pro-oled",
+      "category": "Mac",
+      "title": "OLED MacBook Pro enters mass production in 2026",
+      "target": "Manufacturing during 2026",
+      "status": "Not assessed",
+      "outcome": "No independent manufacturing record is in the saved evidence. Product announcement or retail availability cannot establish this production milestone.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-249",
+      "sourceId": "kcatch-21",
+      "familyId": "macbook-neo",
+      "category": "Mac",
+      "title": "First budget MacBook omits a touchscreen",
+      "target": "First-generation input hardware",
+      "status": "Not assessed",
+      "outcome": "Existing launch dates establish MacBook Neo identity, but a complete official feature/specification comparison is needed to verify the negative touchscreen condition.",
+      "launchIds": [
+        "macbook-neo"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "The contemporary forecast is clear. Do not use MacRumors’ later “accurately predicted” label as manufacturing or hardware outcome proof.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-250",
+      "sourceId": "kcatch-21",
+      "familyId": "macbook-neo-2",
+      "category": "Mac",
+      "title": "Second-generation budget MacBook could add touch support",
+      "target": "Second-generation input hardware",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Could",
+      "kind": "possibility",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "March 8, 2026 article repeats this September 2025 call; March 11, 2026 revises it toward possibly no touch. Retain this initial possibility.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-251",
+      "sourceId": "kcatch-23",
+      "familyId": "samsung-iphone-camera",
+      "category": "iPhone",
+      "title": "First iPhone with Samsung camera sensor released in 2027",
+      "target": "First qualifying iPhone release in 2027",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": "2027-12-31",
+      "start": "2027-01-01",
+      "timing": "Pending",
+      "note": "Explicit revision from an earlier as-early-as-2026 report. The earlier July 2024 source is not in this newly saved collection, so do not backdate this claim.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-252",
+      "sourceId": "kcatch-24",
+      "familyId": "airpods-pro-3",
+      "category": "AirPods",
+      "title": "AirPods Pro 3 released in H2 2025",
+      "target": "Customer release during H2 2025",
+      "status": "Supported",
+      "outcome": "Existing Apple launch evidence dates AirPods Pro 3 availability to September 19, 2025.",
+      "launchIds": [
+        "airpods-pro-3"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": "2025-12-31",
+      "start": "2025-07-01",
+      "timing": "On time",
+      "note": "Kuo specified H2 2025, not the September 9 event. The article attributes other features to Gurman.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Supported; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-253",
+      "sourceId": "kcatch-24",
+      "familyId": "airpods-infrared",
+      "category": "AirPods",
+      "title": "AirPods Pro update with an infrared camera arrives in 2026",
+      "target": "2026 AirPods Pro hardware update",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": "2026-12-31",
+      "start": "2026-01-01",
+      "timing": "Pending",
+      "note": "November 13 is before the end of 2026. AirPods 5 is not an interchangeable substitute for the Pro generation.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-254",
+      "sourceId": "kcatch-24",
+      "familyId": "airpods-infrared",
+      "category": "AirPods",
+      "title": "Infrared-equipped AirPods could respond to in-air gestures",
+      "target": "Possible infrared AirPods control feature",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Could",
+      "kind": "possibility",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Restatement of earlier Kuo proposal within this article; source date is the recovered attribution, not proof of the first prediction date.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-255",
+      "sourceId": "kcatch-24",
+      "familyId": "airpods-infrared",
+      "category": "AirPods",
+      "title": "Infrared AirPods emphasize spatial sound toward the wearer’s head direction with Vision Pro",
+      "target": "Directional spatial-audio behavior with Vision Pro",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Could",
+      "kind": "possibility",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Observable example retained instead of the unbounded adjective “enhanced”. No qualifying device is established in the outcome corpus.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-256",
+      "sourceId": "kcatch-25",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "Luxshare supplies side-button Touch ID module for first foldable iPhone",
+      "target": "Authentication-module supplier",
+      "status": "Not assessed",
+      "outcome": "Apple launch material does not establish this supplier or component-level condition; independent evidence is still required.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "Apple confirms side-button Touch ID, but does not identify its module supplier.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-257",
+      "sourceId": "kcatch-25",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "First foldable iPhone has two rear cameras",
+      "target": "First-model rear camera count",
+      "status": "Supported",
+      "outcome": "Apple identifies Fusion Main and Fusion Ultra Wide rear cameras on iPhone Duo.",
+      "launchIds": [
+        "iphone-duo"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not specified",
+      "note": "This article recaps Kuo’s earlier device description; related specifications are not independent forecasts.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Supported; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-258",
+      "sourceId": "kcatch-25",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "First foldable iPhone has front cameras for folded and unfolded use",
+      "target": "First-model outer and inner front-camera provision",
+      "status": "Supported",
+      "outcome": "Apple identifies a Center Stage front camera and a separate FaceTime camera beneath the inner display.",
+      "launchIds": [
+        "iphone-duo"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not specified",
+      "note": "",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Supported; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-259",
+      "sourceId": "kcatch-26",
+      "familyId": "iphone-a20",
+      "category": "Apple silicon",
+      "title": "A20 uses TSMC wafer-level multi-chip-module packaging",
+      "target": "WMCM packaging of at least some A20 chips",
+      "status": "Not assessed",
+      "outcome": "Apple launch material does not establish this supplier or component-level condition; independent evidence is still required.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "Apple describes side-by-side silicon and memory packaging, but does not name the manufacturing process WMCM. Do not infer the exact technology from similar description.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-260",
+      "sourceId": "kcatch-27",
+      "familyId": "macbook-pro-m5-pro",
+      "category": "Mac",
+      "title": "High-end M5 MacBook Pro models arrive in 2026",
+      "target": "M5 Pro / M5 Max MacBook generation in 2026",
+      "status": "Supported",
+      "outcome": "Apple announced M5 Pro/Max MacBook Pro on March 3 with March 11 availability.",
+      "launchIds": [
+        "macbook-pro-m5-pro"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": "2026-12-31",
+      "start": "2026-01-01",
+      "timing": "On time",
+      "note": "Kuo specifically refers to high-end M5 in 2026 MacBooks. The article’s broader inference that all M5 MacBooks wait until 2026 is not assigned to him; base M5 shipped in 2025.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Supported; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-261",
+      "sourceId": "kcatch-27",
+      "familyId": "macbook-pro-m5-pro",
+      "category": "Apple silicon",
+      "title": "High-end M5 chips retain separate underfill and molding processes",
+      "target": "Chip fabrication process for 2026 high-end M5 Macs",
+      "status": "Not assessed",
+      "outcome": "Apple launch material does not establish this supplier or component-level condition; independent evidence is still required.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-262",
+      "sourceId": "kcatch-29",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "Foldable iPhone display is crease-free",
+      "target": "First inner-display crease visibility",
+      "status": "Unresolvable",
+      "outcome": "Apple describes a finish that minimizes crease visibility; the forecast supplies no viewing conditions or threshold for “crease-free”.",
+      "launchIds": [
+        "iphone-duo"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not specified",
+      "note": "Do not equate minimized crease visibility with literal absence, or infer a miss from marketing wording alone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Unresolvable; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-263",
+      "sourceId": "kcatch-29",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "Foldable iPhone uses a metal plate under its inner display",
+      "target": "Inner-display support material",
+      "status": "Supported",
+      "outcome": "Apple describes a titanium plate beneath the folding display.",
+      "launchIds": [
+        "iphone-duo"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not specified",
+      "note": "Only the material/plate existence is resolved. Supplier identity and the predicted stress-control mechanism need component evidence.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Supported; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-264",
+      "sourceId": "kcatch-29",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "Samsung Display supplies the first foldable iPhone’s inner display",
+      "target": "First-model panel supplier",
+      "status": "Not assessed",
+      "outcome": "Apple launch material does not establish this supplier or component-level condition; independent evidence is still required.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-265",
+      "sourceId": "kcatch-29",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "Fine M-Tec primarily supplies foldable iPhone display support plates",
+      "target": "First-model support-plate supplier",
+      "status": "Not assessed",
+      "outcome": "Apple launch material does not establish this supplier or component-level condition; independent evidence is still required.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-266",
+      "sourceId": "kcatch-29",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "First foldable iPhone enters mass production in H2 2026",
+      "target": "Manufacturing in second half of 2026",
+      "status": "Not assessed",
+      "outcome": "No independent manufacturing record is in the saved evidence. Product announcement or retail availability cannot establish this production milestone.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "Restated July 17 and September 1. October retail availability is not production-start evidence.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-267",
+      "sourceId": "kcatch-29",
+      "familyId": "foldable-iphone",
+      "category": "iPhone",
+      "title": "Foldable iPhone is 4.5 mm unfolded and 9–9.5 mm folded",
+      "target": "First-model enclosure thickness",
+      "status": "Contradicted",
+      "outcome": "Apple specifies 5.2 mm open and 11.3 mm closed, outside both reported thickness figures.",
+      "launchIds": [
+        "iphone-duo"
+      ],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not specified",
+      "note": "Resolved against full technical specifications, not inferred from display sizes.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Contradicted; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-268",
+      "sourceId": "kcatch-30",
+      "familyId": "vision-pro-m5",
+      "category": "Vision",
+      "title": "M5 Vision Pro enters mass production in Q3 2025",
+      "target": "Manufacturing in Q3 2025",
+      "status": "Not assessed",
+      "outcome": "No independent manufacturing record is in the saved evidence. Product announcement or retail availability cannot establish this production milestone.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "Tightens the earlier H2 2025 window in K-206; the October launch does not establish Q3 production.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-269",
+      "sourceId": "kcatch-30",
+      "familyId": "vision-roadmap-2026",
+      "category": "Vision",
+      "title": "No new Vision or smart glasses products released in 2026",
+      "target": "No qualifying public release during 2026",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": "2026-12-31",
+      "start": "2026-01-01",
+      "timing": "Pending",
+      "note": "Cannot mark Supported before the calendar year ends; review requires a complete product check.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-270",
+      "sourceId": "kcatch-30",
+      "familyId": "apple-smart-glasses",
+      "category": "Vision",
+      "title": "First Apple smart glasses have no display",
+      "target": "First generation display configuration",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-271",
+      "sourceId": "kcatch-30",
+      "familyId": "apple-smart-glasses",
+      "category": "Vision",
+      "title": "First Apple smart glasses support voice control",
+      "target": "First generation user input",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-272",
+      "sourceId": "kcatch-30",
+      "familyId": "apple-smart-glasses",
+      "category": "Vision",
+      "title": "First Apple smart glasses support gesture recognition",
+      "target": "First generation user input",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-273",
+      "sourceId": "kcatch-30",
+      "familyId": "apple-smart-glasses",
+      "category": "Vision",
+      "title": "First Apple smart glasses capture photos and video",
+      "target": "First generation camera capability",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-274",
+      "sourceId": "kcatch-30",
+      "familyId": "apple-smart-glasses",
+      "category": "Vision",
+      "title": "First Apple smart glasses offer audio playback",
+      "target": "First generation audio capability",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-275",
+      "sourceId": "kcatch-30",
+      "familyId": "apple-smart-glasses",
+      "category": "Vision",
+      "title": "First Apple smart glasses offer AI environmental awareness",
+      "target": "First generation sensing/AI capability",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Specific user behaviors require clarification before grading; future product remains open. Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-276",
+      "sourceId": "kcatch-30",
+      "familyId": "apple-smart-glasses",
+      "category": "Vision",
+      "title": "First Apple smart glasses enter mass production in Q2 2027",
+      "target": "Manufacturing in Q2 2027",
+      "status": "Not assessed",
+      "outcome": "No independent manufacturing record is in the saved evidence. Product announcement or retail availability cannot establish this production milestone.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-277",
+      "sourceId": "kcatch-30",
+      "familyId": "vision-air",
+      "category": "Vision",
+      "title": "Vision Air weighs over 40% less than Vision Pro",
+      "target": "First Vision Air weight versus contemporary Vision Pro",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-278",
+      "sourceId": "kcatch-30",
+      "familyId": "vision-air",
+      "category": "Vision",
+      "title": "Vision Air replaces glass with plastic",
+      "target": "First Vision Air construction",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-279",
+      "sourceId": "kcatch-30",
+      "familyId": "vision-air",
+      "category": "Vision",
+      "title": "Vision Air uses magnesium alloy",
+      "target": "First Vision Air construction",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-280",
+      "sourceId": "kcatch-30",
+      "familyId": "vision-air",
+      "category": "Vision",
+      "title": "Vision Air uses fewer sensors than Vision Pro",
+      "target": "First Vision Air sensor count",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-281",
+      "sourceId": "kcatch-30",
+      "familyId": "vision-air",
+      "category": "Vision",
+      "title": "Vision Air uses the latest flagship iPhone processor",
+      "target": "First Vision Air chip identity",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-282",
+      "sourceId": "kcatch-30",
+      "familyId": "vision-air",
+      "category": "Vision",
+      "title": "Vision Air costs significantly less than Vision Pro",
+      "target": "First Vision Air relative price",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "“Significantly” requires an explicit interpretation before a future comparison. Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-283",
+      "sourceId": "kcatch-30",
+      "familyId": "vision-air",
+      "category": "Vision",
+      "title": "Vision Air enters mass production in Q3 2027",
+      "target": "Manufacturing in Q3 2027",
+      "status": "Not assessed",
+      "outcome": "No independent manufacturing record is in the saved evidence. Product announcement or retail availability cannot establish this production milestone.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-284",
+      "sourceId": "kcatch-30",
+      "familyId": "vision-pro-2",
+      "category": "Vision",
+      "title": "Second-generation Vision Pro has a lighter redesign",
+      "target": "Second-generation headset design and weight",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-285",
+      "sourceId": "kcatch-30",
+      "familyId": "vision-pro-2",
+      "category": "Vision",
+      "title": "Second-generation Vision Pro uses a Mac-grade chip",
+      "target": "Second-generation headset processor",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-286",
+      "sourceId": "kcatch-30",
+      "familyId": "vision-pro-2",
+      "category": "Vision",
+      "title": "Second-generation Vision Pro has a lower price",
+      "target": "Second-generation headset starting price",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-287",
+      "sourceId": "kcatch-30",
+      "familyId": "vision-pro-2",
+      "category": "Vision",
+      "title": "Second-generation Vision Pro enters mass production in H2 2028",
+      "target": "Manufacturing in H2 2028",
+      "status": "Not assessed",
+      "outcome": "No independent manufacturing record is in the saved evidence. Product announcement or retail availability cannot establish this production milestone.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-288",
+      "sourceId": "kcatch-30",
+      "familyId": "apple-xr-glasses",
+      "category": "Vision",
+      "title": "Apple XR glasses combine color LCoS display and waveguide optics",
+      "target": "First display-equipped Apple glasses architecture",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-289",
+      "sourceId": "kcatch-30",
+      "familyId": "apple-xr-glasses",
+      "category": "Vision",
+      "title": "Apple XR glasses support voice and gesture controls",
+      "target": "First display-equipped Apple glasses input",
+      "status": "Pending",
+      "outcome": "The relevant product condition remains open as of November 13, 2026.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Pending",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Pending; provisional; retrospective collection."
+        }
+      ]
+    },
+    {
+      "id": "K-290",
+      "sourceId": "kcatch-30",
+      "familyId": "apple-xr-glasses",
+      "category": "Vision",
+      "title": "Apple XR glasses enter mass production in H2 2028",
+      "target": "Manufacturing in H2 2028",
+      "status": "Not assessed",
+      "outcome": "No independent manufacturing record is in the saved evidence. Product announcement or retail availability cannot establish this production milestone.",
+      "launchIds": [],
+      "qualifier": "Reported expectation",
+      "kind": "expectation",
+      "deadline": null,
+      "start": null,
+      "timing": "Not assessed",
+      "note": "Kuo’s June 3, 2026 report says this roadmap was substantially revised. That report is a revision, not independent proof of a cancellation or missed future milestone.",
+      "reviewState": "Provisional",
+      "assessedAt": "2026-11-13",
+      "probability": null,
+      "history": [
+        {
+          "date": "2026-11-13",
+          "reviewId": "apple-2026-11-13",
+          "change": "Added from locally parsed saved HTML. Not assessed; provisional; retrospective collection."
+        }
+      ]
     }
   ]
 }

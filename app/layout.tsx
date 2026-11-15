@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Forecast Index — AI & Technology',
+  title: 'Hindsight Research',
   description:
-    'Dated technology predictions, original sources, release milestones, and auditable evidence.',
+    'Checking what people said about the future against what happened: pundit priors, explicit forecasts and essay evaluations.',
 };
 
 export default function RootLayout({

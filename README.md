@@ -32,3 +32,9 @@ Validation note: `npm run lint` includes the generated component catalog, which 
 The Kuo dossier adds 216 claims from 50 source pages across 72 families and 10 hardware categories (2015–2025 reports; outcomes reviewed September 7, 2026). See `docs/kuo-research.md` for scope, counts, limitations, revisions and attribution rules. Three original Medium posts are distinguished from public attributions. The raw ledger is `public/data/kuo-forecasts.json`; `GET /api/kuo` exports all evaluated records and evidence.
 
 Forecast and Apple-launch tables offer 10, 25, 50, 100 or All rows. All applies to the current filtered results. Changing the row count returns to the first page; filtering clamps pagination to prevent an empty stale page. Probability lower bounds in Kuo’s WWDC calls are displayed without converting them into exact probabilities.
+
+## Research dashboard
+
+`/research` tracks the companion `hindsight_research` project; `/research/vox` shows its Vox Future Perfect probability-recovery pilot, leakage diagnostics, and item details. `/research/ontology` explains how prior grading relates to this site's categorical claim grading. This is a private research dashboard, not a person-level leaderboard. Existing claim verdicts remain governed by rubric 0.1.
+
+To refresh, run `python3 pipeline/export_site.py` in the sibling `hindsight_research` repo, then run `node scripts/sync-hindsight.mjs` from this `site/` directory. The sync reads `../../hindsight_research/exports/site/hindsight-*.json` and copies the exports into `public/data/hindsight/`. Data is statically imported; rebuild or restart the site after refreshing it. Validate exports with `node --experimental-strip-types --test tests/hindsight.test.mjs`.

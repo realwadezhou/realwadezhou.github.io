@@ -1,5 +1,6 @@
 import ForecastTracker from '@/components/forecast-tracker';
 const views = [
+  'home',
   'all',
   'models',
   'products',
@@ -17,6 +18,6 @@ export default async function Home({
   searchParams: Promise<{ view?: string }>;
 }) {
   const { view } = await searchParams;
-  const initialView = views.find((item) => item === view) ?? 'all';
+  const initialView = views.find((item) => item === view) ?? 'home';
   return <ForecastTracker key={initialView} initialView={initialView} />;
 }

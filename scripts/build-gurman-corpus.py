@@ -2,6 +2,7 @@
 Run to regenerate the public dataset after editing a source or assessment.
 """
 import json
+from apple_review import apply_review
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sources={}; claims=[]
@@ -199,5 +200,6 @@ add('p16siri','macos-sierra','Software','Siri debuts on Mac with the 10.12 relea
 add('p16siri','macos-sierra','Software','Menu-bar access to Siri on Mac','Mac Siri interface','Supported','Sierra exposed Siri through the menu bar, Dock and keyboard.','macos-sierra')
 add('p16siri','macos-sierra','Software','OS 10.12 with Siri introduced at June WWDC','June 2016 preview','Supported','Apple previewed macOS Sierra on June 13.','macos-sierra',deadline='2016-06-30',start='2016-06-01',timing='On time')
 
-(ROOT/'public/data/gurman-forecasts.json').write_text(json.dumps({'asOf':'2026-09-05','sources':sources,'claims':claims},ensure_ascii=False,indent=2)+'\n')
-print(len(claims),'claims',len(sources),'sources',len(set(c['familyId'] for c in claims)),'families')
+result = apply_review({'asOf':'2026-09-05','sources':sources,'claims':claims}, 'gurman')
+(ROOT/'public/data/gurman-forecasts.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+print(len(result['claims']),'claims',len(result['sources']),'sources')

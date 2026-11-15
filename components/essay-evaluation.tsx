@@ -26,6 +26,171 @@ import {
 } from '@/lib/essays';
 import { verdicts, RUBRIC_VERSION } from '@/lib/rubric';
 import { EpochPolicy } from '@/components/epoch-policy';
+import { essaysV02, V02_ORDER, v02Tone, type V02Claim } from '@/lib/essays-v02';
+
+function V02Grade({ g }: { g: V02Claim | undefined }) {
+  if (!g?.thesisVerdict) return <span className="cell-note">Not graded</span>;
+  return (
+    <>
+      <span className={`status status-${v02Tone(g.thesisVerdict)}`}>
+        {g.thesisVerdict}
+      </span>
+      <span className="cell-note">
+        {[
+          g.weight,
+          g.trajectory && g.trajectory !== 'null' ? g.trajectory : null,
+          g.resolvedOn && g.resolvedOn !== 'null'
+            ? `resolved ${g.resolvedOn}${g.timing === 'Early' ? ' (early)' : ''}`
+            : null,
+          g.credence != null
+            ? `credence ${Math.round(g.credence * 100)}%`
+            : null,
+          g.strictVerdict && g.strictVerdict !== 'null'
+            ? `strict: ${g.strictVerdict}`
+            : null,
+        ]
+          .filter(Boolean)
+          .join(' · ')}
+      </span>
+    </>
+  );
+}
+
+function V02Detail({ g }: { g: V02Claim }) {
+  return (
+    <div className="v02-detail">
+      <h3>Rubric 0.2 (draft)</h3>
+      <div className="grade-line">
+        <V02Grade g={g} />
+      </div>
+      {g.thesis && (
+        <p>
+          <strong>Thesis (read from the essay alone):</strong> {g.thesis}
+        </p>
+      )}
+      {g.horizon && <p className="fine-print">Horizon as read: {g.horizon}</p>}
+      {!!g.indicatorsYes?.length && (
+        <>
+          <h4>Would show it right</h4>
+          <ul>
+            {g.indicatorsYes.map((x) => (
+              <li key={x}>{x}</li>
+            ))}
+          </ul>
+        </>
+      )}
+      {!!g.indicatorsNo?.length && (
+        <>
+          <h4>Would show it wrong</h4>
+          <ul>
+            {g.indicatorsNo.map((x) => (
+              <li key={x}>{x}</li>
+            ))}
+          </ul>
+        </>
+      )}
+      {g.measureUsed && g.measureUsed !== 'null' && (
+        <p className="fine-print">Measure used: {g.measureUsed}</p>
+      )}
+      {g.reasoning && <p>{g.reasoning}</p>}
+      {g.readingFlag && g.readingFlag !== 'null' && (
+        <p className="fine-print">
+          Grader flagged the reading: {g.readingFlag}
+        </p>
+      )}
+      {!!g.evidence.length && (
+        <>
+          <h4>
+            Evidence ({g.evidence.length} items, {g.searchCount} searches)
+          </h4>
+          <ol className="sources">
+            {g.evidence.map((e, i) => (
+              <li key={i}>
+                {e.url ? (
+                  <a href={e.url} target="_blank" rel="noreferrer">
+                    {e.source ?? e.url}
+                  </a>
+                ) : (
+                  e.source
+                )}{' '}
+                <span className="fine-print">{e.date}</span>
+                <p>{e.item}</p>
+              </li>
+            ))}
+          </ol>
+        </>
+      )}
+    </div>
+  );
+}
+
+function V02Compare({
+  essay,
+  v02,
+}: {
+  essay: Essay;
+  v02: Record<string, V02Claim>;
+}) {
+  const forecasts = essay.claims.filter((c) => v02[c.id]?.thesisVerdict);
+  const olds = [...new Set(forecasts.map((c) => c.grade))];
+  const cols = V02_ORDER.filter((v) =>
+    forecasts.some((c) => v02[c.id].thesisVerdict === v),
+  );
+  const byWeight = ['Core', 'Supporting', 'Minor'].map((w) => ({
+    w,
+    counts: cols.map(
+      (v) =>
+        forecasts.filter(
+          (c) => v02[c.id].weight === w && v02[c.id].thesisVerdict === v,
+        ).length,
+    ),
+  }));
+  return (
+    <details className="essay-method" open>
+      <summary>Rubric 0.2 draft vs 0.1 · {forecasts.length} claims</summary>
+      <p className="fine-print">
+        Draft, not adopted. Reading and indicators written from the essay text
+        only (no web); verdict by GPT-6.1 Terra with web search, every query and
+        URL logged. Early success counts as Yes, with the date it resolved.
+        Rows: 0.1 grade. Columns: 0.2 thesis verdict.
+      </p>
+      <Table className="fit-table">
+        <TableHeader>
+          <TableRow>
+            <TableHead>0.1 grade</TableHead>
+            {cols.map((v) => (
+              <TableHead key={v}>{v}</TableHead>
+            ))}
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {olds.map((o) => (
+            <TableRow key={o}>
+              <TableCell>{o}</TableCell>
+              {cols.map((v) => (
+                <TableCell key={v}>
+                  {forecasts.filter(
+                    (c) => c.grade === o && v02[c.id].thesisVerdict === v,
+                  ).length || ''}
+                </TableCell>
+              ))}
+            </TableRow>
+          ))}
+          {byWeight.map(({ w, counts }) => (
+            <TableRow key={w} className="v02-weight-row">
+              <TableCell>
+                <em>{w} claims</em>
+              </TableCell>
+              {counts.map((n, i) => (
+                <TableCell key={cols[i]}>{n || ''}</TableCell>
+              ))}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </details>
+  );
+}
 
 function Grade({ claim }: { claim: EssayClaim }) {
   if (claim.kind === 'Policy proposal' || claim.kind === 'Already observable')
@@ -108,6 +273,7 @@ export function EssayEvaluation({ essay }: { essay: Essay }) {
   const [selected, setSelected] = useState<EssayClaim | null>(null);
   const counts = essayCounts(essay);
   const families = [...new Set(essay.claims.map((c) => c.family))];
+  const v02 = essaysV02.essays[essay.slug]?.claims;
   return (
     <>
       <div className="essay-byline">
@@ -144,6 +310,7 @@ export function EssayEvaluation({ essay }: { essay: Essay }) {
           </div>
         ))}
       </div>
+      {v02 && <V02Compare essay={essay} v02={v02} />}
       <EpochPolicy />
       <p className="fine-print essay-score-note">
         As of {ESSAY_AS_OF} · Provisional assessment by Codex · Rubric{' '}
@@ -205,7 +372,8 @@ export function EssayEvaluation({ essay }: { essay: Essay }) {
               <TableRow>
                 <TableHead>Verifiable claim</TableHead>
                 <TableHead>Window / condition</TableHead>
-                <TableHead>Assessment</TableHead>
+                <TableHead>Assessment (0.1)</TableHead>
+                {v02 && <TableHead>Rubric 0.2 (draft)</TableHead>}
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -246,6 +414,11 @@ export function EssayEvaluation({ essay }: { essay: Essay }) {
                         </span>
                       )}
                     </TableCell>
+                    {v02 && (
+                      <TableCell>
+                        <V02Grade g={v02[claim.id]} />
+                      </TableCell>
+                    )}
                   </TableRow>
                 ))}
             </TableBody>
@@ -293,6 +466,9 @@ export function EssayEvaluation({ essay }: { essay: Essay }) {
                 </div>
                 <h3>Assessment</h3>
                 <p>{selected.assessment}</p>
+                {v02?.[selected.id]?.thesisVerdict && (
+                  <V02Detail g={v02[selected.id]} />
+                )}
                 <dl className="claim-facts">
                   <div>
                     <dt>Target</dt>

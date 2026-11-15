@@ -314,8 +314,8 @@ test('row limits include every match in All mode and clamp pages after filtering
 });
 test('Kuo revisions retain the original forecast and distinguish production from launch', () => {
   const claim = (id) => kuoClaims.find((row) => row.id === id);
-  assert.equal(kuoClaims.length, 216);
-  assert.equal(Object.keys(kuoCorpus.sources).length, 50);
+  assert.equal(kuoClaims.length, 290);
+  assert.ok(Object.keys(kuoCorpus.sources).length > 50);
   for (const [earlier, later] of [
     ['K-126', 'K-152'],
     ['K-171', 'K-172'],
@@ -349,5 +349,35 @@ test('Kuo revisions retain the original forecast and distinguish production from
     for (const observation of row.timing.observations)
       assert.ok(observation.date <= kuoCorpus.asOf);
     assert.equal(row.reviewState, 'Provisional');
+  }
+});
+
+test('November launch review preserves history, missed windows, and deferred software', () => {
+  const g = (id) => gurmanClaims.find((row) => row.id === id);
+  const k = (id) => kuoClaims.find((row) => row.id === id);
+  assert.equal(corpus.asOf, '2026-11-13');
+  assert.equal(kuoCorpus.asOf, '2026-11-13');
+  assert.equal(gurmanClaims.length, 329);
+  assert.equal(g('G-192').status, 'Supported');
+  assert.deepEqual(g('G-192').history.map((r) => r.date), ['2026-09-05', '2026-11-13']);
+  assert.match(g('G-192').history[0].change, /Pending/);
+  assert.equal(k('K-213').status, 'Supported');
+  assert.equal(k('K-214').status, 'Contradicted');
+  assert.equal(k('K-215').status, 'Supported');
+  assert.equal(k('K-216').status, 'Unresolvable');
+  assert.equal(k('K-137').status, 'Contradicted');
+  assert.equal(g('G-259').status, 'Contradicted');
+  assert.equal(g('G-259').timing.label, 'Late');
+  for (const id of ['G-285', 'G-308', 'G-312', 'G-313'])
+    assert.equal(g(id).status, 'Pending', id);
+  assert.equal(g('G-218').kind, 'possibility');
+  assert.equal(g('G-218').status, 'Supported');
+  assert.equal(launchById.get('siri-ai').availabilityDate, '2026-09-14');
+  assert.match(launchById.get('siri-ai').availabilityMilestone, /beta/);
+  assert.equal(launchById.get('apple-home-collection').availabilityDate, null);
+  for (const claim of [...gurmanClaims, ...kuoClaims]) {
+    const initial = claim.history[0].date;
+    assert.ok(initial >= claim.published, claim.id);
+    assert.equal(claim.reviewState, 'Provisional');
   }
 });

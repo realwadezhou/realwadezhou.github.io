@@ -43,7 +43,7 @@ export function KuoOverview({
           </strong>
         </p>
         <p>
-          Reports from 2015–2025, evaluated through September 7, 2026. Coverage
+          Reports from 2015–2026, with a launch review through November 13, 2026. Coverage
           includes iPhone, iPad, Mac, Watch, AirPods, HomePod, Apple TV, iPod,
           accessories and Vision. {direct} original Kuo posts were recovered;
           the remaining source pages explicitly attribute client notes or public

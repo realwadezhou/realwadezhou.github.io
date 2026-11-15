@@ -49,7 +49,7 @@ export const gurmanClaims: Claim[] = corpus.claims.map((row) => {
       role: extra.role as Source['role'],
       access: 'Read',
       published: extra.published,
-      accessed: corpus.asOf,
+      accessed: extra.accessed,
       note: extra.note,
     });
   }
@@ -106,7 +106,7 @@ export const gurmanClaims: Claim[] = corpus.claims.map((row) => {
     context: `Normalized paraphrase of the cited report, collected retrospectively. ${row.note || 'Scope is the named generation or event; an unrelated later product does not fulfill it.'}`,
     assessment: row.outcome,
     review:
-      'Initial assessment by Codex on September 5, 2026. No independent human review. This is a selective historical corpus; related details and revisions are correlated.',
+      `Last assessment of this claim: ${row.assessedAt}. No independent human review. This is a selective historical corpus; related details and revisions are correlated. See history for the original assessment and later updates.`,
     sources,
     rubricVersion: '0.1',
     clarity:
@@ -152,11 +152,6 @@ export const gurmanClaims: Claim[] = corpus.claims.map((row) => {
           : sources.map((source) => source.id),
       },
     ],
-    history: [
-      {
-        date: corpus.asOf,
-        change: `Added to historical corpus. ${row.status}; provisional. ${row.note}`,
-      },
-    ],
+    history: row.history,
   };
 });
