@@ -5,6 +5,7 @@ import {
   Table,
   TableBody,
   TableCell,
+  TableHead,
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
@@ -17,8 +18,8 @@ type Stance = MushyPoint & { qid: string; p: number; diffuse: boolean };
 
 const pct = (p: number | null) => (p == null ? '—' : `${Math.round(p * 100)}%`);
 const num = (x: number | null, d = 3) => (x == null ? '—' : x.toFixed(d));
-const signed = (x: number | null) =>
-  x == null ? '—' : `${x > 0 ? '+' : ''}${x.toFixed(3)}`;
+const signed = (x: number | null, d = 3) =>
+  x == null ? '—' : `${x > 0 ? '+' : ''}${x.toFixed(d)}`;
 const mean = (xs: number[]) =>
   xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null;
 const keysOf = (p: MushyPoint, by: GroupBy): string[] =>
@@ -71,6 +72,9 @@ function summary(xs: Stance[]) {
   const deltas = xs.flatMap((s) =>
     s.deltaVsConsensus == null ? [] : [s.deltaVsConsensus],
   );
+  const bits = xs.flatMap((s) =>
+    s.bitsVsConsensus == null ? [] : [s.bitsVsConsensus],
+  );
   return {
     n: xs.length,
     articles: new Set(xs.map((s) => s.docId)).size,
@@ -81,44 +85,38 @@ function summary(xs: Stance[]) {
     brier: mean(xs.map((s) => (s.p - s.outcome) ** 2)),
     delta: mean(deltas),
     nDelta: deltas.length,
+    bits: mean(bits),
     boldness: mean(xs.map((s) => Math.abs(s.p - 0.5))),
   };
 }
 
 export function MushyCalibration() {
   const [by, setBy] = useState<GroupBy>('author');
-  const [reader, setReader] = useState(mushyData.readers[0]);
+  // Only GPT-6.1 Terra read every article; the other readers covered the MVP set only.
+  const reader = 'GPT-6.1 Terra';
   const [wellPosed, setWellPosed] = useState(false);
-  const [minN, setMinN] = useState(1);
+  const [minN, setMinN] = useState(3);
   const [category, setCategory] = useState('');
-  const [batch, setBatch] = useState('');
-  const [selected, setSelected] = useState<string | null>(null);
 
   const groups = useMemo(
-    () => stances(mushyData.questions, reader, by, wellPosed, category, batch),
-    [reader, by, wellPosed, category, batch],
+    () => stances(mushyData.questions, reader, by, wellPosed, category, ''),
+    [by, wellPosed, category],
   );
+  // Bylines we couldn't attribute are counted in the totals but not ranked.
+  const isUnknown = (g: string) => g === '(unknown author)' || g === '(unknown outlet)';
+  const nUnknown = [...groups.entries()]
+    .filter(([g]) => isUnknown(g))
+    .reduce((n, [, xs]) => n + xs.length, 0);
   const rows = [...groups.entries()]
+    .filter(([g]) => !isUnknown(g))
     .map(([g, xs]) => ({ g, ...summary(xs) }))
     .filter((r) => r.n >= minN)
-    .sort((a, b) => b.n - a.n || (a.brier ?? 1) - (b.brier ?? 1));
-  const all = [...groups.values()].flat();
-  const pool = selected ? (groups.get(selected) ?? []) : all;
-  const overall = summary(all);
-
-  const byCategory = new Map<string, Stance[]>();
-  for (const s of pool) {
-    const c = s.category ?? 'unknown';
-    byCategory.set(c, [...(byCategory.get(c) ?? []), s]);
-  }
-  const reliability = [...byCategory.entries()]
-    .map(([c, xs]) => ({
-      c,
-      n: xs.length,
-      reading: mean(xs.map((s) => s.p)),
-      observed: mean(xs.map((s) => s.outcome)),
-    }))
-    .sort((a, b) => (a.reading ?? 0) - (b.reading ?? 0));
+    .sort(
+      (a, b) =>
+        (b.bits ?? -Infinity) - (a.bits ?? -Infinity) ||
+        (a.brier ?? 1) - (b.brier ?? 1),
+    );
+  const overall = summary([...groups.values()].flat());
 
   const groupSort = useSortable(rows, {
     name: (r) => r.g,
@@ -127,28 +125,50 @@ export function MushyCalibration() {
     hit: (r) => r.hit,
     brier: (r) => r.brier,
     delta: (r) => r.delta,
+    bits: (r) => r.bits,
     boldness: (r) => r.boldness,
-  });
-  const relSort = useSortable(reliability, {
-    category: (r) => r.reading,
-    n: (r) => r.n,
-    reading: (r) => r.reading,
-    observed: (r) => r.observed,
   });
 
   return (
     <section aria-label="Calibration by author and outlet">
       <div className="research-summary">
+        <p>How well did the pundits (as inferred by LLMs) do as forecasters?</p>
+        <p>We grade authors on a few metrics:</p>
+        <ul>
+          <li>
+            <strong>
+              <a
+                href="https://en.wikipedia.org/wiki/Brier_score"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Brier score
+              </a>
+              :
+            </strong>{' '}
+            Lower is better. 0 is a perfect record; 0.25 is what you would get
+            by always saying 50%.
+          </li>
+          <li>
+            <strong>Δ vs consensus:</strong> The Brier score of the forecast
+            minus that of a consensus, an average of views up until that point.
+            Negative scores mean the author beat the consensus.
+          </li>
+          <li>
+            <strong>Boldness:</strong> How far the author’s forecasts sat from
+            50%. A boldness of 0% means they never leaned either way, while 50%
+            means every call they made was a flat yes or no.
+          </li>
+          <li>
+            <strong>Bits vs consensus:</strong> How much better (in bits) the
+            author did than the consensus, per forecast. Positive means they
+            beat it; confident calls against the crowd that turn out right earn
+            the most.
+          </li>
+        </ul>
         <p>
-          How well did pundits’ implied probabilities match what happened?
-          {by === 'category'
-            ? 'Every article × question stance counts; an article tagged with two categories counts in both.'
-            : `One stance per ${by} per question (the latest article, protocol §10).`}
-          read at the primary deadline. Brier: 0 is perfect, 0.25 is always
-          saying 50%. Δ vs consensus: Brier minus that of a trailing consensus
-          of earlier articles; negative means beating the room. Readings are
-          model-inferred and not yet validated; most groups have very few
-          questions, so treat every row as anecdote.
+          We’re still gathering more articles; most values have not been
+          manually checked. All values are tentative.
         </p>
       </div>
       <div className="filter-row mushy-filters">
@@ -158,7 +178,6 @@ export function MushyCalibration() {
             value={by}
             onChange={(e) => {
               setBy(e.target.value as GroupBy);
-              setSelected(null);
             }}
           >
             <option value="author">Author</option>
@@ -172,20 +191,11 @@ export function MushyCalibration() {
             value={category}
             onChange={(e) => {
               setCategory(e.target.value);
-              setSelected(null);
             }}
           >
             <option value="">All</option>
             {mushyData.categories.map((c) => (
               <option key={c}>{c}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          Reader{' '}
-          <select value={reader} onChange={(e) => setReader(e.target.value)}>
-            {mushyData.readers.map((r) => (
-              <option key={r}>{r}</option>
             ))}
           </select>
         </label>
@@ -197,16 +207,6 @@ export function MushyCalibration() {
           >
             <option value="all">All</option>
             <option value="well">Well-posed only</option>
-          </select>
-        </label>
-        <label>
-          Question set{' '}
-          <select value={batch} onChange={(e) => setBatch(e.target.value)}>
-            <option value="">All</option>
-            <option value="1">MVP set</option>
-            <option value="2">Batch 2</option>
-            <option value="3">2026 midterms</option>
-            <option value="4">AI capabilities and adoption</option>
           </select>
         </label>
         <label>
@@ -226,7 +226,7 @@ export function MushyCalibration() {
       <p className="fine-print">
         All groups: {overall.n} stances · hit rate {pct(overall.hit)} · mean
         Brier {num(overall.brier)} · Δ vs consensus {signed(overall.delta)} (n=
-        {overall.nDelta}).
+        {overall.nDelta}) · bits vs consensus {signed(overall.bits, 2)}.
       </p>
       <div>
         <Table className="fit-table calib-table">
@@ -286,19 +286,21 @@ export function MushyCalibration() {
                 sort={groupSort.sort}
                 onSort={groupSort.toggle}
                 numeric
-                title="Mean distance of readings from 50%"
+                title="How far forecasts sat from 50%, on average (0% = never leaned, 50% = always a flat yes or no)"
+              />
+              <SortableHead
+                label="Bits vs consensus"
+                column="bits"
+                sort={groupSort.sort}
+                onSort={groupSort.toggle}
+                numeric
+                title="Mean log₂(probability the author gave the outcome ÷ probability the earlier consensus gave it). Positive beats the room."
               />
             </TableRow>
           </TableHeader>
           <TableBody>
             {groupSort.sorted.map((r) => (
-              <TableRow
-                key={r.g}
-                className={
-                  selected === r.g ? 'mushy-row-selected' : 'mushy-row'
-                }
-                onClick={() => setSelected(selected === r.g ? null : r.g)}
-              >
+              <TableRow key={r.g}>
                 <TableCell>
                   <span className="clamp-2" title={r.g}>
                     {r.g}
@@ -313,67 +315,69 @@ export function MushyCalibration() {
                   {r.nDelta ? ` (n=${r.nDelta})` : ''}
                 </TableCell>
                 <TableCell>{pct(r.boldness)}</TableCell>
+                <TableCell>{signed(r.bits, 2)}</TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
-      </div>
-      <h3 className="hindsight-heading">
-        Reliability by phrase category{selected ? ` — ${selected}` : ' — all'}
-      </h3>
-      <p className="fine-print">
-        When a piece read as a given category, how often did the event happen?
-        Well calibrated: observed close to the reading.
-        {selected
-          ? ' Click the row again to show all.'
-          : ' Click a row above to filter.'}
-      </p>
-      <div>
-        <Table className="fit-table">
-          <TableHeader>
-            <TableRow>
-              <SortableHead
-                label="Category"
-                column="category"
-                sort={relSort.sort}
-                onSort={relSort.toggle}
-                numeric
-              />
-              <SortableHead
-                label="Stances"
-                column="n"
-                sort={relSort.sort}
-                onSort={relSort.toggle}
-                numeric
-              />
-              <SortableHead
-                label="Reading"
-                column="reading"
-                sort={relSort.sort}
-                onSort={relSort.toggle}
-                numeric
-              />
-              <SortableHead
-                label="Observed"
-                column="observed"
-                sort={relSort.sort}
-                onSort={relSort.toggle}
-                numeric
-              />
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {relSort.sorted.map((r) => (
-              <TableRow key={r.c}>
-                <TableCell>{r.c.replace(/_/g, ' ')}</TableCell>
-                <TableCell>{r.n}</TableCell>
-                <TableCell>{pct(r.reading)}</TableCell>
-                <TableCell>{pct(r.observed)}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+        {nUnknown > 0 && (
+          <p className="fine-print">
+            {nUnknown} stances from articles with no identifiable {by} are left
+            out of the table but counted in the totals above.
+          </p>
+        )}
       </div>
     </section>
+  );
+}
+
+/** Phrase-scale check: when a piece read as a category, how often did the event happen? */
+export function PhraseReliability() {
+  // Same pool as the leaderboard's totals: GPT-6.1 Terra, latest article per author per question.
+  const pool = useMemo(
+    () => [
+      ...stances(mushyData.questions, 'GPT-6.1 Terra', 'author', false, '', '').values(),
+    ].flat(),
+    [],
+  );
+  const byCategory = new Map<string, Stance[]>();
+  for (const s of pool) {
+    const c = s.category ?? 'unknown';
+    byCategory.set(c, [...(byCategory.get(c) ?? []), s]);
+  }
+  const reliability = [...byCategory.entries()]
+    .map(([c, xs]) => ({
+      c,
+      n: xs.length,
+      reading: mean(xs.map((s) => s.p)),
+      observed: mean(xs.map((s) => s.outcome)),
+    }))
+    .sort((a, b) => (a.reading ?? 0) - (b.reading ?? 0));
+
+  return (
+    <Table className="fit-table">
+      <TableHeader>
+        <TableRow>
+          <TableHead>Likelihood</TableHead>
+          <TableHead title="One per author per question: their latest article">
+            Forecasts
+          </TableHead>
+          <TableHead title="The probability our reader assigned to this phrasing, on average">
+            Implied probability
+          </TableHead>
+          <TableHead>Actually happened</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {reliability.map((r) => (
+          <TableRow key={r.c}>
+            <TableCell>{r.c.replace(/_/g, ' ')}</TableCell>
+            <TableCell>{r.n}</TableCell>
+            <TableCell>{pct(r.reading)}</TableCell>
+            <TableCell>{pct(r.observed)}</TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
   );
 }

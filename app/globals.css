@@ -21,6 +21,21 @@
 .research-summary strong {
   color: #273951;
 }
+.research-summary ul {
+  max-width: 90ch;
+  margin: 0 0 12px;
+  padding-left: 20px;
+  list-style: disc;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #48525f;
+}
+.research-summary li {
+  margin-bottom: 4px;
+}
+.research-summary a {
+  text-decoration: underline;
+}
 .research-actions {
   display: flex;
   gap: 12px 24px;
@@ -535,6 +550,13 @@ h1 {
   line-height: 1.7;
   color: #637080;
   margin: 0;
+}
+/* Subtitle hugs the title; clear gap before the page content. */
+.page-heading h1 {
+  margin-bottom: 4px;
+}
+.page-heading {
+  margin-bottom: 28px;
 }
 .collection-meta {
   display: flex;
@@ -1668,6 +1690,15 @@ h1 {
 }
 .scoring-page li + li {
   margin-top: 4px;
+}
+.scoring-page a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+/* Space between paragraphs (and before a table) within a section. */
+.scoring-page p + p,
+.scoring-page p + [data-slot='table-container'] {
+  margin-top: 8px;
 }
 @media (max-width: 1100px) {
   .home-grid {
