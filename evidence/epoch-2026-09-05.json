@@ -1,0 +1,191 @@
+{
+  "accessed": "2026-09-05",
+  "attribution": "Epoch AI. Selected records and calculations, CC BY 4.0.",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "inputs": {
+    "centers": {
+      "url": "https://epoch.ai/data/data_centers/data_centers.csv",
+      "sha256": "764c398bbc40532c8fe043836dce94ea442d24ca7ea87f433a7fe8f2b2b98dd5",
+      "rows": 86
+    },
+    "timelines": {
+      "url": "https://epoch.ai/data/data_centers/data_center_timelines.csv",
+      "sha256": "b6bb4dacdfee379e9a48ae7f32cc81ba1806fb28bc19a941d75732a8814c724b",
+      "rows": 497
+    },
+    "chips": {
+      "url": "https://epoch.ai/data/data_centers/data_centers_chip_quantities.csv",
+      "sha256": "f5428b25057675d116ea04d7559d23c9efa7e9db4bf39f5b4b5a4d12825ff5f2",
+      "rows": 207
+    },
+    "models": {
+      "url": "https://epoch.ai/data/all_ai_models.csv",
+      "sha256": "d3c52bb791ec7baea9fb187197a8e570c56794e057b6970c664bbcd6635f8ee8",
+      "rows": 3601
+    },
+    "owners": {
+      "url": "https://epoch.ai/data/ai_chip_owners_cumulative_by_designer.csv",
+      "sha256": "4fbcba105f9c7d4f12c1d7374efdeb596a7379282357039691072e5948a17e08",
+      "rows": 215
+    },
+    "sales": {
+      "url": "https://epoch.ai/data/ai_chip_sales_timelines_by_chip.csv",
+      "sha256": "619b9be29e07a1ce0a390c3571761b75b417943dc67f748fdf451b4e4e9adff1",
+      "rows": 160
+    }
+  },
+  "method": "Dated rows only; no interpolation or future capacity counted. Epoch estimates are accepted as estimates. Missing values are not zero. Data-center totals cover listed sites, not the world.",
+  "colossus2": {
+    "Data center": "Colossus 2",
+    "Date": "2026-06-15",
+    "IT power (MW)": "946.0",
+    "Power (MW)": "1276.0",
+    "H100 equivalents": "1111672.5618999496",
+    "Total capital cost (2025 USD billions)": "35.836372"
+  },
+  "colossus2Chips": [
+    {
+      "Date": "2025-10-19",
+      "Chip type": "B200",
+      "Number of Units": "110000"
+    },
+    {
+      "Date": "2026-06-15",
+      "Chip type": "B300",
+      "Number of Units": "330000"
+    }
+  ],
+  "modelsReleasedThrough2025": {
+    "totalRows": 3448,
+    "rowsWithComputeEstimate": 1384,
+    "missingCompute": 2064,
+    "largestEstimates": [
+      {
+        "Model": "Grok 4",
+        "Publication date": "2025-07-09",
+        "Training compute (FLOP)": "5.0000000000001e+26",
+        "Training compute lower bound": "",
+        "Training compute upper bound": "",
+        "Training compute estimation method": "Comparison with other models"
+      },
+      {
+        "Model": "GPT-4.5",
+        "Publication date": "2025-02-27",
+        "Training compute (FLOP)": "3.8e+26",
+        "Training compute lower bound": "",
+        "Training compute upper bound": "",
+        "Training compute estimation method": "Benchmarks"
+      },
+      {
+        "Model": "Grok 3",
+        "Publication date": "2025-02-17",
+        "Training compute (FLOP)": "3.5e+26",
+        "Training compute lower bound": "2.1e+26",
+        "Training compute upper bound": "1.13e+27",
+        "Training compute estimation method": "Hardware,Comparison with other models"
+      },
+      {
+        "Model": "GPT-5",
+        "Publication date": "2025-08-07",
+        "Training compute (FLOP)": "6.6e+25",
+        "Training compute lower bound": "",
+        "Training compute upper bound": "",
+        "Training compute estimation method": ""
+      },
+      {
+        "Model": "Llama 4 Behemoth (preview)",
+        "Publication date": "2025-04-05",
+        "Training compute (FLOP)": "5.18400000000001e+25",
+        "Training compute lower bound": "",
+        "Training compute upper bound": "",
+        "Training compute estimation method": "Operation counting"
+      }
+    ],
+    "unestimatedFrontierExamples": [
+      {
+        "Model": "Claude Opus 4.5",
+        "Publication date": "2025-11-24",
+        "Training compute (FLOP)": "",
+        "Training compute lower bound": "",
+        "Training compute upper bound": "",
+        "Training compute estimation method": ""
+      },
+      {
+        "Model": "Gemini 3 Pro",
+        "Publication date": "2025-11-18",
+        "Training compute (FLOP)": "",
+        "Training compute lower bound": "",
+        "Training compute upper bound": "",
+        "Training compute estimation method": ""
+      }
+    ]
+  },
+  "chinaOwnership2025": [
+    {
+      "Owner": "China",
+      "Chip manufacturer": "Huawei",
+      "End date": "2025-12-31",
+      "Compute estimate in H100e (median)": "707968",
+      "H100e (5th percentile)": "",
+      "H100e (95th percentile)": ""
+    },
+    {
+      "Owner": "China",
+      "Chip manufacturer": "Nvidia",
+      "End date": "2025-12-31",
+      "Compute estimate in H100e (median)": "401698",
+      "H100e (5th percentile)": "324871.0",
+      "H100e (95th percentile)": "496849.0"
+    },
+    {
+      "Owner": "China",
+      "Chip manufacturer": "AMD",
+      "End date": "2025-12-31",
+      "Compute estimate in H100e (median)": "10523",
+      "H100e (5th percentile)": "8605.0",
+      "H100e (95th percentile)": "12837.0"
+    },
+    {
+      "Owner": "China (smuggled)",
+      "Chip manufacturer": "Nvidia",
+      "End date": "2025-12-31",
+      "Compute estimate in H100e (median)": "662048",
+      "H100e (5th percentile)": "294087.0",
+      "H100e (95th percentile)": "1592327.0"
+    },
+    {
+      "Owner": "China",
+      "Chip manufacturer": "Cambricon",
+      "End date": "2025-12-31",
+      "Compute estimate in H100e (median)": "34925",
+      "H100e (5th percentile)": "32079.0",
+      "H100e (95th percentile)": "45788.0"
+    }
+  ],
+  "ownershipLatestRows": {
+    "date": "2026-03-31",
+    "incomplete": true
+  },
+  "coveredWorld": {
+    "listedSites": 86,
+    "sitesWithDatedRecords": 86,
+    "ITPowerMW": 13257.12971,
+    "facilityPowerMW": 16927.8,
+    "H100e": 13937151.212872377,
+    "capitalCost2025USDBillions": 502.20658767422
+  },
+  "coveredUS": {
+    "listedSites": 75,
+    "sitesWithDatedRecords": 75,
+    "ITPowerMW": 12109.32971,
+    "facilityPowerMW": 15493.8,
+    "H100e": 13046294.315449437,
+    "capitalCost2025USDBillions": 458.72562807421997
+  },
+  "chipDeliveries2025": {
+    "rows": 54,
+    "H100e": 13577309.0,
+    "units": 9571051.0,
+    "scope": "Covered chip deliveries; not deployed stock or all AI investment."
+  }
+}
