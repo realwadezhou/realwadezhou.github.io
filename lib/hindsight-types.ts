@@ -69,6 +69,8 @@ export type MushyPoint = {
   brier: number | null;
   consensusBefore: number | null;
   deltaVsConsensus: number | null;
+  /** log2(P_article(outcome) / P_consensus(outcome)), clipped to [0.01, 0.99]; positive beats the room. */
+  bitsVsConsensus: number | null;
 };
 
 export type MushySeries = {

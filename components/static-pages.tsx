@@ -1,39 +1,45 @@
 import Link from '@/components/page-link';
+import { PhraseReliability } from '@/components/mushy-calibration';
 
 /** How the quantifying-vibes charts and leaderboard are scored. */
 export function VibesScoring() {
   return (
     <section className="scoring-page">
       <p>
-        Most commentary never states a probability, but it still leans. These
-        pages turn that lean into a number, plot it over time, and score it
-        against what happened and against markets.
+        This system takes in mushy articles and attempts to quantify the authors' implicit
+        probabilities about particular events happening. We then calculate how accurate
+        the authors were by checking the actual outcomes.
       </p>
-      <h2>1. Questions come first</h2>
+      <h2>1. Choosing forecasting questions</h2>
       <p>
-        Each question is fixed before collection: wording, resolution rule and
-        deadline or thresholds. We then collect articles that discuss it,
-        published before it resolved, without regard to whether they turned out
-        right. Pieces that take no stance are kept, so the denominator is
-        honest.
+        We first pick relevant forecasting questions with precise wording and
+        clean resolutions. Next we collect articles that discuss the topic,
+        before the event resolved. Articles are retained in this database even if 
+        they do not have clear stances, though they are not plotted on charts.
       </p>
-      <h2>2. A sealed reader</h2>
+      <h2>2. LLM-driven probability extraction</h2>
       <p>
-        A model reads each article and records its stance and a probability band
-        from a fixed phrase table (for example, “almost certain” is 90–99%). The
-        reader has no web search, browsing or other tools, and is told not to
-        look anything up, so it cannot see the outcome. Articles with no stance
-        are not plotted.
+        An LLM reads each article and "extracts" the author's implicit stance and probability.
+        This is aided by a table which converts words into concrete numbers. 
+        For example, “almost certain” is 90–99%.
+        This model does not have access to search, browsing or other web tools,
+        and is instructed not to look anything up, so it cannot see the outcome.
+      </p>
+      <p>
+        We then conduct testing with both prompts and models to ensure the models do
+        not "cheat" by running a series of tests, as described in{' '}
+        <Link href="/research/vox">Calibration</Link>.
       </p>
       <h2>3. Consensus and reference lines</h2>
       <ul>
         <li>
           The blue line is a Gaussian-weighted average of the readings over
-          time: the conventional wisdom.
+          time. This lets us create an index of "conventional wisdom" for various topics.
         </li>
         <li>
-          Market and forecasting-platform lines (Polymarket, Kalshi, PredictIt,
-          Manifold, Metaculus) are labelled direct, qualified or context-only,
+          We try to match these conventional wisdom indices to forecasting platforms, 
+          such as Polymarket, Kalshi, PredictIt,
+          Manifold, or Metaculus. These are labelled as "direct", "qualified" or "context-only",
           depending on how closely their rules match ours.
         </li>
       </ul>
@@ -59,18 +65,30 @@ export function VibesScoring() {
         The <Link href="/research/calibration">leaderboard</Link> aggregates
         these by author and outlet.
       </p>
+      <h2>5. Does the scale hold up?</h2>
+      <p>
+        When an article is assigned to a probability range, how often did the actual 
+        event happen? If both pundits and our system are well-calibrated, then the 
+        implied probability should sit close to what actually happened. 
+      </p>
+      <p>
+        At the moment, most of the questions in our data resolved yes (85 of 118), 
+        so far more of the low-probability calls came true than the readings imply.
+        This is a property of the current question set as much as of the scale.
+      </p>
+      <PhraseReliability />
       <h2>Limits</h2>
       <ul>
         <li>
-          Model readings are not yet validated against careful human labels.
+          Most of the values have not yet been reviewed by a human grader.
         </li>
         <li>
           Newer question sets (2026 midterms, AI) are drafts. Some thresholds
           were chosen with the outcome known, and are marked as such.
         </li>
         <li>
-          Resolutions weigh several sources rather than treating any one as the
-          oracle; judgement calls are recorded with each question.
+          We are still severely data-constrained. More articles in our database would
+          likely change the calibration numbers significantly. 
         </li>
       </ul>
     </section>
@@ -183,7 +201,7 @@ export function About() {
         </li>
       </ul>
       <p className="fine-print">
-        Version 0.2, November 2026. Pilot research: numbers and grades are
+        Version 0.21, November 2026. Pilot research: numbers and grades are
         revisable.
       </p>
     </section>

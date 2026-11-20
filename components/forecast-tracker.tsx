@@ -167,7 +167,7 @@ const descriptions: Record<View, string> = {
     'A reusable reference for announcement dates, orders, and availability—linked to forecast evaluations.',
 };
 /** Update when publishing changes to the site. */
-const LAST_UPDATED = '15 November 2026';
+const LAST_UPDATED = '19 November 2026';
 const SECTIONS: [string, View[]][] = [
   [
     'Quantifying vibes',
@@ -331,7 +331,7 @@ function Navigation({ view }: { view: View }) {
         <Radio size={21} strokeWidth={1.8} />
         <span className="brand-name">
           <span>Hindsight Research</span>
-          <span className="brand-version">v0.2</span>
+          <span className="brand-version">v0.21</span>
         </span>
       </SidebarHeader>
       <SidebarContent>
@@ -642,7 +642,7 @@ export default function ForecastTracker({
         <div id="main-content" className="page-content" tabIndex={-1}>
           <div className="page-heading">
             <div className="eyebrow">
-              {view === 'home' ? 'Version 0.2' : sectionOf(view).toUpperCase()}
+              {view === 'home' ? 'Version 0.21' : sectionOf(view).toUpperCase()}
             </div>
             <h1>{titles[view]}</h1>
             <p className="intro">{descriptions[view]}</p>
